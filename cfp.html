@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en" class="gr__getbootstrap_com">
+
+<head>
+
+	<!-- Metadata -->
+	<link rel="icon" href="files/images/favicon.ico">
+	<title>ICAPS-2019</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Open-Iconic CSS -->
+	<link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+    <link href="files/css/offcanvas.css" rel="stylesheet">
+	<link href="files/css/custom.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abel:400,700|Quattrocento+Sans" rel="stylesheet">
+
+	<!-- jQuery -->
+	<script src="files/js/jquery-3.2.1.min.js"></script>
+
+	<!-- Bootstrap core JS -->
+	<script src="bootstrap-4.0.0/js/popper.min.js"></script>
+	<script src="bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="files/js/custom.js"></script>
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="files/js/ie10-viewport-bug-workaround.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#cfp-body" data-offset="100" id="cfp-body">
+
+	<div class="bg-inverse collapse navbar-dark bg-dark icapsHeader" id="navbarHeader" aria-expanded="false">
+		<div class="container icapsHeader__container">
+
+			<div class="row icapsHeader__container__row">
+
+				<div class="col-sm-9 py-4 icapsHeader__container__row--left-block">
+
+					<h4 class="text-muted">About ICAPS</h4>
+
+					<p class="text-white">
+						The <a class="text-orange" href="http://www.icaps-conference.org/" target="_blank">International Conference on Automated Planning and Scheduling (ICAPS)</a> is the premier forum for researchers and practitioners in planning and scheduling - two technologies that are critical to manufacturing, space systems, software engineering, robotics, education, and entertainment. The ICAPS conference resulted from merging two bi-annual conferences, namely the International Conference on Artificial Intelligence Planning and Scheduling (AIPS) and the European Conference on Planning (ECP).
+                        <br><br>
+                        <a class="text-orange" href="http://icaps18.icaps-conference.org/" target="_blank">ICAPS 2018</a> will be held from June 23-29, 2018 in Delft, The Netherlands. Conference chairs are Matthijs Spaan and Mathijs de Weerdt. Program chairs are Sven Koenig and Gabriele Röger.
+						<br><br>
+						<a class="text-orange" href="http://icaps17.icaps-conference.org/" target="_blank">ICAPS 2017</a> was be held from June 18-23, 2017 in Pittsburgh, USA. Conference chairs were Stephen F. Smith and Laura Barbulescu. Program chairs were Jeremy Frank and Mausam.
+						<br><br>
+						<a class="text-orange" href="http://icaps16.icaps-conference.org/" target="_blank">ICAPS 2016</a> was held from June 12-17, 2016 in London, UK. Conference chairs were Andrew Coles and Daniele Magazzeni. Program chairs were Amanda Coles, Stefan Edelkamp, and Scott Sanner.
+					</p>
+
+				</div>
+
+				<div class="col-sm-3 py-4 icapsHeader__container__row--right-block">
+					<h4 class="text-muted">Contact</h4>
+					<ul class="list-unstyled">
+						<li><a class="text-orange" href="http://www.icaps-conference.org/">Homepage</a></li>
+						<li><a class="text-orange" href="http://users.cecs.anu.edu.au/~patrik/sigaps/index.php">SIGAPS</a></li>
+						<li><a class="text-orange" href="https://groups.google.com/forum/#!forum/icaps-conference">Google Groups</a></li>
+						<br>
+						<li><span class="text-muted">Email us @ <br><a class="text-muted" href="mailto:minh.do@nasa.gov">minh.do [AT] nasa.gov</a></span></li>
+					</ul>
+				</div>
+
+			</div>
+
+            <button type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="true">Close</button>
+
+		</div>
+	</div>
+
+
+	<nav class="navbar navbar-inverse bg-inverse navbar-expand-md fixed-top navbar-dark">
+
+		<button class="navbar" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" id="icapsButton">
+			<img src="files/images/icapslogo.png"/>
+		</button>
+
+        <button class="btn btn-dark navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" id="navDropdownButton">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="navbar-collapse collapse" id="navbar-menu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link spy-enabled" id="reset" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="calls-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Calls
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="calls-dropdown">
+                        <a class="dropdown-item card-header spy-enabled" href="#cfp">Call for Papers</a>
+                        <a class="dropdown-item card-header spy-enabled" href="#cfw">Call for Workshops</a>
+                        <a class="dropdown-item card-header spy-enabled" href="#cft">Call for Tutorials</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="calls-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Instructions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="calls-dropdown">
+                        <a class="dropdown-item card-header spy-enabled" href="#instructions">Authors Instructions</a>
+                        <a class="dropdown-item card-header" href="https://easychair.org/conferences/?conf=icaps2019" target="_blank">Submit on EasyChair</a>
+                        <a class="dropdown-item card-header" href="https://www.aaai.org/Publications/Author/author.php" target="_blank">AAAI Style Files</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+	</nav>
+
+    <button class="navbar" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" style="margin:0;padding:0;">
+        <div class="col-12 d-none d-md-block banner" style="background-image: url('files/images/banner-fade.png'); background-size: 100%;">
+            <img src="files/images/banner.png" width="100%"/>
+        </div>
+
+        <div class="col-12 d-block d-md-none banner" style="background-image: url('files/images/banner-fade-mini.png'); background-size: 100%;">
+            <img src="files/images/banner-mini.png" width="100%"/>
+        </div>
+    </button>
+
+	<!-- this is the div containing *everything* under the banner -->
+	<div class="set-background">
+
+		<!--  follwoing two div only contributes to positioning of all on/off-canvas elements -->
+		<div class="col-12 justify-content-center">
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<!--  this div contains the on-canvas elements -->
+				<div class="col-12">
+					<div class="row">
+
+    					<div class="col-12 col-xl-3">
+
+        					<div class="d-none d-xl-block jumbotron info-card text-color">
+
+                                <nav aria-label="breadcrumb" role="navigation">
+                                    <ol class="breadcrumb breadcrumb-header">
+                                        <li class="breadcrumb-item breadcrumb-item-primary">
+                                            <h5 class="text-left">Deadlines</h5>
+                                        </li>
+                                        <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                                            UTC-12
+                                        </li>
+                                    </ol>
+                                </nav>
+
+
+                                <div id="short-deadlines" class="collapse in show">
+                                    <table class="table info-table">
+                                        <tbody class="text-justify sm-font-size">
+                                            <tr><td>Papers due</td><td>Nov 2018</td></tr>
+                                            <tr><td>Conference</td><td>Jun 2019</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <a id="toggler" href="#" data-toggle="collapse" class="active" data-target="#long-deadlines,#short-deadlines">
+                                    <div class="well text-center breadcrumb breadcrumb-header">
+                                        <span class="oi oi-chevron-bottom"></span>
+                                    </div>
+                                </a>
+
+                                <div id="long-deadlines" class="collapse in">
+                                    <table class="table info-table">
+                                        <tbody class="text-justify xs-font-size">
+                                            <tr><td>Abstracts due</td><td>Nov 2018</td></tr>
+                                            <tr><td>Papers due</td><td>Nov 2018</td></tr>
+                                            <tr><td>Paper notifications</td><td>Jan 2019</td></tr>
+                                            <tr><td>Camera ready due</td><td>Mar 2019</td></tr>
+                                            <tr><td>Workshops due</td><td>Mar 2019</td></tr>
+                                            <tr><td>Workshop notifications</td><td>Apr 2019</td></tr>
+                                            <tr><td>Registration</td><td>Apr 2019</td></tr>
+                                            <tr><td>Conference</td><td>Jun 2019</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <div class="list-group quicklink-buttons d-none d-xl-block ">
+                                <a href="cfp.html#cfp" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
+                                Call for Papers</a>
+                                <a href="cfp.html#cfw" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
+                                Call for Workshops</a>
+                                <a href="cfp.html#cft" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
+                                Call for Tutorials</a>
+                                <a href="cfp.html#instructions" class="list-group-item list-group-item-action go-big-for-current-font spy-enabled">Author Instructions</a>
+                                <a href="coming-soon.html" class="list-group-item list-group-item-action go-big-for-current-font indent" target="_blank">Submit on Easychair</a>
+                                <a href="https://www.aaai.org/Publications/Author/author.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font indent" target="_blank">AAAI Style Files</a>
+                            </div>
+
+    					</div>
+
+    					<div class="col-12 col-xl-9 call-card">
+
+                            <div class="row" id="cfp">
+
+                                <div class="col-12">
+
+                                    <div class="jumbotron info-card text-color">
+
+                                        <nav aria-label="breadcrumb" role="navigation">
+                                            <ol class="breadcrumb breadcrumb-header">
+                                                <li class="breadcrumb-item breadcrumb-item-primary">
+                                                   <h5 class="text-left">&nbsp;Call for Papers</h5>
+                                                </li>
+                                                <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                                                   [<a href="#" class="text-orange">Click to download</a>]
+                                                </li>
+                                            </ol>
+                                        </nav>
+
+                                        <p class="text-color go-for-nunito">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque orci et dolor eleifend congue. Proin gravida augue sed dignissim volutpat. Etiam consequat sapien vel nisl tristique, sed egestas dui accumsan. Vivamus justo nulla, lobortis quis condimentum vel, lobortis tincidunt sapien. Proin leo sem, dignissim et ipsum ut, imperdiet blandit urna. Proin a posuere leo. Sed placerat mattis velit, ac volutpat nulla.
+
+                                            Etiam viverra dui eu iaculis consectetur. Quisque nec varius orci, vitae facilisis sapien. Vestibulum in posuere urna. Vestibulum placerat purus ac ante tempor, pulvinar tempus ipsum dictum. Nam tristique mattis libero, porttitor consectetur ex porttitor id. In tristique, lectus a scelerisque malesuada, leo tortor vestibulum ante, consectetur molestie dui risus et magna. Mauris mollis scelerisque turpis, vitae eleifend dui semper nec. Aliquam sed felis pharetra, vestibulum lectus sed, lacinia purus. Vivamus mattis, lacus eu eleifend sollicitudin, tellus mauris suscipit libero, pulvinar tristique urna felis ut diam. Sed mollis, quam quis tincidunt congue, eros tortor commodo neque, eu accumsan sapien eros ac orci. Donec porta ornare nisi, a venenatis dolor finibus quis. Ut vitae nunc quis massa rutrum condimentum. Sed et tellus lacus.
+                                        </p>                        
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row" id="cfw">
+
+                                <div class="col-12">
+
+                                    <div class="jumbotron info-card text-color">
+
+                                        <nav aria-label="breadcrumb" role="navigation">
+                                            <ol class="breadcrumb breadcrumb-header">
+                                                <li class="breadcrumb-item breadcrumb-item-primary">
+                                                   <h5 class="text-left">&nbsp;Call for Workshops</h5>
+                                                </li>
+                                                <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                                                   [<a href="#" class="text-orange">Click to download</a>]
+                                                </li>
+                                            </ol>
+                                        </nav>
+
+                                        <p class="text-color go-for-nunito">
+                                            Nulla ac risus quis dolor porta semper nec a urna. Etiam eu erat venenatis, sagittis nulla id, ultrices nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam vestibulum, ipsum ut aliquam euismod, enim est dictum lectus, dapibus aliquam mi libero vel lorem. Integer eu tellus eget turpis aliquet accumsan quis non augue. Aenean feugiat nibh condimentum vulputate pellentesque. Vestibulum quis convallis augue, at vehicula ex. Pellentesque eget laoreet enim. Nunc pulvinar, neque sed faucibus tempor, ipsum enim ornare felis, non feugiat augue risus in augue. Nulla ac vulputate lectus.
+                                        </p>                        
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row" id="cft">
+
+                                <div class="col-12">
+
+                                    <div class="jumbotron info-card text-color">
+
+                                        <nav aria-label="breadcrumb" role="navigation">
+                                            <ol class="breadcrumb breadcrumb-header">
+                                                <li class="breadcrumb-item breadcrumb-item-primary">
+                                                   <h5 class="text-left">&nbsp;Call for Tutorials</h5>
+                                                </li>
+                                                <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                                                   [<a href="#" class="text-orange">Click to download</a>]
+                                                </li>
+                                            </ol>
+                                        </nav>
+
+                                        <p class="text-color go-for-nunito">
+                                            Nullam a scelerisque augue, ac efficitur nulla. Suspendisse eget blandit ex, non rhoncus enim. Donec id mattis odio. Praesent ex purus, eleifend eu odio sed, egestas tempor nibh. Nam fringilla aliquet lectus non porta. Donec sed tincidunt odio, eu rutrum est. Curabitur mollis ex eu ex vulputate, eu porta urna scelerisque. Nulla id leo sollicitudin, hendrerit turpis a, malesuada odio. Ut at condimentum massa. Integer rhoncus massa velit, at gravida urna imperdiet nec.
+                                        </p>                        
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row" id="instructions">
+
+                                <div class="col-12">
+
+                                    <div class="jumbotron info-card text-color">
+
+                                        <nav aria-label="breadcrumb" role="navigation">
+                                            <ol class="breadcrumb breadcrumb-header">
+                                                <li class="breadcrumb-item breadcrumb-item-primary">
+                                                   <h5 class="text-left">&nbsp;Author Instructions</h5>
+                                                </li>
+                                                <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                                                   [<a href="coming-soon.html" target="_blank" class="text-orange">Link to Easychair</a>]
+                                                </li>
+                                                <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                                                   [<a href="https://www.aaai.org/Publications/Author/author.php" target="_blank" class="text-orange">Download AAAI Author Kit</a>]
+                                                </li>
+                                            </ol>
+                                        </nav>
+
+                                        <p class="text-color go-for-nunito">
+                                            Duis tempus arcu eget metus congue imperdiet. Morbi id augue libero. Vivamus molestie pretium ligula, vitae varius dolor. Vivamus et blandit est. Nullam sit amet justo in mauris suscipit luctus id nec risus. Etiam quis luctus lectus. Vivamus molestie interdum dolor, eget hendrerit quam molestie quis. Pellentesque sed mi in lectus placerat viverra id finibus ante. Donec luctus scelerisque arcu, nec convallis orci maximus id. Phasellus ut dignissim odio. Donec auctor egestas arcu eget elementum. Vivamus ultrices odio non diam vulputate vestibulum non vitae metus. Vestibulum malesuada libero a turpis pulvinar, ut pellentesque turpis blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras et tincidunt lorem, a sollicitudin dui.
+                                        </p>                        
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+        				</div>
+
+    				</div>
+    			</div><!-- end of on-canvas elements-->
+
+            </div>
+		</div><!-- end of canvas -->
+
+        <div class="footer-container">
+
+            <div class="d-block">
+                <img src="files/images/banner_bottom.png" width="100%">
+            </div>
+
+            <div class="footer-bottom-left" style="width:100%;">
+
+                <hr>
+
+                <footer>
+                    <p class="text-orange">&copy; ICAPS 2019</p>
+                </footer>
+
+            </div>
+
+        </div>
+
+	</div>
+
+</body>
+
+</html>

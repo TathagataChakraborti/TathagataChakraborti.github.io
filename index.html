@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en" class="gr__getbootstrap_com">
+
+<head>
+
+	<!-- Metadata -->
+	<link rel="icon" href="files/images/favicon.ico">
+	<title>ICAPS-2019</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Open-Iconic CSS -->
+	<link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+    <link href="files/css/offcanvas.css" rel="stylesheet">
+	<link href="files/css/custom.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Abel:400,700|Quattrocento+Sans:400,700" rel="stylesheet">
+
+	<!-- jQuery -->
+	<script src="files/js/jquery-3.2.1.min.js"></script>
+
+	<!-- Bootstrap core JS -->
+	<script src="bootstrap-4.0.0/js/popper.min.js"></script>
+	<script src="bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="files/js/custom.js"></script>
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="files/js/ie10-viewport-bug-workaround.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#main-body" data-offset="100" id="main-body">
+
+	<div class="bg-inverse collapse navbar-dark bg-dark icapsHeader" id="navbarHeader" aria-expanded="false">
+		<div class="container icapsHeader__container">
+
+			<div class="row icapsHeader__container__row">
+
+				<div class="col-sm-9 py-4 icapsHeader__container__row--left-block">
+
+					<h4 class="text-muted">About ICAPS</h4>
+
+					<p class="text-white">
+						The <a class="text-orange" href="http://www.icaps-conference.org/" target="_blank">International Conference on Automated Planning and Scheduling (ICAPS)</a> is the premier forum for researchers and practitioners in planning and scheduling - two technologies that are critical to manufacturing, space systems, software engineering, robotics, education, and entertainment. The ICAPS conference resulted from merging two bi-annual conferences, namely the International Conference on Artificial Intelligence Planning and Scheduling (AIPS) and the European Conference on Planning (ECP).
+                        <br><br>
+                        <a class="text-orange" href="http://icaps18.icaps-conference.org/" target="_blank">ICAPS 2018</a> will be held from June 23-29, 2018 in Delft, The Netherlands. Conference chairs are Matthijs Spaan and Mathijs de Weerdt. Program chairs are Sven Koenig and Gabriele Röger.
+                        <br><br>
+                        <a class="text-orange" href="http://icaps17.icaps-conference.org/" target="_blank">ICAPS 2017</a> was be held from June 18-23, 2017 in Pittsburgh, USA. Conference chairs were Stephen F. Smith and Laura Barbulescu. Program chairs were Jeremy Frank and Mausam.
+						<br><br>
+						<a class="text-orange" href="http://icaps16.icaps-conference.org/" target="_blank">ICAPS 2016</a> was held from June 12-17, 2016 in London, UK. Conference chairs were Andrew Coles and Daniele Magazzeni. Program chairs were Amanda Coles, Stefan Edelkamp, and Scott Sanner.
+					</p>
+
+				</div>
+
+				<div class="col-sm-3 py-4 icapsHeader__container__row--right-block">
+					<h4 class="text-muted">Contact</h4>
+					<ul class="list-unstyled">
+						<li><a class="text-orange" href="http://www.icaps-conference.org/">Homepage</a></li>
+						<li><a class="text-orange" href="http://users.cecs.anu.edu.au/~patrik/sigaps/index.php">SIGAPS</a></li>
+						<li><a class="text-orange" href="https://groups.google.com/forum/#!forum/icaps-conference">Google Groups</a></li>
+						<br>
+						<li><span class="text-muted">Email us @ <br><a class="text-muted" href="mailto:minh.do@nasa.gov">minh.do [AT] nasa.gov</a></span></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<button type="button" class="btn btn-outline-secondary close-bg" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="true">Close</button>
+
+		</div>
+	</div>
+
+
+	<nav class="navbar navbar-inverse bg-inverse navbar-expand-md fixed-top navbar-dark">
+
+		<button class="navbar" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" id="icapsButton">
+			<img src="files/images/icapslogo.png"/>
+		</button>
+
+		<button class="btn btn-dark navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" id="navDropdownButton">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<nav class="navbar-collapse collapse" id="navbar-menu">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link spy-enabled" id="reset" href="#main-body">Home</a>
+				</li>
+                <li class="nav-item">
+                    <a class="nav-link spy-enabled" href="#venue">Venue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link spy-enabled" href="#committee">Committee</a>
+                </li>
+			</ul>
+		</nav>
+
+	</nav>
+
+    <button class="navbar" type="button" style="margin:0;padding:0;">
+        <div class="col-12 d-none d-md-block banner" style="background-image: url('files/images/banner-fade.png'); background-size: 100%;">
+            <img src="files/images/banner.png" width="100%"/>
+        </div>
+
+        <div class="col-12 d-block d-md-none banner" style="background-image: url('files/images/banner-fade-mini.png'); background-size: 100%;">
+            <img src="files/images/banner-mini.png" width="100%"/>
+        </div>
+    </button>
+
+	<!-- this is the div containing *everything* under the banner -->
+	<div class="set-background">
+
+		<!--  follwoing two div only contributes to positioning of all on/off-canvas elements -->
+		<div class="col-12 justify-content-center">
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<!--  this div contains the on-canvas elements -->
+				<div class="col-12">
+					<div class="row">
+
+                        <div class="col-12 d-block d-xl-none">
+
+                            <div  id="intro" class="d-block d-xl-none jumbotron info-card text-color">
+                                <p>
+                                    ICAPS is the premier forum for sharing research on AI systems that reason and act over extended timeframes to accomplish complex user-assigned tasks.
+                                    The ICAPS 2019 program committee invites submissions related to automated planning and scheduling including, but not limited to:
+                                    <br>
+                                    <ul>
+                                        <li>Theoretical and empirical studies of planning and scheduling problems;</li>
+                                        <li>Analytic and implemented tools supporting automated planning and scheduling;</li>
+                                        <li>Novel techniques that extend the scope of problems that can be solved;</li>
+                                        <li>Studies of applying automated planning and scheduling technologies to significant problems with deep technical insight.</li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                        </div>
+
+    					<div class="col-12 col-xl-3">
+
+        					<div class="jumbotron info-card text-color">
+
+            					<nav aria-label="breadcrumb" role="navigation">
+                					<ol class="breadcrumb breadcrumb-header">
+                    					<li class="breadcrumb-item breadcrumb-item-primary">
+                        					<h5 class="text-left">Deadlines</h5>
+                    					</li>
+                    					<li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                        					UTC-12
+                    					</li>
+                					</ol>
+            					</nav>
+
+
+            					<div id="short-deadlines" class="collapse in show">
+                					<table class="table info-table">
+                    					<tbody class="text-justify sm-font-size">
+                        					<tr><td>Papers due</td><td>Nov 2018</td></tr>
+                        					<tr><td>Conference</td><td>Jun 2019</td></tr>
+                    					</tbody>
+                					</table>
+            					</div>
+
+            					<a id="toggler" href="#" data-toggle="collapse" class="active" data-target="#long-deadlines,#short-deadlines">
+                					<div class="well text-center breadcrumb breadcrumb-header">
+                    					<span class="oi oi-chevron-bottom"></span>
+                					</div>
+            					</a>
+
+            					<div id="long-deadlines" class="collapse in">
+                					<table class="table info-table">
+                    					<tbody class="text-justify xs-font-size">
+                        					<tr><td>Abstracts due</td><td>Nov 2018</td></tr>
+                        					<tr><td>Papers due</td><td>Nov 2018</td></tr>
+                        					<tr><td>Paper notifications</td><td>Jan 2019</td></tr>
+                        					<tr><td>Camera ready due</td><td>Mar 2019</td></tr>
+                                            <tr><td>Workshops due</td><td>Mar 2019</td></tr>
+                                            <tr><td>Workshop notifications</td><td>Apr 2019</td></tr>
+                        					<tr><td>Registration</td><td>Apr 2019</td></tr>
+                        					<tr><td>Conference</td><td>Jun 2019</td></tr>
+                    					</tbody>
+                					</table>
+            					</div>
+
+        					</div>
+
+                            <div class="d-none d-xl-block" id="twitter-block">
+                                <a class="twitter-timeline" data-lang="en" data-height="555" data-link-color="#E95F28" href="https://twitter.com/ICAPSConference?ref_src=twsrc%5Etfw">Tweets by ICAPSConference</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+
+                            <div class="list-group quicklink-buttons d-none">
+                                <a href="cfp.html#cfp" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font avoid-clicks">Call for Papers</a>
+                                <a href="cfp.html#cfw" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font avoid-clicks">Call for Workshops</a>
+                                <a href="cfp.html#cft" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font avoid-clicks">Call for Tutorials</a>
+                                <a href="cfp.html#instructions" class="list-group-item list-group-item-action go-big-for-current-font avoid-clicks">Author Instructions</a>
+                                <a href="coming-soon.html" class="list-group-item list-group-item-action go-big-for-current-font indent" target="_blank">Submit on Easychair</a>
+                                <a href="https://www.aaai.org/Publications/Author/author.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font indent" target="_blank">AAAI Style Files</a>
+                            </div>
+
+    					</div>
+
+    					<div class="col-12 col-xl-9">
+
+        					<div  id="intro" class="d-none d-xl-block jumbotron info-card text-color">
+                                <p>
+                                    ICAPS is the premier forum for sharing research on AI systems that reason and act over extended timeframes to accomplish complex user-assigned tasks.
+                                    The ICAPS 2019 program committee invites submissions related to automated planning and scheduling including, but not limited to:
+                                    <br>
+                                    <ul>
+                                        <li>Theoretical and empirical studies of planning and scheduling problems;</li>
+                                        <li>Analytic and implemented tools supporting automated planning and scheduling;</li>
+                                        <li>Novel techniques that extend the scope of problems that can be solved;</li>
+                                        <li>Studies of applying automated planning and scheduling technologies to significant problems with deep technical insight.</li>
+                                    </ul>
+                                </p>
+        					</div>
+
+        					<div id="venue" class="jumbotron info-card text-color">
+
+            					<nav aria-label="breadcrumb" role="navigation">
+                					<ol class="breadcrumb breadcrumb-header">
+                    					<li class="breadcrumb-item breadcrumb-item-primary">
+                    					   <h5 class="text-left">&nbsp;Venue Details</h5>
+                    					</li>
+                    					<li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                    					   Berkeley, CA USA
+                    					</li>
+                					</ol>
+            					</nav>
+
+            					<div class="row">
+
+                					<div class="col-12 col-md-4">
+                					   <img src='files/images/IMG_0334.jpg' width="100%" />
+                					</div>
+
+                					<div class="col-12 col-md-8">
+                    					<p class="text-color go-for-current-font">
+                        					Berkeley is a city on the east shore of San Francisco Bay in northern Alameda County, California. Berkeley is home to the oldest campus in the University of California system, the University of California, Berkeley, and the Lawrence Berkeley National Laboratory, which is managed and operated by the University. Berkeley is one of the most politically liberal cities in USA.
+                    					</p>                      	
+                					</div>
+
+            					</div>
+
+        					</div>
+
+            				<div id="committee" class="jumbotron info-card col-12 text-color">
+
+                				<nav aria-label="breadcrumb" role="navigation">
+                    				<ol class="breadcrumb breadcrumb-header">
+                        				<li class="breadcrumb-item breadcrumb-item-primary">
+                        				    <h5 class="text-left">&nbsp;Organizing Team</h5>
+                        				</li>
+                    				</ol>
+                				</nav>
+
+                				<table class="table info-table">
+                    				<tbody class="sm-font-size">
+                        				<tr><td>Conference Chairs</td><td>J. Benton and Siddharth Srivastava</td></tr>
+                        				<tr><td>Program Chairs</td><td>Nir Lipovetzky, Eva Onaindia and David Smith</td></tr>
+                        				<tr><td>Workshop Chairs</td><td>Tiago Vaquero and Sara Bernardini</td></tr>
+                        				<tr><td>Tutorial Chairs</td><td>Mark Roberts and Kartik Talamadupula</td></tr>
+                        				<tr><td>System Demonstration Chairs</td><td>Erez Karpas and Tim Niemueller</td></tr>
+                        				<tr><td>Doctoral Consortium Chairs</td><td>Christopher Amato</td></tr>
+                        				<tr><td>Publicity Chairs</td><td>Tathagata Chakraborti</td></tr>
+                        				<tr><td>Sponsorship Chairs</td><td>Jeremy Frank and Daniele Magazzeni</td></tr>
+                    				</tbody>
+                				</table>
+
+            				</div>
+
+        				</div>
+
+    				</div>
+    			</div><!-- end of on-canvas elements-->
+
+            </div>
+		</div><!-- end of canvas -->
+
+        <div class="footer-container">
+
+            <div class="d-block">
+                <img src="files/images/banner_bottom.png" width="100%">
+            </div>
+
+            <div class="footer-bottom-left" style="width:100%;">
+
+                <hr>
+
+                <footer>
+                    <p class="text-orange">&copy; ICAPS 2019</p>
+                </footer>
+
+            </div>
+
+        </div>
+
+	</div>
+
+</body>
+
+</html>
