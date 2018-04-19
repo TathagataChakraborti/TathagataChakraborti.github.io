@@ -1,2 +1,6 @@
-# Studio files
+# studio files
 studio/
+
+# dropbox stuff
+.dropbox
+desktop.ini
