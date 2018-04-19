@@ -53,13 +53,89 @@ $(document).ready(function () {
 
 	// method :: set default primary carousel speed 
 	$('.carousel-primary').carousel({
-		interval: 2000
+		interval: 5000,
+		pause: 'hover'
+	});
+
+	$('.carousel-primary').carousel(Math.floor(Math.random() * 6));
+
+	$('.carousel-primary').on('slid.bs.carousel', function () {
+
+		var curr = parseInt(($('.carousel-item.active').attr('href')));
+
+		for (var i = 0; i<6; i++) {
+		    $('#item-' + i.toString()).css('display', 'none');
+		}
+	    $('#rem-icaps-slide').remove();
+
+		$('#item-' + curr.toString()).fadeIn( "slow", function() {
+		    $('#item-' + curr.toString()).css('display', 'block');
+		});
+
+	})
+
+
+	var state = 'play';
+
+	$('#button_fbw').click( function(){
+	    $('.carousel-primary').carousel(0);
+	});
+
+	$('#button_bw').click( function(){
+	    $('.carousel-primary').carousel('prev');
+	});
+
+	$('#button_stop').click( function(){
+	    $('.carousel-primary').carousel('next');
+	});
+
+	$('#button_ffw').click( function(){
+	    $('.carousel-primary').carousel(5);
+	});
+
+	$('#button_play').click( function(){
+
+	    if(state == 'stop'){
+
+			state='play';
+	    	$(this).html('<span class="oi oi-media-pause"></span>');
+			$('.carousel-primary').carousel('cycle');
+			$('.carousel-primary').carousel('next');
+
+	    } else {
+
+	    	state = 'stop';
+	    	$(this).html('<span class="oi oi-media-play" style="color:#fb6346;"></span>');
+			$('.carousel-primary').carousel('pause');
+
+		}
+
+	});
+
+	$('.sidebar-offcanvas > .info-card').mouseenter(function(){
+		// $('.carousel-primary').carousel('pause');
+	});
+
+	$('.sidebar-offcanvas > .info-card').mouseleave(function(){
+		// $('.carousel-primary').carousel('cycle');
+		// $('.carousel-primary').carousel('next');
+	});
+
+	// method :: pause or restart carousel 
+	$('#toggle-carousel').click( function(){
+
+		if($(this).is(':checked')) {
+			$('.carousel-primary').carousel('cycle');
+			$('.carousel-primary').carousel('next');
+		} else {
+			$('.carousel-primary').carousel('pause');
+		}
 	});
 
 	// method :: set default secondary carousel speed 
-	$('.carousel-secondary').carousel({
-		interval: 3000
-	});
+	// $('.carousel-secondary').carousel({
+	// 	interval: 3000
+	// });
 
 	// method :: scroll-spy on entire body, only anchor tags with class 'spy-enabled'
 	$('a[class*="spy-enabled"]:not([href="#"])').click(function() {
@@ -82,97 +158,97 @@ $(document).ready(function () {
 		}
 	});
 
-	// method :: on badge click 
+	// // method :: on badge click 
 
-	$('.badge-click').click( function() {
-		event.preventDefault();
-		location.href = $(this).attr('href');
-	});
+	// $('.badge-click').click( function() {
+	// 	event.preventDefault();
+	// 	location.href = $(this).attr('href');
+	// });
 
-	// methods :: carousel logic
+	// // methods :: carousel logic
 
-	// on click on primary carousel entries
+	// // on click on primary carousel entries
 
-	$( ".fade-to-black" ).click( function() {
+	// $( ".fade-to-black" ).click( function() {
 
-		// pause primary carousel
-		$('.carousel-primary').carousel('pause');
+	// 	// pause primary carousel
+	// 	$('.carousel-primary').carousel('pause');
 
-		// activate highlights on primary carousel 
-		$('.active > a > img', '.carousel-primary').addClass('fade-to-black-primary-img');
-		$('.active > a > div > p', '.carousel-primary').addClass('fade-to-black-primary-p');
+	// 	// activate highlights on primary carousel 
+	// 	$('.active > a > img', '.carousel-primary').addClass('fade-to-black-primary-img');
+	// 	$('.active > a > div > p', '.carousel-primary').addClass('fade-to-black-primary-p');
 
-	});
+	// });
 
-	// on hover on primary carousel entries
+	// // on hover on primary carousel entries
 
-	$( "#carouselIndicators" ).hover( 
+	// $( "#carouselIndicators" ).hover( 
 
-		// mouse entry 
-		function() {
+	// 	// mouse entry 
+	// 	function() {
 
-			// check if primary carousel is currently frozen
-			var check_freeze = false;
-			check_freeze = $('.active > a > img', '.carousel-primary').hasClass('fade-to-black-primary-img');
+	// 		// check if primary carousel is currently frozen
+	// 		var check_freeze = false;
+	// 		check_freeze = $('.active > a > img', '.carousel-primary').hasClass('fade-to-black-primary-img');
 
-			// remove highlights on primary carousel, i.e. reset to default state 
-			$('.active > a > img', '.carousel-primary').removeClass('fade-to-black-primary-img');
-			$('.active > a > div > p', '.carousel-primary').removeClass('fade-to-black-primary-p');
+	// 		// remove highlights on primary carousel, i.e. reset to default state 
+	// 		$('.active > a > img', '.carousel-primary').removeClass('fade-to-black-primary-img');
+	// 		$('.active > a > div > p', '.carousel-primary').removeClass('fade-to-black-primary-p');
 
-			// collapse entire accordion on mouse entry on primary carousel
-			$("a[aria-expanded='true']").click();
+	// 		// collapse entire accordion on mouse entry on primary carousel
+	// 		$("a[aria-expanded='true']").click();
 
-			// resume primary carousel cycle on mouse entry
-			$('.carousel-primary').carousel('cycle');
+	// 		// resume primary carousel cycle on mouse entry
+	// 		$('.carousel-primary').carousel('cycle');
 
-			// switch to next slide if current one was already frozen
-			if ( check_freeze ) {
-				$('.carousel-primary').carousel('next');
-			}
+	// 		// switch to next slide if current one was already frozen
+	// 		if ( check_freeze ) {
+	// 			$('.carousel-primary').carousel('next');
+	// 		}
 
-		},
+	// 	},
 
-		// mouse exit
-		function() {}
+	// 	// mouse exit
+	// 	function() {}
 
-	);
+	// );
 
-	// on click on accordion card headers
+	// // on click on accordion card headers
 
-	$("a[class*='card-header'][data-toggle='collapse']").click( function() {
+	// $("a[class*='card-header'][data-toggle='collapse']").click( function() {
 
-		// remove freeze on current carousel
-		$('.active > a > img', '.carousel-primary').removeClass('fade-to-black-primary-img');
-		$('.active > a > div > p', '.carousel-primary').removeClass('fade-to-black-primary-p');
+	// 	// remove freeze on current carousel
+	// 	$('.active > a > img', '.carousel-primary').removeClass('fade-to-black-primary-img');
+	// 	$('.active > a > div > p', '.carousel-primary').removeClass('fade-to-black-primary-p');
 
-		// switch to this slide on the primary carousel 
-		$('.carousel-primary').carousel(parseInt($(this).attr('id').match("collapse(.*)Control")[1]));
+	// 	// switch to this slide on the primary carousel 
+	// 	$('.carousel-primary').carousel(parseInt($(this).attr('id').match("collapse(.*)Control")[1]));
 
-		// pause primary carousel
-		$('.carousel-primary').carousel('pause');
+	// 	// pause primary carousel
+	// 	$('.carousel-primary').carousel('pause');
 
-		// activate highlights on primary carousel 
-		$('a[href="#' + $(this).attr('id') + '"] > img', '.carousel-primary').addClass('fade-to-black-primary-img');
-		$('a[href="#' + $(this).attr('id') + '"] > div > p', '.carousel-primary').addClass('fade-to-black-primary-p');
+	// 	// activate highlights on primary carousel 
+	// 	$('a[href="#' + $(this).attr('id') + '"] > img', '.carousel-primary').addClass('fade-to-black-primary-img');
+	// 	$('a[href="#' + $(this).attr('id') + '"] > div > p', '.carousel-primary').addClass('fade-to-black-primary-p');
 
-		// if clidked on card already open, causes accordion to collapse
-		// switch to default primary carousel then
-		if ( $(this).attr('aria-expanded') === 'true' ) {
+	// 	// if clidked on card already open, causes accordion to collapse
+	// 	// switch to default primary carousel then
+	// 	if ( $(this).attr('aria-expanded') === 'true' ) {
 
-			// remove highlights on primary carousel, i.e. reset to default state 
+	// 		// remove highlights on primary carousel, i.e. reset to default state 
 
-			$('.active > a > img', '.carousel-primary').removeClass('fade-to-black-primary-img');
-			$('.active > a > div > p', '.carousel-primary').removeClass('fade-to-black-primary-p');
+	// 		$('.active > a > img', '.carousel-primary').removeClass('fade-to-black-primary-img');
+	// 		$('.active > a > div > p', '.carousel-primary').removeClass('fade-to-black-primary-p');
 
-			// resume primary carousel cycle 
+	// 		// resume primary carousel cycle 
 
-			$('.carousel-primary').carousel('cycle');
-			$('.carousel-primary').carousel('next');
+	// 		$('.carousel-primary').carousel('cycle');
+	// 		$('.carousel-primary').carousel('next');
 
-		}
+	// 	}
 
 
-	});
+	// });
 
 });
 

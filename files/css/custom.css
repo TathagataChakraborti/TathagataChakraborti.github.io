@@ -17,7 +17,11 @@ html, body {
 }
 
 button:hover {
-    cursor:pointer;
+    cursor: pointer;
+}
+
+.sidebar-offcanvas > .info-card:hover {
+    /*cursor: help;*/
 }
 
 a {
@@ -26,7 +30,12 @@ a {
 }
 
 a:hover {
-    color: rgba(127,255,167,1.0) !important;
+    color: black !important;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: white !important;
     text-decoration: none;
 }
 
@@ -106,7 +115,7 @@ a:hover {
 
 /* active areas are icaps orange */
 
-.active {
+.cactive {
     color: rgba(255,158,95,1.0) !important;
 }
 
@@ -221,18 +230,18 @@ a > .breadcrumb-header {
 	filter: grayscale(0%);
 }
 
-.fade-to-black + div * {
+.fade-to-black + div {
     background-color: rgba(0,0,0,0.4);
     padding: 5px;
     border-radius: 5px;
 }
 
-.fade-to-black:hover + div > * {
+.fade-to-black:hover + div  {
 	background-color: rgba(0,0,0,0.8);
 	color: rgba(255,158,95,1.0);
 }
 
-.fade-to-black + div > *:hover {
+.fade-to-black + div:hover {
 	background-color: rgba(0,0,0,0.8);
 	color: rgba(255,158,95,1.0);
 }
@@ -258,7 +267,6 @@ a > .breadcrumb-header {
     background-color: rgba(0,0,0,0.8);
     color: rgba(255,158,95,1.0);
 }
-
 
 /*
  * custom styles for accordion elements
@@ -550,5 +558,81 @@ footer p {
         width: 90%!important;
     }
 
+}
+
+
+/*
+ * toggle button styles
+ * --------------------------------------------------
+ */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 16px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ff9e5f;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 16px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.carousel-control {
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+}
+
+.carousel-control > span {
+    color: #808080;
+}
+
+.carousel-control-set {
+    padding: 10px;
 }
 
