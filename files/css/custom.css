@@ -430,7 +430,8 @@ footer p {
 }
 
 .info-table * tr > td:first-child {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-style: italic;
 }
 
 .quicklink-buttons {
@@ -636,3 +637,10 @@ input:checked + .slider:before {
     padding: 10px;
 }
 
+.profile {
+    color: black;
+}
+
+.profile:hover {
+    color: rgba(251,99,70,1.0)!important;
+}
