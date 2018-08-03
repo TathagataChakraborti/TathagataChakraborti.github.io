@@ -116,6 +116,10 @@ a:hover {
 /* active areas are icaps orange */
 
 .pactive {
+    color: black !important;
+}
+
+.pactive:hover {
     color: rgba(255,158,95,1.0) !important;
 }
 
@@ -206,7 +210,8 @@ a:hover {
 .breadcrumb-item > * {
     /* h-tags on the cards */
     font-family: 'Abel', sans-serif;
-    color : rgba(251,99,70,1.0);
+    color : black;
+    /*color : rgba(251,99,70,1.0);*/
     font-weight: bold;
     margin-bottom: 0px;
 }
