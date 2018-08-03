@@ -115,7 +115,16 @@ a:hover {
 
 /* active areas are icaps orange */
 
+.pactive {
+    color: rgba(255,158,95,1.0) !important;
+}
+
 .cactive {
+    color: #a20000 !important;
+    font-weight: normal;
+}
+
+.cactive:hover {
     color: rgba(255,158,95,1.0) !important;
 }
 
@@ -444,6 +453,10 @@ footer p {
     color: white;
 }
 
+td.text-right {
+    padding-right: 20px!important;
+}
+
 /*
  * custom fonts
  * --------------------------------------------------
@@ -638,7 +651,8 @@ input:checked + .slider:before {
 }
 
 .profile {
-    color: black;
+    color: #a20000;
+    font-weight: normal;
 }
 
 .profile:hover {
