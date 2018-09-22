@@ -39,6 +39,10 @@ a:hover {
     text-decoration: none;
 }
 
+.obfuscate { 
+    unicode-bidi: bidi-override; 
+    direction: rtl; 
+}
 
 /*
  * disable buttons temporarily
