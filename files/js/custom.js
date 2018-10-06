@@ -36,6 +36,24 @@ $(document).ready(function () {
 		$('.offcanvas-toggle-button:not(.caret)').toggleClass('toggle-focus');
 	});
 
+	// method :: custom animation for accordion click
+	$('#accordionCFP .card-header').click( function(){
+
+        offset = $('#accordionCFP .collapse.show').height();
+
+        if ( $(this).offset().top < $('#accordionCFP .collapse.show').offset().top ) {
+            offset = $('#accordionCFP .collapse.show').offset().top - $(this).offset().top;
+        }
+
+        $('html,body').animate({scrollTop: $(this).offset().top - offset - 60}, 'slow');
+
+	});
+
+	// method :: trigger CFP card header click
+	$('.click-to-go').click( function(){
+		$($(this).attr('data-target')).click();
+	});
+
 	// method :: custom animation for icaps nav header 
 	$('#icapsButton').click( function(){
 		$('html,body').animate({scrollTop: $("body").offset().top}, 'slow');

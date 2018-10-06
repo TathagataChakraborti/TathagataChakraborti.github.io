@@ -94,7 +94,7 @@ def write_file(args):
     print 'Writing carousel ...'
 
     # write to output
-    print 'Writing to file (../temp.html) ...'
+    print 'Writing to file (index.html) ...'
 
     with open('../index.html', 'w') as output_file:
         output_file.write(index_template)
@@ -112,6 +112,9 @@ def write_file(args):
 
     cfp_template = cfp_template.replace('[INDEX]', 'index.html')
     cfp_template = cfp_template.replace('[CFP]', '')
+
+    # write to output
+    print 'Writing to file (cfp.html) ...'
 
     with open('../cfp.html', 'w') as output_file:
         output_file.write(cfp_template)
