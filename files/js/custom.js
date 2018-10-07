@@ -89,8 +89,9 @@ $(document).ready(function () {
 	$('.carousel-primary').on('slid.bs.carousel', function () {
 
 		var curr = parseInt(($('.carousel-item.active').attr('href')));
+		var num_entries = $('.carousel-item').length;
 
-		for (var i = 0; i<6; i++) {
+		for (var i = 0; i <= num_entries; i++) {
 		    $('#item-' + i.toString()).css('display', 'none');
 		}
 	    $('#rem-icaps-slide').remove();
