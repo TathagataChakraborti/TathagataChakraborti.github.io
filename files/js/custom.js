@@ -6,14 +6,6 @@
 // document ready 
 $(document).ready(function () {
 
-	// lazy load footer image
-	var footer_image = $(document).find(".footer-container img[data-src]");
-
-	footer_image.attr("src", footer_image.data('src'));
-	footer_image.removeAttr("data-src");
-
-	$('.footer-container').removeClass('d-none');
-
 	// method :: custom fonts for twitter timeline 
 	window.setTimeout(function(){
 		$(".twitter-timeline").contents().find(".timeline-Tweet-text").css("font-size","12");
@@ -87,6 +79,15 @@ $(document).ready(function () {
 
 	$('.carousel-primary').on('slid.bs.carousel', function (ev) {
 
+		// make carousel lazy load
+
+		var lazy = $(ev.relatedTarget).find("img[data-src]");
+
+		lazy.attr("src", lazy.data('src'));
+		lazy.removeAttr("data-src");
+
+		// load data
+
 		var curr = parseInt(($('.carousel-item.active').attr('href')));
 		var num_entries = $('.carousel-item').length;
 
@@ -98,13 +99,6 @@ $(document).ready(function () {
 		$('#item-' + curr.toString()).fadeIn( "slow", function() {
 		    $('#item-' + curr.toString()).css('display', 'block');
 		});
-
-		// make carousel lazy load
-
-		var lazy = $(ev.relatedTarget).find("img[data-src]");
-
-		lazy.attr("src", lazy.data('src'));
-		lazy.removeAttr("data-src");
 
 	})
 
