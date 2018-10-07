@@ -42,6 +42,7 @@ a:hover {
 .obfuscate { 
     unicode-bidi: bidi-override; 
     direction: rtl; 
+    white-space: nowrap;
 }
 
 /*
@@ -679,4 +680,8 @@ input:checked + .slider:before {
 
 .profile:hover {
     color: rgba(251,99,70,1.0)!important;
+}
+
+#toggler > div {
+    margin-top: 10px;
 }

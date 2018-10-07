@@ -51,7 +51,16 @@ $(document).ready(function () {
 
 	// method :: trigger CFP card header click
 	$('.click-to-go').click( function(){
-		$($(this).attr('data-target')).click();
+		// $($(this).attr('data-target')).click();
+
+		// $('.collapse').each( function() {
+		// 	$(this).removeClass('show');
+		// });
+
+		$($(this).attr('href')).click();
+// event.preventDefault();
+		// $($(this).attr('href')).collapse('show')
+
 	});
 
 	// method :: custom animation for icaps nav header 
@@ -91,7 +100,6 @@ $(document).ready(function () {
 		});
 
 	})
-
 
 	var state = 'play';
 
