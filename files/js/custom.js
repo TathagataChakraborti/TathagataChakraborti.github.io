@@ -6,6 +6,14 @@
 // document ready 
 $(document).ready(function () {
 
+	// lazy load footer image
+	var footer_image = $(document).find(".footer-container img[data-src]");
+
+	footer_image.attr("src", footer_image.data('src'));
+	footer_image.removeAttr("data-src");
+
+	$('.footer-container').removeClass('d-none');
+
 	// method :: custom fonts for twitter timeline 
 	window.setTimeout(function(){
 		$(".twitter-timeline").contents().find(".timeline-Tweet-text").css("font-size","12");
@@ -51,16 +59,7 @@ $(document).ready(function () {
 
 	// method :: trigger CFP card header click
 	$('.click-to-go').click( function(){
-		// $($(this).attr('data-target')).click();
-
-		// $('.collapse').each( function() {
-		// 	$(this).removeClass('show');
-		// });
-
 		$($(this).attr('href')).click();
-// event.preventDefault();
-		// $($(this).attr('href')).collapse('show')
-
 	});
 
 	// method :: custom animation for icaps nav header 
@@ -86,7 +85,7 @@ $(document).ready(function () {
 
 	$('.carousel-primary').carousel(Math.floor(Math.random() * 6));
 
-	$('.carousel-primary').on('slid.bs.carousel', function () {
+	$('.carousel-primary').on('slid.bs.carousel', function (ev) {
 
 		var curr = parseInt(($('.carousel-item.active').attr('href')));
 		var num_entries = $('.carousel-item').length;
@@ -99,6 +98,13 @@ $(document).ready(function () {
 		$('#item-' + curr.toString()).fadeIn( "slow", function() {
 		    $('#item-' + curr.toString()).css('display', 'block');
 		});
+
+		// make carousel lazy load
+
+		var lazy = $(ev.relatedTarget).find("img[data-src]");
+
+		lazy.attr("src", lazy.data('src'));
+		lazy.removeAttr("data-src");
 
 	})
 
