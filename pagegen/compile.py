@@ -15,7 +15,10 @@ packages
 '''
 
 import openpyxl as xl
-import argparse, sys, random
+import argparse, sys, random, copy
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 '''
 global variables 
@@ -46,6 +49,25 @@ with open('templates/quicklinks-template.html', 'r') as temp:
     quicklinks_template = temp.read()
 
 '''
+carousel templates
+'''
+
+with open('templates/carousel-elements/carousel-template.html', 'r') as temp:
+    carousel_template = temp.read()
+
+with open('templates/carousel-elements/carousel-entry-template.html', 'r') as temp:
+    carousel_entry_template = temp.read()
+
+with open('templates/carousel-elements/carousel-entry-link-template.html', 'r') as temp:
+    carousel_entry_link_template = temp.read()
+
+with open('templates/carousel-elements/carousel-inner-template.html', 'r') as temp:
+    carousel_inner_template = temp.read()
+
+with open('templates/carousel-elements/carousel-indicators-template.html', 'r') as temp:
+    carousel_indicators_template = temp.read()
+
+'''
 method :: cache data from xlxs file
 '''
 def cache(filename = 'data.xlsx'):
@@ -54,16 +76,24 @@ def cache(filename = 'data.xlsx'):
 
     wb = xl.load_workbook(filename)
 
-    # print wb['topics'][1]   
-    # for item in wb['topics'][1]   
+    count = 0
 
-    # keys = [str(item.value) for item in wb[sheet_name][1]][:max_col]
+    for item in wb['items']:
 
-    # for row in wb[sheet_name].iter_rows(min_row=min_row, max_col=max_col, max_row=max_row):
+        new_entry = [str(elem.value) for elem in item]
 
-    #   temp[str(row[0].value)] = {}
-    #   for i in range(1, len(keys)):
-    #       temp[str(row[0].value)][keys[i]] = str(row[i].value)
+        if not count: keys = new_entry
+        else:
+
+            data[count] = {}
+            inner_count  = 0
+
+            for key in keys:
+
+                data[count][key] = new_entry[inner_count]
+                inner_count += 1
+
+        count += 1
 
 '''
 method :: write index.html
@@ -92,6 +122,59 @@ def write_file(args):
 
     # write primary carousel section
     print 'Writing carousel ...'
+
+    carousel_indicators = ''
+    carousel_inner = ''
+    carousel_entries = ''
+
+    for key in data:
+
+        carousel_indicator = copy.deepcopy(carousel_indicators_template) 
+        carousel_indicator = carousel_indicator.replace('[NUMBER]', str(key))
+
+        if key == 1:
+            carousel_indicator = carousel_indicator.replace('class', 'class="active"')
+
+        carousel_indicators += carousel_indicator
+
+        local_carousel_inner = copy.deepcopy(carousel_inner_template)
+
+        local_carousel_inner = local_carousel_inner.replace('[NUMBER]', str(key)) 
+        local_carousel_inner = local_carousel_inner.replace('[Name]', data[key]['Name']) 
+        local_carousel_inner = local_carousel_inner.replace('[Image]', data[key]['Image']) 
+
+        carousel_inner += '\n\n' + local_carousel_inner
+
+        carousel_entry = copy.deepcopy(carousel_entry_template) 
+        carousel_entry = carousel_entry.replace('[NUMBER]', str(key))
+
+        for inner_key in data[key]:
+
+            new_entry = ""
+
+            if inner_key == 'Links':
+
+                link_list = data[key][inner_key].split(',')
+
+                for link in link_list:
+
+                    link_entry = copy.deepcopy(carousel_entry_link_template)
+                    link_entry = link_entry.replace('[Link]', link)
+
+                    new_entry += '\n' + link_entry
+
+            else: new_entry = data[key][inner_key]
+
+            carousel_entry = carousel_entry.replace('[{}]'.format(inner_key), new_entry)                
+
+        carousel_entries += '\n\n' + carousel_entry
+
+    local_carousel_template = copy.deepcopy(carousel_template)
+    local_carousel_template = local_carousel_template.replace('[CAROUSEL-INDICATORS]', carousel_indicators)
+    local_carousel_template = local_carousel_template.replace('[CAROUSEL-INNER]', carousel_inner)
+    local_carousel_template = local_carousel_template.replace('[CAROUSEL-ELEMENTS]', carousel_entries)
+
+    index_template = index_template.replace('[CAROUSEL]', local_carousel_template)
 
     # write to output
     print 'Writing to file (index.html) ...'
