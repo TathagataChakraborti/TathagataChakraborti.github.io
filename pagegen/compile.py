@@ -17,8 +17,10 @@ packages
 import openpyxl as xl
 import argparse, sys, random, copy
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# from importlib import reload
+
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 '''
 global variables 
@@ -103,14 +105,14 @@ def write_file(args):
     global index_template, cfp_template
 
     # cache data
-    print 'Reading data...'
+    print( 'Reading data...' )
     cache()
 
     # write problem file
-    print 'Compiling index.html ...'
+    print( 'Compiling index.html ...' )
 
     # writing templates
-    print 'Writing templates ...'
+    print( 'Writing templates ...' )
 
     index_template = index_template.replace('[HEADER]', header_template)    
     index_template = index_template.replace('[NAVBAR]', navbar_template)    
@@ -121,7 +123,7 @@ def write_file(args):
     index_template = index_template.replace('[CFP]', 'cfp.html')
 
     # write primary carousel section
-    print 'Writing carousel ...'
+    print( 'Writing carousel ...' )
 
     carousel_indicators = ''
     carousel_inner = ''
@@ -177,16 +179,16 @@ def write_file(args):
     index_template = index_template.replace('[CAROUSEL]', local_carousel_template)
 
     # write to output
-    print 'Writing to file (index.html) ...'
+    print( 'Writing to file (index.html) ...' )
 
     with open('../index.html', 'w') as output_file:
         output_file.write(index_template)
 
     # write problem file
-    print 'Compiling CFP.html ...'
+    print( 'Compiling CFP.html ...' )
 
     # writing templates
-    print 'Writing templates ...'
+    print( 'Writing templates ...' )
 
     cfp_template = cfp_template.replace('[HEADER]', header_template)    
     cfp_template = cfp_template.replace('[NAVBAR]', navbar_template)    
@@ -197,12 +199,12 @@ def write_file(args):
     cfp_template = cfp_template.replace('[CFP]', '')
 
     # write to output
-    print 'Writing to file (cfp.html) ...'
+    print( 'Writing to file (cfp.html) ...' )
 
     with open('../cfp.html', 'w') as output_file:
         output_file.write(cfp_template)
 
-    print 'Done.'
+    print( 'Done.' )
 
 
 '''
@@ -214,7 +216,7 @@ def main():
     args = parser.parse_args()
 
     if '-h' in sys.argv[1:]:
-        print parser.print_help()
+        print( parser.print_help() )
         sys.exit(1)
     else:
         write_file(args)
