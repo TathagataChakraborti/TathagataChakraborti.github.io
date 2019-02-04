@@ -691,3 +691,16 @@ input:checked + .slider:before {
 #toggler > div {
     margin-top: 10px;
 }
+
+/*
+ * workshop page
+ * --------------------------------------------------
+ */
+
+.info-card-page-title {
+    padding: 0;
+}
+
+.info-card-page-title .card-title {
+    padding: 10px;
+}

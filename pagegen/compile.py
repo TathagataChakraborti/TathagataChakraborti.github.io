@@ -38,6 +38,9 @@ with open('templates/index-template.html', 'r') as temp:
 with open('templates/cfp-template.html', 'r') as temp:
     cfp_template = temp.read()
 
+with open('templates/workshop-template.html', 'r') as temp:
+    workshop_template = temp.read()
+
 with open('templates/header-template.html', 'r') as temp:
     header_template = temp.read()
 
@@ -102,7 +105,7 @@ method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template
+    global index_template, cfp_template, workshop_template
 
     # cache data
     print( 'Reading data...' )
@@ -121,6 +124,7 @@ def write_file(args):
 
     index_template = index_template.replace('[INDEX]', '')
     index_template = index_template.replace('[CFP]', 'cfp.html')
+    index_template = index_template.replace('[WORKSHOPS]', 'workshops.html')
 
     # write primary carousel section
     print( 'Writing carousel ...' )
@@ -185,7 +189,7 @@ def write_file(args):
         output_file.write(index_template)
 
     # write problem file
-    print( 'Compiling CFP.html ...' )
+    print( 'Compiling cfp.html ...' )
 
     # writing templates
     print( 'Writing templates ...' )
@@ -197,12 +201,34 @@ def write_file(args):
 
     cfp_template = cfp_template.replace('[INDEX]', 'index.html')
     cfp_template = cfp_template.replace('[CFP]', '')
+    cfp_template = cfp_template.replace('[WORKSHOPS]', 'workshops.html')
 
     # write to output
     print( 'Writing to file (cfp.html) ...' )
 
     with open('../cfp.html', 'w') as output_file:
         output_file.write(cfp_template)
+
+    # write problem file
+    print( 'Compiling workshops.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    workshop_template = workshop_template.replace('[HEADER]', header_template)    
+    workshop_template = workshop_template.replace('[NAVBAR]', navbar_template)    
+    workshop_template = workshop_template.replace('[DATES]', dates_template)    
+    workshop_template = workshop_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    workshop_template = workshop_template.replace('[INDEX]', 'index.html')
+    workshop_template = workshop_template.replace('[CFP]', 'cfp.html')
+    workshop_template = workshop_template.replace('[WORKSHOPS]', '')
+
+    # write to output
+    print( 'Writing to file (workshops.html) ...' )
+
+    with open('../workshops.html', 'w') as output_file:
+        output_file.write(workshop_template)
 
     print( 'Done.' )
 

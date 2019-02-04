@@ -1,0 +1,17 @@
+/*
+ * Custom styles for your workshop page
+ * loads last, overwrites most other things
+ * --------------------------------------------------
+ */
+
+body {
+    background-color: #e9ecef;
+}
+
+.jumbotron.jumbotron-fluid {
+    margin-top: 100px;
+}
+
+.card-body .breadcrumb-header {
+    margin-top: 20px;
+}

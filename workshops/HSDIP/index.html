@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Metadata -->
+    <link rel="icon" href="../../files/images/favicon.ico">
+    <title>HSDIP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Open-Iconic CSS -->
+    <link href="../../open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../files/css/offcanvas.css" rel="stylesheet">
+    <link href="../../files/css/custom.css" rel="stylesheet">
+    <!-- Add your own CSS here -->
+    <link href="local/custom.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="../../files/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="../../bootstrap-4.0.0/js/popper.min.js"></script>
+    <script src="../../bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../../files/js/custom.js"></script>
+    <!-- Add your own JS here -->
+    <script src="local/custom.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../files/js/ie10-viewport-bug-workaround.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-dark">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link">ICAPS 2019 Workshop on Heuristics and Search for Domain-independent Planning (HSDIP)</a>
+                </li>
+            </ul>
+
+    </nav>
+
+<!-- this is the div containing *everything* under the banner -->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Workshop on Heuristics and Search for Domain-independent Planning (HSDIP)</h1>
+    <p class="lead">Collocated with <a href="https://icaps19.icaps-conference.org" target="_blank" class="text-orange">ICAPS 2019</a> in Berkeley, USA.</p>
+  </div>
+</div>
+
+<!-- this is the div containing *everything* under the jumbotron -->
+
+<div class="jumbotron info-card">
+<div class="card-body">
+<p class="card-text">
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Overview</h5>
+</li>
+</ol>
+
+Heuristics and search algorithms are the two key components of
+heuristic search, one of the main approaches to many variations of
+domain-independent planning, including classical planning, temporal
+planning, planning under uncertainty and adversarial planning. This
+workshop seeks to understand the underlying principles of current
+heuristics and search methods, their limitations, ways for overcoming
+those limitations, as well as the synergy between heuristics and
+search.
+
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Topics and Objectives</h5>
+</li>
+</ol>
+
+Search guided by heuristics, automatically derived from a
+declarative formulation of action effects, preconditions and
+goals, has been a successful approach to domain-independent
+planning. From the initial success of heuristics based on
+syntactic relaxations and abstractions, the theory and
+practice of developing novel heuristics have become more
+diverse, often borrowing concepts and tools from Optimisation
+and Satisfiability, and bolder, tackling more expressive
+planning languages.
+
+<br>
+<br>
+In parallel to the increasing maturity of the methods and tools
+used to derive heuristic methods, important theoretical results
+have brought around a more clear image of how heuristic methods
+relate to each other. For instance, it has been shown that classic
+frameworks for heuristic search as planning can be encoded
+symbolically and their execution simulated via off-the-shelf
+satisfiability solvers. Groundbreaking theoretical work has shown
+how heuristic methods can be grouped into distinct families,
+depending on whether they can or cannot be shown to dominate or
+be compiled into each other.
+
+<br>
+<br>
+As a result, the formulation of heuristics for domain-independent
+planning is increasingly being less about describing procedures
+that exploit specific features in declarative information, and
+more about describing auxiliary constraints that make apparent
+those features to off-the-shelf solvers that operate over a
+logical or algebraic theory that over-approximate the set of valid
+plans and compute the heuristic estimator.
+
+<br>
+<br>
+Last, but not least, there is a growing realization that the search
+algorithm used can significantly amplify or reduce the utility of
+specific heuristics. Recent work that highlights the pitfalls latent
+in well-known search algorithms, also suggests opportunities to
+exploit synergies between the heuristic calculation and the search
+control.
+
+<br>
+<br>
+The workshop on Heuristics and Search for Domain-Independent Planning
+(HSDIP) is the 11th workshop in a series that started with the
+"Heuristics for Domain-Independent Planning" (HDIP) workshops at ICAPS
+2007. At ICAPS 2012, the workshop was changed to its current name and
+scope to explicitly encourage work on search for domain-independent
+planning.
+
+<br>
+<br>
+Examples of typical topics for submissions to this workshop are:
+<ul>
+<li>
+automatic derivation of heuristic estimators for domain-independent planning
+</li>
+<li>
+formal results showing equivalence or dominance between heuristics
+</li>
+<li>
+novel heuristic methods dealing with planning with numeric variables
+and effects, partial observability and non-deterministic action
+effects
+</li>
+<li>
+heuristic estimators for domain-independent planning via procedures
+or suitably defined encodings of declarative descriptions of planning
+tasks into Satisfiability or Optimisation
+</li>
+<li>
+novel search techniques for domain-independent planning that explicitly
+aim at exploiting effectively the properties of existing heuristics
+</li>
+<li>
+empirical observations of synergies between heuristics and search in
+domain-independent planning
+</li>
+<li>
+challenging domains for existing combinations of heuristics and search
+algorithms
+</li>
+</ul>
+
+The HSDIP workshop has always been welcoming of multidisciplinary work,
+for example, drawing inspiration from operations research (like row and
+column generation algorithms), convex optimization (like gradient
+optimization for hybrid planning), constraint programming or
+satisfiability, or applications of machine learning in heuristic search
+(e.g. learning heuristics, adaptive search strategies, or heuristic selection).
+We will keep this stance, particularly as ICAPS 2019 will continue the special
+track on planning &amp; learning.
+
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Submissions</h5>
+</li>
+</ol>
+
+Please format submissions in AAAI style (see instructions in the Author Kit at 
+<a href="https://www.aaai.org/Publications/Templates/AuthorKit19.zip" target="_blank">
+https://www.aaai.org/Publications/Templates/AuthorKit19.zip</a>) and
+keep them to at most 9 pages including references. Authors considering
+submitting to the workshop papers rejected from the main conference,
+please ensure you do your utmost to address the comments given by ICAPS
+reviewers. Please do not submit papers that are already accepted for
+the main conference to the workshop.
+
+<br>
+<br>
+Submissions will be made through OpenReview. The following conditions apply:
+
+<ul>
+<li>
+Submissions will be double blind to the general public, but single blind
+to the official reviewers and organizing committee.
+</li>
+<li>
+The submitted papers, reviews and author responses to those will be public, and all anonymous.
+</li>
+<li>
+Discussions between reviewers and organisers will be private.
+</li>
+</ul>
+
+Every submission will be reviewed by two members of the organizing committee
+according to the usual criteria such as relevance to the workshop, significance
+of the contribution, and technical quality.
+
+<br>
+<br>
+Submissions sent to other conferences are allowed. It is the responsibility of
+the authors to ensure that those venues allow for papers submitted to be
+already published in "informal" ways (e.g. on proceedings or websites without
+associated ISSN/ISBN).
+
+<br>
+<br>
+The workshop is meant to be an open and inclusive forum, and we encourage papers
+that report on work in progress or that do not fit the mold of a typical
+conference paper. Non-trivial negative results are welcome to the workshop, but
+we expect the authors to argue for the significance of the presented results to
+alternative lines of research on the topic of choice.
+
+<br>
+<br>
+At least one author of each accepted paper must attend the workshop in order to
+present the paper. Authors must register for the ICAPS main conference in order
+to attend the workshop. There will be no separate workshop-only registration.
+
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Deadlines and Dates</h5>
+</li>
+</ol>
+
+<ul>
+<li>
+Submission deadline: 15 March 2019 (UTC-12 timezone)
+</li>
+<li>
+Notification: 12 April 2019
+</li>
+<li>
+Camera Ready: 24 May 2019
+</li>
+<li>
+Workshop: 11/12 July 2019
+</li>
+</ul>
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Organizers</h5>
+</li>
+</ol>
+
+<ul>
+<li>
+Patrik Haslum, Australian National University, Australia
+</li>
+<li>
+Daniel Gnad, Saarland University, Germany
+</li>
+<li>
+Miquel Ramirez, University of Melbourne, Australia
+</li>
+<li>
+Florian Pommerening, University of Basel, Switzerland
+</li>
+<li>
+Jendrik Seipp, University of Basel, Switzerland
+</li>
+<li>
+Florian Geisser, Australian National University, Australia
+</li>
+<li>
+Guillem Francès, University of Basel, Switzerland
+</li>
+<li>
+Silvan Sievers, University of Basel, Switzerland
+</li>
+</ul>
+
+</p>
+</div>
+</div>
+
+</body>
+
+</html>

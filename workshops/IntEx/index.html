@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Metadata -->
+    <link rel="icon" href="../../files/images/favicon.ico">
+    <title>IntEx</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Open-Iconic CSS -->
+    <link href="../../open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../files/css/offcanvas.css" rel="stylesheet">
+    <link href="../../files/css/custom.css" rel="stylesheet">
+    <!-- Add your own CSS here -->
+    <link href="local/custom.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="../../files/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="../../bootstrap-4.0.0/js/popper.min.js"></script>
+    <script src="../../bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../../files/js/custom.js"></script>
+    <!-- Add your own JS here -->
+    <script src="local/custom.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../files/js/ie10-viewport-bug-workaround.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-dark">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link">ICAPS 2019 Workshop on Integrating Planning, Acting, and Execution (IntEx)</a>
+                </li>
+            </ul>
+
+    </nav>
+
+<!-- this is the div containing *everything* under the banner -->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Workshop on Integrating Planning, Acting, and Execution (IntEx)</h1>
+    <p class="lead">Special Focus on Diagnosis and Causal Reasoning.</p>
+    <p class="lead">Collocated with <a href="https://icaps19.icaps-conference.org" target="_blank" class="text-orange">ICAPS 2019</a> in Berkeley, USA.</p>
+  </div>
+</div>
+
+<!-- this is the div containing *everything* under the jumbotron -->
+
+<div class="jumbotron info-card">
+<div class="card-body">
+<p class="card-text">
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Overview</h5>
+</li>
+</ol>
+
+Automated planners are increasingly being integrated into online execution systems. The integration may, for example, embed a domain-independent temporal planner in a manufacturing system (e.g., the Xerox printer application) or autonomous vehicles. The integration may resemble something more like a "planning stack" where an automated planner produces an activity or task plan that is further refined before being executed by a reactive controller (e.g., robotics). Or, the integration may be a domain-specific policy that maps states to actions (e.g., reinforcement learning). Online learning may or may not be involved, and may include adjusting or augmenting the model, determining when to repair versus replan, learning to switch policies, etc. A specific focus of these integrations involves online deliberation, bringing to the foreground concerns over how much computational effort planning should invest over time.  But reality rarely proceeds according to the plan or the model. Planning, plan execution, diagnosis, and causal explanation have each been examined by various research efforts, but discussion of the linkages between them in the literature is still somewhat sparse. When considering how to integrate these functions, at least three questions must be considered: (1) System integration: how to integrate planning, plan execution, diagnosis, and causal explanation in a single system? (2) Model / Belief updates: when the unexpected happens, how does the system change its internal representation so future plans are effective? (3) Replanning: what to do now that the unexpected has happened?  
+
+<br>
+<br>
+Performing diagnosis while executing a plan gives a planning and execution agent an opportunity to recover from failures; however, it also raises many new issues. These include sharing reasoning time between planning and diagnosis, trading off execution resources between goal achievement and diagnostic testing (for active diagnosis), and how to act in the presence of multiple competing diagnoses.
+
+<br>
+<br>
+The Third IntEx workshop aims to provide a forum for discussing the challenges of integrating planning with execution, emphasize the role of diagnosis in online planning and execution, and raise awareness, promote discussion, and encourage cross-fertilization of ideas from the following topics:
+<ul>
+<li>
+Integration of planning and plan execution  
+<ul>
+<li>
+Theory (e.g. flexibility vs uncertainty, replanning vs contingent planning algorithms)
+</li>
+<li>
+Practice (technologies, architectures, system integration)          
+</li>
+</ul>
+</li>
+<li>
+Integration of planning and fault management (diagnosis, prognostics, anomaly detection) technologies:  
+<ul>
+<li>
+Planning to Diagnose (active diagnosis)
+</li>
+<li>
+Planning and Fault Model Integration (impact of diagnosis algorithms on plan model revision, level of abstraction of models)    
+</li>
+</ul>
+</li>
+<li>
+Integration of planning and causal explanation (state/event estimation and prediction) technologies:    
+<ul>
+<li>
+Improving or revising plans based on inferred causal explanations       
+</li>
+<li>
+Revising long-term models based on causal explanation
+</li>
+</ul>
+</li>
+</ul>
+
+In addition to the above special focus areas, we encourage short or long papers on past topics of interest to this workshop including: benchmarks or challenge problems for integrated execution; improving planning performance from execution experience; plan dispatching or plan executives; anytime or incremental planning; execution monitoring, comparing replanning, plan repair, regoaling, or plan merging; managing open worlds with closed-world planners; model learning from experience or determining an observation policy; policy switching or applying incremental policy adjustment.
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Format</h5>
+</li>
+</ol>
+
+We plan a half day workshop with an invited speaker, Sheila McIlraith.
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Submissions</h5>
+</li>
+</ol>
+
+Submissions may be regular papers (up to 8 pages plus references) or short position/challenge papers (up to 4 pages plus references). 
+All papers should conform to the AAAI formatting guidelines and style (
+<a href="http://www.aaai.org/Publications/Author/author.php" target="_blank">
+http://www.aaai.org/Publications/Author/author.php</a>). 
+The papers must be submitted in a PDF format via EasyChair (
+<a href="https://easychair.org/conferences/?conf=intex2019" target="_blank">
+https://easychair.org/conferences/?conf=intex2019</a>). 
+Submissions will be reviewed by at least two referees. 
+
+<br>
+<br>
+We welcome existing publications from other venues that are appropriate for discussion at this workshop. Please note in the title area if this work is already accepted at another venue. If the work is under review at another venue (e.g. IJCAI) please notify the organizers so we can avoid potential reviewing conflicts.
+
+<br>
+<br>
+At least one author of each accepted paper must attend the workshop in order to present the paper. Authors must register for the ICAPS main conference in order to attend the workshop. There will be no separate workshop-only registration.
+
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Important Dates</h5>
+</li>
+</ol>
+
+<ul>
+<li>
+Paper submission: TBD
+</li>
+<li>
+Notification of acceptance/rejection: TBD
+</li>
+<li>
+Camera-ready paper submissions: TBD
+</li>
+<li>
+Workshop date: TBD
+</li>
+</ul>
+
+<ol class="breadcrumb breadcrumb-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="text-left">Organizers</h5>
+</li>
+</ol>
+
+<ul>
+<li>
+<a href="http://makro.ink/" target="_blank">Mak Roberts</a> (Naval Research Laboratory, USA. Contact: <a href="mailto:mark.roberts@nrl.navy.mil">mark.roberts@nrl.navy.mil</a>)
+</li>
+<li>
+<a href="https://sites.google.com/view/tiagovaquero/home" target="_blank">Tiago Vaquero</a> (Jet Propulsion Laboratory, Caltech, USA. Contact: <a href="mailto:vaquero@jpl.nasa.gov">vaquero@jpl.nasa.gov</a>)
+</li>
+<li>
+<a href="https://www.niemueller.de/" target="_blank">Tim NiemuellerTiago Vaquero</a> (RWTH Aachen University, Germany. Contact: <a href="mailto:niemueller@kbsg.rwth-aachen.de">niemueller@kbsg.rwth-aachen.de</a>)
+</li>
+<li>
+<a href="https://sites.google.com/site/fratinisimone/" target="_blank">Simone Fratini</a> (European Space Agency, Germany. Contact: <a href="mailto:simone.fratini@esa.int">simone.fratini@esa.int</a>)
+</li>
+</ul>
+
+</p>
+</div>
+</div>
+
+</body>
+
+</html>
