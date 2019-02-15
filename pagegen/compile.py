@@ -24,6 +24,7 @@ global variables
 
 data = {} 
 pc_list = {}
+paper_list = {}
 
 '''
 html templates
@@ -50,6 +51,12 @@ with open('templates/dates-template.html', 'r') as temp:
 with open('templates/quicklinks-template.html', 'r') as temp:
     quicklinks_template = temp.read()
 
+with open('templates/program-template.html', 'r') as temp:
+    program_template = temp.read()
+
+with open('templates/track-paper-single.html', 'r') as temp:
+    track_paper_single_template = temp.read()
+
 with open('templates/organizing-team-template.html', 'r') as temp:
     organizing_team_template = temp.read()
 
@@ -60,10 +67,11 @@ with open('templates/track-table-single.html', 'r') as temp:
     track_table_single_template = temp.read()
 
 '''
-track table stubs
+table stubs
 '''
 
-track_table_td = '<tr><td>[NAME] <span class="text-muted">&middot; [AFFILIATION]</span></td></tr>'
+track_table_td = '<tr><td>[NAME]<span class="text-muted"> &middot; [AFFILIATION]</span></td></tr>'
+paper_table_td = '<tr><td>[TITLE]<span class="text-muted"> &bull; [AUTHORS] <span class="d-none">&middot; Short Paper</span></span></td></tr>'
 
 ''''''
 
@@ -91,7 +99,7 @@ method :: cache data from xlsx file
 '''
 def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS-2019_accepted.xlsx'):
 
-    global data, pc_list
+    global data, pc_list, paper_list
 
     print( 'Reading highlights...' )
 
@@ -139,12 +147,34 @@ def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx
         pc_list[str(sheet_name)] = dict_entry
 
 
+    print( 'Reading Paper list...' )
+
+    wb = xl.load_workbook(papers_filename)
+
+    title_flag = False
+    for row in wb["Accepted"]:
+
+        if not title_flag:
+            title_flag = True
+        else:
+
+            row_values = [str(item.value).strip() for item in row]
+
+            key   = row_values[4]
+            entry = row_values[1:4]
+
+            if key in paper_list:
+                paper_list[key].append(entry)
+            else:
+                paper_list[key] = [entry]
+
+
 '''
 method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template, organizing_team_template
+    global index_template, cfp_template, workshop_template, organizing_team_template, program_template
 
     # cache data
     print( 'Reading data...' )
@@ -238,10 +268,6 @@ def write_file(args):
     cfp_template = cfp_template.replace('[DATES]', dates_template)    
     cfp_template = cfp_template.replace('[QUICKLINKS]', quicklinks_template)    
 
-    cfp_template = cfp_template.replace('[INDEX]', 'index.html')
-    cfp_template = cfp_template.replace('[CFP]', '')
-    cfp_template = cfp_template.replace('[WORKSHOPS]', 'workshops.html')
-
     # write to output
     print( 'Writing to file (cfp.html) ...' )
 
@@ -258,10 +284,6 @@ def write_file(args):
     workshop_template = workshop_template.replace('[NAVBAR]', navbar_template)    
     workshop_template = workshop_template.replace('[DATES]', dates_template)    
     workshop_template = workshop_template.replace('[QUICKLINKS]', quicklinks_template)    
-
-    workshop_template = workshop_template.replace('[INDEX]', 'index.html')
-    workshop_template = workshop_template.replace('[CFP]', 'cfp.html')
-    workshop_template = workshop_template.replace('[WORKSHOPS]', '')
 
     # write to output
     print( 'Writing to file (workshops.html) ...' )
@@ -289,7 +311,7 @@ def write_file(args):
             for person in pc_list[track][role]:
 
                 if person[1]:
-                    temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', "{}".format(person[1]))
+                    temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', person[1])
                 else:
                     temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', "")
 
@@ -306,9 +328,6 @@ def write_file(args):
     organizing_team_template = organizing_team_template.replace('[DATES]', dates_template)    
     organizing_team_template = organizing_team_template.replace('[QUICKLINKS]', quicklinks_template)    
 
-    organizing_team_template = organizing_team_template.replace('[INDEX]', 'index.html')
-    organizing_team_template = organizing_team_template.replace('[CFP]', 'cfp.html')
-    organizing_team_template = organizing_team_template.replace('[WORKSHOPS]', '')
     organizing_team_template = organizing_team_template.replace('[TRACK-TABLES]', track_tables_stub)
 
     # write to output
@@ -316,6 +335,45 @@ def write_file(args):
 
     with open('../organizing-team.html', 'wb') as output_file:
         output_file.write(organizing_team_template.encode("utf-8"))
+
+    # write program file
+    print( 'Compiling program.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    paper_list_stub = ""
+
+    track_order = ["Main Track", "Novel Applications Track", "Planning and Learning Track", "Robotics Track"]
+
+    for track in track_order:
+
+        temp_track_paper_single_template = copy.deepcopy(track_paper_single_template).replace('[TRACK]', track)
+
+        temp_papers_list_stub = ""
+
+        for paper in paper_list[track]:
+            temp = paper_table_td.replace('[TITLE]', paper[1]).replace('[AUTHORS]', paper[0])
+
+            if paper[2] == "Short":
+                temp = temp.replace("d-none", "")
+
+            temp_papers_list_stub += temp
+
+        paper_list_stub += "\n\n" + temp_track_paper_single_template.replace('[ENTRIES]', temp_papers_list_stub)
+
+    program_template = program_template.replace('[HEADER]', header_template)    
+    program_template = program_template.replace('[NAVBAR]', navbar_template)    
+    program_template = program_template.replace('[DATES]', dates_template)    
+    program_template = program_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    program_template = program_template.replace('[PAPERS]', paper_list_stub)
+
+    # write to output
+    print( 'Writing to file (program.html) ...' )
+
+    with open('../program.html', 'wb') as output_file:
+        output_file.write(program_template.encode("utf-8"))
 
     print( 'Done.' )
 

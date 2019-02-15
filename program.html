@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en" class="gr__getbootstrap_com">
+
+<head>
+
+    <!-- Metadata -->
+    <link rel="icon" href="files/images/favicon.ico">
+    <title>ICAPS-2019</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Open-Iconic CSS -->
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="files/css/offcanvas.css" rel="stylesheet">
+    <link href="files/css/custom.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="files/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="bootstrap-4.0.0/js/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="files/js/custom.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="files/js/ie10-viewport-bug-workaround.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#ws-body" data-offset="100" id="program-body">
+
+    <div class="bg-inverse collapse navbar-dark bg-dark icapsHeader" id="navbarHeader" aria-expanded="false">
+    <div class="container icapsHeader__container">
+
+        <div class="row icapsHeader__container__row">
+
+            <div class="col-sm-9 py-4 icapsHeader__container__row--left-block">
+
+                <h4 class="text-muted">About ICAPS</h4>
+
+                <p class="text-white">
+                    The <a class="text-orange" href="http://www.icaps-conference.org/" target="_blank">International Conference on Automated Planning and Scheduling (ICAPS)</a> is the premier forum for researchers and practitioners in planning and scheduling - two technologies that are critical to manufacturing, space systems, software engineering, robotics, education, and entertainment. The ICAPS conference resulted from merging two bi-annual conferences, namely the International Conference on Artificial Intelligence Planning and Scheduling (AIPS) and the European Conference on Planning (ECP).
+                    <br><br>
+                    <a class="text-orange" href="http://icaps18.icaps-conference.org/" target="_blank">ICAPS 2018</a> was held from June 23-29, 2018 in Delft, The Netherlands. Conference chairs are Matthijs Spaan and Mathijs de Weerdt. Program chairs are Sven Koenig and Gabriele RÃ¶ger.
+                    <br><br>
+                    <a class="text-orange" href="http://icaps17.icaps-conference.org/" target="_blank">ICAPS 2017</a> was held from June 18-23, 2017 in Pittsburgh, USA. Conference chairs were Stephen F. Smith and Laura Barbulescu. Program chairs were Jeremy Frank and Mausam.
+                    <br><br>
+                    <a class="text-orange" href="http://icaps16.icaps-conference.org/" target="_blank">ICAPS 2016</a> was held from June 12-17, 2016 in London, UK. Conference chairs were Andrew Coles and Daniele Magazzeni. Program chairs were Amanda Coles, Stefan Edelkamp, and Scott Sanner.
+                </p>
+
+            </div>
+
+            <div class="col-sm-3 py-4 icapsHeader__container__row--right-block">
+                <h4 class="text-muted">Contact</h4>
+                <ul class="list-unstyled">
+                    <li><a class="text-orange" href="http://www.icaps-conference.org/">Homepage</a></li>
+                    <li><a class="text-orange" href="http://users.cecs.anu.edu.au/~patrik/sigaps/index.php">SIGAPS</a></li>
+                    <li><a class="text-orange" href="https://groups.google.com/forum/#!forum/icaps-conference">Google Groups</a></li>
+                    <br>
+                    <li><span class="text-muted">Email the ICAPS organization @ <br><a class="text-muted" href="mailto:minh.do@nasa.gov">minh.do [AT] nasa.gov</a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <button type="button" class="btn btn-outline-secondary close-bg" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="true">Close</button>
+
+    </div>
+</div>
+
+
+    <nav class="navbar navbar-inverse bg-inverse navbar-expand-md fixed-top navbar-dark">
+
+    <button class="navbar" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" id="icapsButton">
+        <img src="files/images/icapslogo.png"/>
+    </button>
+
+    <button class="btn btn-dark navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" id="navDropdownButton">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <nav class="navbar-collapse collapse" id="navbar-menu">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" id="reset" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" id="calls" href="cfp.html">Calls</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" id="calls" href="program.html">Program</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" id="calls" href="workshops.html">Workshops</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" id="calls" href="cfp.html#cft">Tutorials</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" href="index.html#venue">Venue</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link spy-enabled" href="organizing-team.html">Committee</a>
+            </li>
+        </ul>
+    </nav>
+
+</nav>
+
+<button class="navbar" type="button" style="margin:0;padding:0;">
+    <div class="col-12 d-none d-md-block banner" style="background-image: url('files/images/banner-fade.png'); background-size: 100%;">
+        <img src="files/images/banner.png" width="100%"/>
+    </div>
+
+    <div class="col-12 d-block d-md-none banner" style="background-image: url('files/images/banner-fade-mini.png'); background-size: 100%;">
+        <img src="files/images/banner-mini.png" width="100%"/>
+    </div>
+</button>
+
+
+
+    <!-- this is the div containing *everything* under the banner -->
+    <div class="set-background">
+
+        <!--  follwoing two div only contributes to positioning of all on/off-canvas elements -->
+        <div class="col-12 justify-content-center">
+            <div class="row row-offcanvas row-offcanvas-right">
+
+                <!--  this div contains the on-canvas elements -->
+                <div class="col-12">
+                    <div class="row">
+
+                        <div class="col-12 col-xl-3">
+
+                            <div class="list-group quicklink-buttons">
+    <a href="files/images/icaps2019.png" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font"> 
+        Download the ICAPS 2019 Poster
+    </a>
+    <a href="[CFP]#instructions" class="list-group-item list-group-item-action go-big-for-current-font spy-enabled">Author Instructions</a>
+    <a href="https://www.aaai.org/Publications/Templates/AuthorKit19.zip" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font indent">AAAI Author Kit</a>
+    <a href="[CFP]#instructions" class="list-group-item list-group-item-action go-big-for-current-font spy-enabled">Active Calls</a>
+    <a href="cfp.html#cft" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
+    Call for Tutorials</a>
+    <a href="cfp.html#cfj" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
+    Call for Journal Track Presentations</a>
+    <a href="program.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
+    Accepted Papers</a>
+    <a href="workshops.html#workshops" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
+    Accepted Workshops</a>
+</div>
+
+
+
+
+                            <!-- <div class="d-none d-xl-block jumbotron info-card text-color"> -->
+<div class="jumbotron info-card text-color">
+
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb breadcrumb-header">
+            <li class="breadcrumb-item breadcrumb-item-primary">
+                <h5 class="text-left">Deadlines</h5>
+            </li>
+            <li class="breadcrumb-item breadcrumb-item-secondary" aria-current="page">
+                UTC-12
+            </li>
+        </ol>
+    </nav>
+
+    <div id="short-deadlines" class="collapse in show">
+        <table class="table info-table">
+            <tbody class="text-justify sm-font-size">
+                <tr class="text-danger"><td>Tutorial Proposals due</td><td>15 Feb 2019</td></tr>
+                <tr><td>Journal Track due</td><td>24 March 2019</td></tr>
+                <tr><td>Workshop Papers due</td><td>Mar 2019</td></tr>
+                <tr><td>Conference</td><td>11-15 Jul 2019</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a id="toggler" href="#" data-toggle="collapse" class="pactive" data-target="#long-deadlines,#short-deadlines">
+        <div class="well text-center breadcrumb breadcrumb-header">
+            <div style="font-weight: normal; padding-top: 5px;">
+                More Dates
+            </div>
+            <span class="oi oi-chevron-bottom"></span>
+        </div>
+    </a>
+
+    <div id="long-deadlines" class="collapse in">
+        <table class="table info-table">
+            <tbody class="text-justify xs-font-size">
+                <tr class="text-danger"><td>Tutorial Proposals due</td><td>15 Feb 2019</td></tr>
+                <tr><td>Tutorial notifications</td><td>1 Mar 2019</td></tr>
+                <tr><td>Journal Track due</td><td>24 March 2019</td></tr>
+                <tr><td>Workshop Papers due</td><td>Mar 2019</td></tr>
+                <tr><td>Journal Track notifications</td><td>10 Apr 2019</td></tr>
+                <tr><td>Workshop notifications</td><td>Apr 2019</td></tr>
+                <tr><td>Registration</td><td>Apr 2019</td></tr>
+                <tr><td>Workshops and Tutoriails</td><td>11-12 Jul 2019</td></tr>
+                <tr><td>Main Conference</td><td>13-15 Jul 2019</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+ 
+<div class="d-none d-xl-block" id="twitter-block">
+    <a class="twitter-timeline" data-lang="en" data-height="555" data-link-color="#E95F28" href="https://twitter.com/ICAPSConference?ref_src=twsrc%5Etfw">Tweets by ICAPSConference</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+
+
+                        </div>
+
+                        <div class="col-12 col-xl-9 call-card">
+
+                            <div class="row" id="workshops">
+
+                                <div class="col-12">
+
+<div class="jumbotron info-card info-card-page-title">
+<ol class="breadcrumb breadcrumb-header org-team-header">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h5 class="card-title">Accepted Papers</h5>
+</li>
+</ol>
+
+
+
+<ol class="breadcrumb breadcrumb-header org-team-header sub">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h6 class="card-title profile">Main Track</h6>
+</li>
+</ol>
+
+<div class="card-body container">
+
+<table class="table info-table">
+<tbody class="sm-font-size">
+<tr><td>Algorithm Selection in Optimization and  Application to Angry Birds<span class="text-muted"> &bull; Shahaf S. Shperberg, Avinoam Yehezkel and Solomon Eyal Shimony <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Efﬁcient Heuristic Search for Optimal Environment Redesign<span class="text-muted"> &bull; Sarah Keren, Luis Pineda, Avigdor Gal, Erez Karpas and Shlomo Zilberstein <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Robust Operations Management on Mars<span class="text-muted"> &bull; Michael Saint-Guillain <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Quantifying Degrees of Controllability in Temporal Networks with Uncertainty<span class="text-muted"> &bull; Shyan Akmal, Savana Ammons, Maggie Li and Jim Boerkoel <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>On the Pathological Search Behavior of Distributed Greedy Best First Search<span class="text-muted"> &bull; Ryo Kuroiwa and Alex Fukunaga <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Error-Tolerant Anytime Approach for Plan Recognition using a Particle Filter<span class="text-muted"> &bull; Jean Massardi, Mathieu Gravel and Éric Beaudry <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>T-REX: SAT-based Tree Exploration for Efficient and High-Quality HTN Planning<span class="text-muted"> &bull; Dominik Schreiber, Tomáš Balyo, Damien Pellier and Humbert Fiorino <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Explicability? Legibility? Predictability? Transparency? Privacy? Security? The Emerging Landscape of Interpretable Robot Behavior<span class="text-muted"> &bull; Tathagata Chakraborti, Anagha Kulkarni, Sarath Sreedharan, David Smith and Subbarao Kambhampati <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Mixed Discrete Continuous Non-Linear Planning Through Piecewise Linear Approximation<span class="text-muted"> &bull; Elad Denenberg and Amanda Coles <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Subset Saturated Cost Partitioning for Optimal Classical Planning<span class="text-muted"> &bull; Jendrik Seipp and Malte Helmert <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Efficiently Exploring Ordering Problems through Conflict-directed Search<span class="text-muted"> &bull; Jingkai Chen and Brian Williams <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Lazy CBS: Implict Conflict-Based Search Using Lazy Clause Generation<span class="text-muted"> &bull; Graeme Gange, Daniel Harabor and Peter J. Stuckey <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Tabu-Based Large Neighbourhood Search for Time/Sequence-Dependent Scheduling Problems with Time Windows<span class="text-muted"> &bull; Lei He, Mathijs de Weerdt and Neil Yorke-Smith <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Propagating Piecewise-Linear Weights in Temporal Networks<span class="text-muted"> &bull; Luke Hunsberger and Roberto Posenato <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Relaxed BDDs: An Admissible Heuristic for Delete-Free Planning Based on a Discrete Relaxation<span class="text-muted"> &bull; Margarita Castro, Chiara Piacentini, Andre Augusto Cire and Chris Beck <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Model Recognition as Planning<span class="text-muted"> &bull; Diego Aineto, Sergio Jiménez, Eva Onaindia and Miquel Ramírez <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>A theoretical and algorithmic analysis of configurable MDPs<span class="text-muted"> &bull; Rui Silva, Gabriele Farina, Francisco S. Melo and Manuela Veloso <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Towards a Unified View of AI Planning and Reactive Synthesis<span class="text-muted"> &bull; Alberto Camacho, Meghyn Bienvenu and Sheila A. McIlraith <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Online Risk-Bounded Motion Planning for Autonomous Vehicles in Dynamic Environments<span class="text-muted"> &bull; Xin Huang, Sungkweon Hong, Andreas Hofmann and Brian Williams <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Stochastic Planning with Lifted Symbolic Trajectory Optimization<span class="text-muted"> &bull; Hao Cui, Thomas Keller and Roni Khardon <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Landmark-Enhanced Heuristics for Goal Recognition in Incomplete Domain Models<span class="text-muted"> &bull; Ramon Fraga Pereira, André Grahl Pereira and Felipe Meneguzzi <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Learning Scheduling Models from Event Data<span class="text-muted"> &bull; Arik Senderovich, Kyle E. C. Booth and J. Christopher Beck <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Theoretical Foundations for Structural Symmetries of Lifted PDDL Tasks<span class="text-muted"> &bull; Silvan Sievers, Gabriele Röger, Martin Wehrle and Michael Katz <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>A Factored Approach to Contingent Multi-Agent Planning<span class="text-muted"> &bull; Shashank Shekhar, Ronen Brafman and Guy Shani <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>On the Relation between Star-Topology Decoupling and Petri Net Unfolding<span class="text-muted"> &bull; Daniel Gnad and Joerg Hoffmann <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Foundations for Restraining Bolts: Reinforcement Learning with LTLf/LDLf restraining specifications<span class="text-muted"> &bull; Giuseppe De Giacomo, Marco Favorito, Luca Iocchi and Fabio Patrizi <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Symbolic Planning with Axioms<span class="text-muted"> &bull; David Speck, Florian Geißer, Robert Mattmüller and Álvaro Torralba <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>A stochastic dual dynamic integer programming for the uncapacitated lot-sizing problem with uncertain demand and costs<span class="text-muted"> &bull; Franco Quezada, Céline Gicquel and Safia Kedad-Sidhoum <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Privacy Leakage of Search-based Multi-Agent Planning Algorithms<span class="text-muted"> &bull; Michal Štolba, Daniel Fišer and Antonín Komenda <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Lagrangian Decomposition for Optimal Cost Partitioning<span class="text-muted"> &bull; Florian Pommerening, Gabriele Röger, Malte Helmert, Hadrien Cambazard, Louis-Martin Rousseau and Domenico Salvagnin <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>On Computational Complexity of Automorphism Groups in Classical Planning<span class="text-muted"> &bull; Alexander Shleyfman <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Eliminating Redundant Actions in Partially Ordered Plans -- A Complexity Analysis<span class="text-muted"> &bull; Conny Olz and Pascal Bercher <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>On Compiling Away PDDL3 Qualitative Preferences without Using Automata<span class="text-muted"> &bull; Francesco Percassi and Alfonso Emilio Gerevini <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Discovery of Optimal Solution Horizons in Non-Stationary Markov Decision Processes with Unbounded Rewards<span class="text-muted"> &bull; Grigory Neustroev, Mathijs de Weerdt and Remco Verzijlbergh <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Best-First Width Search for Multi Agent Privacy-preserving Planning<span class="text-muted"> &bull; Alfonso E. Gerevini, Nir Lipovetzky, Francesco Percassi, Alessandro Saetti and Ivan Serina <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Oversubscription Planning as Classical Planning with Multiple Cost Functions<span class="text-muted"> &bull; Michael Katz, Emil Keyder, Florian Pommerening and Dominik Winterer <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Planning under LTL Environment Specifications<span class="text-muted"> &bull; Benjamin Aminof, Giuseppe De Giacomo, Aniello Murano and Sasha Rubin <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>An Exact Algorithm to make a Trade-off between Cost and Probability in SSPs<span class="text-muted"> &bull; Valdinei Freire, Karina Valdivia Delgado and Willy Arthur Silva Reis <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Bridging the Gap Between Abstractions and Critical-Path Heuristics via Hypergraphs<span class="text-muted"> &bull; Marcel Steinmetz and Álvaro Torralba <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>A Logical Semantics for PDDL+<span class="text-muted"> &bull; Vitaliy Batusov and Mikhail Soutchanski <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Reducing the Computational and Communication Overhead of Robust Agent Rescheduling<span class="text-muted"> &bull; Jordan Abrahams, William Lloyd, Grace Diehl, Marina Knittel, Judy Lin, David Chu, Jeremy Frank and Jim Boerkoel <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Cyber-Physical Planning: Deliberation for Hybrid Systems with a Continuous Numeric State<span class="text-muted"> &bull; Arthur Bit-Monnot, Luca Pulina and Armando Tacchella <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Robust Bayes-Adaptive Planning under Model Uncertainty<span class="text-muted"> &bull; Apoorva Sharma, James Harrison, Matthew Tsao and Marco Pavone <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Approximate Gradient Descent Convergence Dynamics for Adaptive Control on Heterogeneous Networks<span class="text-muted"> &bull; Jean Carpentier and Sebastien Blandin <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Using Bi-Directional Information Exchange to Improve Decentralized Schedule-Driven Traffic Control<span class="text-muted"> &bull; Hsu-Chieh Hu and Stephen Smith <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Cutting the Size of Compressed Path Databases With Wildcards and Redundant Symbols<span class="text-muted"> &bull; Mattia Chiari, Shizhe Zhao, Adi Botea, Alfonso Gerevini, Daniel Harabor, Alessandro Saetti, Matteo Salvetti and Peter J. Stuckey <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Analysis of Backward Sequence in Cluster Tools with Processing Time Variations<span class="text-muted"> &bull; Jun-Ho Lee and Hyun-Jung Kim <span class="">&middot; Short Paper</span></span></td></tr><tr><td>An Empirical Study of Perfect Potential Heuristics<span class="text-muted"> &bull; Augusto B. Corrêa and Florian Pommerening <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Planning with Global State Constraints and State-Dependent Action Costs<span class="text-muted"> &bull; Franc Ivankovic, Patrik Haslum and Dan Gordon <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Improving the Combination of JPS and Geometric Containers<span class="text-muted"> &bull; Yue Hu, Long Qin, Quanjun Yin, Daniel Harabor and Cong Hu <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Solving Graph Problems in Euclidean Space Using FastMap<span class="text-muted"> &bull; Jiaoyang Li, Ariel Felner, Sven Koenig and T. K. Satish Kumar <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Disjoint Splitting for Conflict-Based Search for Multi-Agent Path Finding<span class="text-muted"> &bull; Jiaoyang Li, Daniel Harabor, Peter Stuckey, Ariel Felner, Hang Ma and Sven Koenig <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Temporal Planning as Refinement-Based Model Checking<span class="text-muted"> &bull; Alexander Heinz, Martin Wehrle, Sergiy Bogomolov, Daniele Magazzeni, Marius Greitschus and Andreas Podelski <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Advanced Factoring Strategies for Decoupled Search using Linear Programming<span class="text-muted"> &bull; Frederik Schmitt, Daniel Gnad and Joerg Hoffmann <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Finding Centroids and Minimum Covering States in Planning<span class="text-muted"> &bull; Alberto Pozanco, Yolanda E-Martín, Susana Fernández and Daniel Borrajo <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Counterexample-Guided Abstraction Refinement for Pattern Selection in Optimal Classical Planning<span class="text-muted"> &bull; Alexander Rovner, Silvan Sievers and Malte Helmert <span class="">&middot; Short Paper</span></span></td></tr><tr><td>A Multi-Label A* Algorithm for Multi-Agent Pathfinding<span class="text-muted"> &bull; Florian Grenouilleau, Willem-Jan van Hoeve and J. N. Hooker <span class="">&middot; Short Paper</span></span></td></tr><tr><td>Measuring and Optimizing Durability Against Scheduling Disturbances<span class="text-muted"> &bull; Joon Lee, Vivaswat Ojha and Jim Boerkoel <span class="">&middot; Short Paper</span></span></td></tr>
+<td></td>
+</tbody>
+</table>
+
+</div>
+
+
+
+<ol class="breadcrumb breadcrumb-header org-team-header sub">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h6 class="card-title profile">Novel Applications Track</h6>
+</li>
+</ol>
+
+<div class="card-body container">
+
+<table class="table info-table">
+<tbody class="sm-font-size">
+<tr><td>Personalized Medication and Activity Planning in PDDL+<span class="text-muted"> &bull; Fares K. Alaboud and Andrew Coles <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Temporal Brittleness Analysis of Task Networks for Planetary Rovers<span class="text-muted"> &bull; Tiago Vaquero, Steve Chien, Jagriti Agrawal, Wayne Chi and Terrance Huntsberger <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Optimizing Parameters for Uncertain Execution and Rescheduling Robustness<span class="text-muted"> &bull; Wayne Chi, Jagriti Agrawal and Steve Chien <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>The Clustered Dial-a-Ride Problem<span class="text-muted"> &bull; Fabian Feitsch and Sabine Storandt <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Exact Methods for Extended Rotating Workforce Scheduling Problems<span class="text-muted"> &bull; Lucas Kletzander, Nysret Musliu, Johannes Gärtner, Werner Schafhauser and Thomas Krennwallner <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Towards Automating Crime Prevention through Environmental Design (CPTED) Analysis to Predict Burglary<span class="text-muted"> &bull; Leanne Monchuk, Simon Parkinson and James Kitchen <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>ZAC: A Zone pAth Construction Approach for Effective Real Time Ride Sharing<span class="text-muted"> &bull; Meghna Lowalekar, Pradeep Varakantham and Patrick Jaillet <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Reinforcement Learning Based Querying in Camera Networks for Efficient Target Tracking<span class="text-muted"> &bull; Anil Sharma, Saket Anand and Sanjit Kaul <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Solution Approaches for an Automotive Paint Shop Scheduling Problem<span class="text-muted"> &bull; Felix Winter, Emir Demirović, Nysret Musliu and Christoph Mrkvicka <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Mixed Integer Programming versus Evolutionary Computation for Optimizing a Hard Real-World Staff Assignment Problem<span class="text-muted"> &bull; Jannik Peters, Daniel Stephan, Isabel Amon, Hans Gawendowicz, Julius Lischeid, Lennart Salabarria, Jonas Umland, Felix Werner, Martin S. Krejca, Ralf Rothenberger, Timo Kötzing and Tobias Friedrich <span class="d-none">&middot; Short Paper</span></span></td></tr>
+<td></td>
+</tbody>
+</table>
+
+</div>
+
+
+
+<ol class="breadcrumb breadcrumb-header org-team-header sub">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h6 class="card-title profile">Planning and Learning Track</h6>
+</li>
+</ol>
+
+<div class="card-body container">
+
+<table class="table info-table">
+<tbody class="sm-font-size">
+<tr><td>Towards Stable Symbol Grounding with Zero-Suppressed State AutoEncoder<span class="text-muted"> &bull; Masataro Asai and Hiroshi Kajino <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Deep Policies for Width-Based Planning in Pixel Domains<span class="text-muted"> &bull; Miquel Junyent, Anders Jonsson and Vicenç Gómez <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Unsupervised Grounding of Plannable First-Order Logic Representation from Images<span class="text-muted"> &bull; Masataro Asai <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Resource Constrained Deep Reinforcement Learning<span class="text-muted"> &bull; Abhinav Bhatia, Pradeep Varakantham and Akshat Kumar <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Fast Feature Selection for Linear Value Function Approximation<span class="text-muted"> &bull; Bahram Behzadian, Soheil Gharatappeh and Marek Petrik <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Learning Interpretable Models Expressed in Linear Temporal Logic<span class="text-muted"> &bull; Alberto Camacho and Sheila A. McIlraith <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Maximum Entropy based Independent Learning in Anonymous Multi-Agent Settings<span class="text-muted"> &bull; Tanvi Verma, Pradeep Varakantham and Hoong Chuin Lau <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Learning Classical Planning Strategies with Policy Gradient<span class="text-muted"> &bull; Pawel Gomoluch, Dalal Alrajeh and Alessandra Russo <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Size-Independent Neural Transfer for RDDL Planning<span class="text-muted"> &bull; Sankalp Garg, Aniket Bajpai and Mausam <span class="">&middot; Short Paper</span></span></td></tr>
+<td></td>
+</tbody>
+</table>
+
+</div>
+
+
+
+<ol class="breadcrumb breadcrumb-header org-team-header sub">
+<li class="breadcrumb-item breadcrumb-item-primary">
+<h6 class="card-title profile">Robotics Track</h6>
+</li>
+</ol>
+
+<div class="card-body container">
+
+<table class="table info-table">
+<tbody class="sm-font-size">
+<tr><td>Replanning for Situated Robots<span class="text-muted"> &bull; Michael Cashmore, Andrew Coles, Bence Cserna, Erez Karpas, Daniele Magazzeni and Wheeler Ruml <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>An Hierarchical Approach to Active Semantic Mapping Using Probabilistic Logic and Information Reward POMDP<span class="text-muted"> &bull; Tiago Veiga, Miguel Silva, Rodrigo Ventura and Pedro U. Lima <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Mars On-site Shared Analytics, Information, and Computing<span class="text-muted"> &bull; Joshua Vander Hook, Tiago Stegun Vaquero, Federico Rossi, Martina Troesch, Marc Sanchez-Net, Joshua Schoolcraft, Jean-Pierre de la Croix and Steve Chien <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Provable Infinite-Horizon Real-Time Planning for Repetitive Tasks<span class="text-muted"> &bull; Fahad Islam, Oren Salzman and Maxim Likhachev <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Learning Heuristic for Mobile Robot Path Planning Using Deep Neural Network<span class="text-muted"> &bull; Takeshi Takahashi, He Sun, Dong Tian and Yebin Wang <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Goal Reasoning in a CLIPS-based Executive for Integrated Planning and Execution<span class="text-muted"> &bull; Tim Niemueller, Till Hofmann and Gerhard Lakemeyer <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>POMDP-based Candy Server: Lessons Learned from a Seven Day Demo<span class="text-muted"> &bull; Marcus Hoerger, Joshua Mun Liang Song, Hanna Kurniawati and Alberto Elfes <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>POMHDP: Search-based Belief Space Planning using Multiple Heuristics<span class="text-muted"> &bull; Sung-Kyun Kim, Oren Salzman and Maxim Likhachev <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Trajectory Tracking Control for Robotic Vehicles using Counterexample Guided Training of Neural Networks<span class="text-muted"> &bull; Arthur Claviere, Souradeep Dutta and Sriram Sankaranarayanan <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Generalized Lazy Search for Robot Motion Planning: Interleaving Search and Edge Evaluations via Event-based Toggles<span class="text-muted"> &bull; Aditya Mandalika, Sanjiban Choudhury, Oren Salzman and Siddhartha Srinivasa <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Open-world Reasoning for Service Robots<span class="text-muted"> &bull; Yuqian Jiang, Nick Walker, Justin Hart and Peter Stone <span class="d-none">&middot; Short Paper</span></span></td></tr><tr><td>Speeding Up Search-based Motion Planning via Conservative Heuristics<span class="text-muted"> &bull; Ishani Chatterjee, Maxim Likhachev, Ashwin Khadke and Manuela Veloso <span class="">&middot; Short Paper</span></span></td></tr>
+<td></td>
+</tbody>
+</table>
+
+</div>
+
+
+
+</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div><!-- end of on-canvas elements-->
+
+            </div>
+        </div><!-- end of canvas -->
+
+        <div class="footer-container" style="margin-top: 100px;">
+
+            <div class="d-block">
+                <img data-src="files/images/banner_bottom.png" width="100%">
+            </div>
+
+            <div class="footer-bottom-left" style="width:100%;">
+
+                <hr>
+
+                <footer>
+                    <p class="text-orange">&copy; ICAPS 2019</p>
+                </footer>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

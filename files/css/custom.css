@@ -721,3 +721,11 @@ input:checked + .slider:before {
     background-color: #ffe1df;
 }
 
+/*
+ * program page
+ * --------------------------------------------------
+ */
+
+.paper-title {
+    color: #3658ff;
+}
