@@ -2,10 +2,10 @@
 
 '''
 ------
-Auto-compile Webpages for ICAPS 2019 Homepage
+Auto-compile Webpages for ICAPS 2019
 ------
 Author :: Tathagata Chakraborti
-Date   :: 10/10/2018
+Date   :: 02/14/2019
 ------
 '''
 
@@ -17,16 +17,13 @@ packages
 import openpyxl as xl
 import argparse, sys, random, copy
 
-# from importlib import reload
-
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
 
 '''
 global variables 
 '''
 
 data = {} 
+pc_list = {}
 
 '''
 html templates
@@ -53,6 +50,23 @@ with open('templates/dates-template.html', 'r') as temp:
 with open('templates/quicklinks-template.html', 'r') as temp:
     quicklinks_template = temp.read()
 
+with open('templates/organizing-team-template.html', 'r') as temp:
+    organizing_team_template = temp.read()
+
+with open('templates/track-table.html', 'r') as temp:
+    track_table_template = temp.read()
+
+with open('templates/track-table-single.html', 'r') as temp:
+    track_table_single_template = temp.read()
+
+'''
+track table stubs
+'''
+
+track_table_td = '<tr><td>[NAME] <span class="text-muted">&middot; [AFFILIATION]</span></td></tr>'
+
+''''''
+
 '''
 carousel templates
 '''
@@ -73,11 +87,13 @@ with open('templates/carousel-elements/carousel-indicators-template.html', 'r') 
     carousel_indicators_template = temp.read()
 
 '''
-method :: cache data from xlxs file
+method :: cache data from xlsx file
 '''
-def cache(filename = 'data.xlsx'):
+def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS-2019_accepted.xlsx'):
 
-    global data
+    global data, pc_list
+
+    print( 'Reading highlights...' )
 
     wb = xl.load_workbook(filename)
 
@@ -100,12 +116,35 @@ def cache(filename = 'data.xlsx'):
 
         count += 1
 
+    print( 'Reading PC list...' )
+
+    wb = xl.load_workbook(pc_filename)
+
+    for sheet_name in wb.sheetnames:
+
+        dict_entry = {}
+
+        for row in wb[sheet_name]:
+
+            row_values = [str(item.value).strip() for item in row][:4]
+
+            key   = row_values[3]
+            entry = ["{} {}".format(row_values[0], row_values[1]), row_values[2]]
+
+            if key in dict_entry:
+                dict_entry[key].append(entry)
+            else:
+                dict_entry[key] = [entry]
+
+        pc_list[str(sheet_name)] = dict_entry
+
+
 '''
 method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template
+    global index_template, cfp_template, workshop_template, organizing_team_template
 
     # cache data
     print( 'Reading data...' )
@@ -188,7 +227,7 @@ def write_file(args):
     with open('../index.html', 'w') as output_file:
         output_file.write(index_template)
 
-    # write problem file
+    # write cfp file
     print( 'Compiling cfp.html ...' )
 
     # writing templates
@@ -209,7 +248,7 @@ def write_file(args):
     with open('../cfp.html', 'w') as output_file:
         output_file.write(cfp_template)
 
-    # write problem file
+    # write workshops file
     print( 'Compiling workshops.html ...' )
 
     # writing templates
@@ -229,6 +268,54 @@ def write_file(args):
 
     with open('../workshops.html', 'w') as output_file:
         output_file.write(workshop_template)
+
+    # write committees file
+    print( 'Compiling organizing_team.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    track_tables_stub = ""
+
+    for track in pc_list:
+
+        temp_track_table_template = copy.deepcopy(track_table_template).replace('[TRACK-NAME]', "{} Track".format(track))
+        temp_table_stub = ""
+
+        for role in pc_list[track]:
+
+            temp_table_stub_single = ""
+
+            for person in pc_list[track][role]:
+
+                if person[1]:
+                    temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', "{}".format(person[1]))
+                else:
+                    temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', "")
+
+            temp_track_table_single_template = copy.deepcopy(track_table_single_template).replace('[ROLE]', role)
+            temp_track_table_single_template = temp_track_table_single_template.replace('[ENTRIES]', temp_table_stub_single)
+
+            temp_table_stub += "\n\n" + temp_track_table_single_template
+
+        temp_track_table_template = temp_track_table_template.replace('[TRACK-TABLE]', temp_table_stub)
+        track_tables_stub += "\n\n\n" + temp_track_table_template
+
+    organizing_team_template = organizing_team_template.replace('[HEADER]', header_template)    
+    organizing_team_template = organizing_team_template.replace('[NAVBAR]', navbar_template)    
+    organizing_team_template = organizing_team_template.replace('[DATES]', dates_template)    
+    organizing_team_template = organizing_team_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    organizing_team_template = organizing_team_template.replace('[INDEX]', 'index.html')
+    organizing_team_template = organizing_team_template.replace('[CFP]', 'cfp.html')
+    organizing_team_template = organizing_team_template.replace('[WORKSHOPS]', '')
+    organizing_team_template = organizing_team_template.replace('[TRACK-TABLES]', track_tables_stub)
+
+    # write to output
+    print( 'Writing to file (organizing-team.html) ...' )
+
+    with open('../organizing-team.html', 'wb') as output_file:
+        output_file.write(organizing_team_template.encode("utf-8"))
 
     print( 'Done.' )
 

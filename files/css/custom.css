@@ -704,3 +704,20 @@ input:checked + .slider:before {
 .info-card-page-title .card-title {
     padding: 10px;
 }
+
+/*
+ * committee page
+ * --------------------------------------------------
+ */
+
+.org-team-header {
+    margin-bottom: 0px;
+    background-color: #0000001a;
+}
+
+.org-team-header.sub {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #ffe1df;
+}
+
