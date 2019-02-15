@@ -70,8 +70,8 @@ with open('templates/track-table-single.html', 'r') as temp:
 table stubs
 '''
 
-track_table_td = '<tr><td>[NAME]<span class="text-muted"> &middot; [AFFILIATION]</span></td></tr>'
-paper_table_td = '<tr><td>[TITLE]<span class="text-muted"> &bull; [AUTHORS] <span class="d-none">&middot; Short Paper</span></span></td></tr>'
+track_table_td = '<tr><td>[NAME]<span class="text-muted d-none"> &middot; [AFFILIATION]</span></td></tr>'
+paper_table_td = '<tr><td>[TITLE]<span class="text-muted"> &bull; [AUTHORS] <span class="d-none">[Short Paper]</span></span></td></tr>'
 
 ''''''
 
@@ -310,8 +310,8 @@ def write_file(args):
 
             for person in pc_list[track][role]:
 
-                if person[1]:
-                    temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', person[1])
+                if person[1] != "None":
+                    temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', person[1]).replace("d-none", "")
                 else:
                     temp_table_stub_single += track_table_td.replace('[NAME]', person[0]).replace('[AFFILIATION]', "")
 
