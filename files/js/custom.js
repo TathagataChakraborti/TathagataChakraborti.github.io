@@ -125,14 +125,14 @@ $(document).ready(function () {
         if(state == 'stop'){
 
             state='play';
-            $(this).html('<span class="oi oi-media-pause"></span>');
+            $(this).html('<i class="fas fa-pause"></i>');
             $('.carousel-primary').carousel('cycle');
             $('.carousel-primary').carousel('next');
 
         } else {
 
             state = 'stop';
-            $(this).html('<span class="oi oi-media-play" style="color:#fb6346;"></span>');
+            $(this).html('<i class="fas fa-play" style="color:#fb6346;"></i>');
             $('.carousel-primary').carousel('pause');
 
         }
