@@ -192,7 +192,7 @@ def write_file(args):
     index_template = index_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     index_template = index_template.replace('[INDEX]', '')
-    index_template = index_template.replace('[CFP]', 'cfp.html')
+    index_template = index_template.replace('[CFP]', 'calls.html')
     index_template = index_template.replace('[WORKSHOPS]', 'workshops.html')
 
     # write primary carousel section
@@ -258,7 +258,7 @@ def write_file(args):
         output_file.write(index_template)
 
     # write cfp file
-    print( 'Compiling cfp.html ...' )
+    print( 'Compiling calls.html ...' )
 
     # writing templates
     print( 'Writing templates ...' )
@@ -269,7 +269,7 @@ def write_file(args):
     cfp_template = cfp_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
-    print( 'Writing to file (cfp.html) ...' )
+    print( 'Writing to file (calls.html) ...' )
 
     with open('../calls.html', 'w') as output_file:
         output_file.write(cfp_template)
