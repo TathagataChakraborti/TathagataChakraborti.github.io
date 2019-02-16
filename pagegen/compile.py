@@ -191,10 +191,6 @@ def write_file(args):
     index_template = index_template.replace('[DATES]', dates_template)    
     index_template = index_template.replace('[QUICKLINKS]', quicklinks_template)    
 
-    index_template = index_template.replace('[INDEX]', '')
-    index_template = index_template.replace('[CFP]', 'calls.html')
-    index_template = index_template.replace('[WORKSHOPS]', 'workshops.html')
-
     # write primary carousel section
     print( 'Writing carousel ...' )
 
