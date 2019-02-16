@@ -271,7 +271,7 @@ def write_file(args):
     # write to output
     print( 'Writing to file (cfp.html) ...' )
 
-    with open('../cfp.html', 'w') as output_file:
+    with open('../calls.html', 'w') as output_file:
         output_file.write(cfp_template)
 
     # write workshops file
