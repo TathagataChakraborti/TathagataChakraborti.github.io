@@ -70,8 +70,8 @@ with open('templates/track-table-single.html', 'r') as temp:
 table stubs
 '''
 
-track_table_td = '<tr><td>[NAME]<span class="text-muted d-none"> &middot; [AFFILIATION]</span></td></tr>'
-paper_table_td = '<tr><td>[TITLE]<span class="text-muted"> &bull; [AUTHORS] <span class="d-none">[Short Paper]</span></span></td></tr>'
+track_table_td = '<tr><td>[NAME]<span class="text-muted d-none"> &middot; [AFFILIATION]</span></td></tr>\n'
+paper_table_td = '<tr><td>[TITLE]<span class="text-muted"> &bull; [AUTHORS] <span class="d-none">[Short Paper]</span></span></td></tr>\n'
 
 ''''''
 
