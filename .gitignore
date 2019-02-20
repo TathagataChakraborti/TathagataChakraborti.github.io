@@ -4,3 +4,7 @@ studio/
 # dropbox stuff
 .dropbox
 desktop.ini
+
+# icaps info
+*/icaps19_info/*/*.xlsx
+*/icaps19_info/*/*.pdf
