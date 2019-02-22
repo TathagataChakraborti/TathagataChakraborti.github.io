@@ -721,6 +721,11 @@ input:checked + .slider:before {
     background-color: #ffe1df;
 }
 
+.org-team-pre-header {
+    background-color: aliceblue;
+    margin-bottom: 0;
+}
+
 /*
  * program page
  * --------------------------------------------------
