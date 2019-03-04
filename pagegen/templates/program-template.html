@@ -62,7 +62,7 @@
 
                         <div class="col-12 col-xl-9 call-card">
 
-                            <div class="row" id="workshops">
+                            <div class="row" id="accepted_papers">
 
                                 <div class="col-12">
 
@@ -108,6 +108,52 @@
         </div>
 
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="paper-info" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Paper Information</h4>
+        <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+<div class="input-group mb-3">
+  <span class="input-group-addon">Title</span>
+  <div type="text" class="form-control" id="paper-title">
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-addon">Authors</span>
+  <div type="text" class="form-control" id="paper-authors" style="display: block;">
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-addon">Abstract</span>
+  <div type="text" class="form-control" id="paper-abstract">
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-addon">Contact</span>
+  <div type="text" class="form-control"">
+    <span class="obfuscate" id="paper-contact">
+    </span>
+  </div>
+</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 

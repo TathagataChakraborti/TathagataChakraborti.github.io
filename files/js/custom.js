@@ -185,5 +185,19 @@ $(document).ready(function () {
         }
     });
 
+    // method :: populate modal info
+    $(document).on("click", "#accepted_papers .list-group-item", function() {
+
+        var elem = $(this);
+
+        $.each( ["title", "authors", "abstract", "contact"] , function(index, item) {
+
+            content = elem.find("#save-paper-"+item).html().trim();
+            $("#paper-info #paper-"+item).html(content);
+
+        });
+
+    });
+
 });
 

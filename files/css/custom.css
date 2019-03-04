@@ -328,15 +328,15 @@ a > .breadcrumb-header {
  * --------------------------------------------------
  */
 
-.list-group-item.active, .list-group-item:hover {
+.quicklink-buttons .list-group-item.active, .quicklink-buttons .list-group-item:hover {
     background-color: rgba(0,0,0,0)!important;
 }
 
-.list-group-item {
+.quicklink-buttons .list-group-item {
     -webkit-transition: all 0.5s ease-in-out;
 }
 
-.list-group-item:hover {
+.quicklink-buttons .list-group-item:hover {
     padding-left: 2.0rem;
     -webkit-transition: all 0.5s ease-in-out;
     color: #c0ff00;
@@ -352,6 +352,9 @@ a > .breadcrumb-header {
     cursor: pointer;
 }
 
+#accepted_papers .list-group-item:hover {
+    background-color: transparent;
+}
 
 /*
  * footer area
@@ -735,3 +738,7 @@ input:checked + .slider:before {
     color: #3658ff;
 }
 
+
+#paper-info .input-group-addon {
+    min-width: 90px;
+}

@@ -72,14 +72,12 @@ with open('templates/track-table-single.html', 'r') as temp:
 with open('templates/banner-template.html', 'r') as temp:
     banner_template = temp.read()
 
-'''
-table stubs
-'''
+with open('templates/paper-info-template.html', 'r') as temp:
+    paper_info_stub = temp.read()
 
-track_table_td = '<tr><td>[NAME]<span class="text-muted d-none"> &middot; [AFFILIATION]</span></td></tr>\n'
-paper_table_td = '<tr><td>[TITLE]<span class="text-muted"> &bull; [AUTHORS] <span class="d-none">[Short Paper]</span></span></td></tr>\n'
+with open('templates/pc-info-template.html', 'r') as temp:
+    track_table_td = temp.read()
 
-''''''
 
 '''
 carousel templates
@@ -380,12 +378,27 @@ def write_file(args):
 
             authors = []
             for i in range(5, len(paper), 3):
-                print(111, paper[i])
                 if paper[i].strip() != "" and paper[i].strip() != "None":
-                    print(666, paper[i])
                     authors.append(paper[i])
 
-            temp = paper_table_td.replace('[TITLE]', paper[2]).replace('[AUTHORS]', ','.join(authors))
+            temp = paper_info_stub.replace('[TITLE]', paper[2]).replace('[AUTHORS]', ', '.join(authors))
+
+            # save paper info
+
+            authors = []
+            for i in range(5, len(paper), 3):
+                if paper[i].strip() != "" and paper[i].strip() != "None":
+
+                    if paper[i+1] == "None":
+                        authors.append('<span class="profile">{}</span>'.format(paper[i]))
+                    else:
+                        authors.append('<span class="profile">{}</span> ({})'.format(paper[i], paper[i+1]))
+
+            temp = temp.replace('[save-paper-title]', '<strong>{}</strong>'.format(paper[2]))
+            temp = temp.replace('[save-paper-authors]', ', '.join(authors))
+            temp = temp.replace('[save-paper-abstract]', paper[3])
+            temp = temp.replace('[save-paper-contact]', paper[4][::-1])
+
             temp_papers_list_stub += temp
 
         paper_list_stub += "\n\n" + temp_track_paper_single_template.replace('[ENTRIES]', temp_papers_list_stub)
