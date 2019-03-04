@@ -103,7 +103,7 @@ with open('templates/carousel-elements/carousel-indicators-template.html', 'r') 
 '''
 method :: cache data from xlsx file
 '''
-def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS-2019_accepted.xlsx'):
+def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS19 Metadata.xlsx'):
 
     global data, pc_list, paper_list
 
@@ -158,7 +158,7 @@ def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx
     wb = xl.load_workbook(papers_filename)
 
     title_flag = False
-    for row in wb["Accepted"]:
+    for row in wb["AAAIPressList"]:
 
         if not title_flag:
             title_flag = True
@@ -166,8 +166,8 @@ def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx
 
             row_values = [str(item.value).strip() for item in row]
 
-            key   = row_values[4]
-            entry = row_values[1:4]
+            key   = row_values[1]
+            entry = row_values
 
             if key in paper_list:
                 paper_list[key].append(entry)
@@ -368,20 +368,24 @@ def write_file(args):
 
     paper_list_stub = ""
 
-    track_order = ["Main Track", "Novel Applications Track", "Planning and Learning Track", "Robotics Track"]
+    track_order = ["Main", "Applications", "Planning & Learning", "Robotics"]
 
     for track in track_order:
 
-        temp_track_paper_single_template = copy.deepcopy(track_paper_single_template).replace('[TRACK]', track)
+        temp_track_paper_single_template = copy.deepcopy(track_paper_single_template).replace('[TRACK]', track + ' Track')
 
         temp_papers_list_stub = ""
 
         for paper in paper_list[track]:
-            temp = paper_table_td.replace('[TITLE]', paper[1]).replace('[AUTHORS]', paper[0])
 
-            if paper[2] == "Short":
-                temp = temp.replace("d-none", "")
+            authors = []
+            for i in range(5, len(paper), 3):
+                print(111, paper[i])
+                if paper[i].strip() != "" and paper[i].strip() != "None":
+                    print(666, paper[i])
+                    authors.append(paper[i])
 
+            temp = paper_table_td.replace('[TITLE]', paper[2]).replace('[AUTHORS]', ','.join(authors))
             temp_papers_list_stub += temp
 
         paper_list_stub += "\n\n" + temp_track_paper_single_template.replace('[ENTRIES]', temp_papers_list_stub)
