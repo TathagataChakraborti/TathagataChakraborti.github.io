@@ -742,3 +742,11 @@ input:checked + .slider:before {
 #paper-info .input-group-addon {
     min-width: 90px;
 }
+
+.openrev-ws-links {
+    display: flex;
+}
+
+.openrev-ws-links > .btn {
+    flex: 1;
+}
