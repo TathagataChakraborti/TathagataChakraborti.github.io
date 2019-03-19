@@ -17,6 +17,24 @@ $(document).ready(function () {
         $("html, body").animate({scrollTop:$(window.location.hash).offset().top-50 }, 500);
     }
 
+    // method :: workshop reel on openreview area
+    function show_ws_name() {
+
+        if ( !$('.ws-roll').parent().hasClass('show') ) {
+    
+            $('.ws-roll-content').fadeOut( function() { 
+                $(this).text( ws_names[Math.floor(Math.random()*ws_names.length)] ).fadeIn('slow');
+            });
+
+        }
+
+    }
+
+    var ws_names = $('.ws-roll').parent().find('.dropdown-item').map( function() { return $(this).text(); } );
+    var lets_loop = self.setInterval( function() { show_ws_name() }, 2000 );
+
+    show_ws_name();
+
     // method :: toggle visibility of off-canvas panel  
     $('[data-toggle="offcanvas"]').click( function () {
         $('.row-offcanvas').toggleClass('active');
