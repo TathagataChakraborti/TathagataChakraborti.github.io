@@ -42,6 +42,9 @@ with open('templates/workshop-template.html', 'r') as temp:
 with open('templates/tutorial-template.html', 'r') as temp:
     tutorial_template = temp.read()
 
+with open('templates/info-template.html', 'r') as temp:
+    info_template = temp.read()
+
 with open('templates/header-template.html', 'r') as temp:
     header_template = temp.read()
 
@@ -178,7 +181,7 @@ method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template
+    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template
 
     # cache data
     print( 'Reading data...' )
@@ -292,7 +295,25 @@ def write_file(args):
     print( 'Writing to file (tutorials.html) ...' )
 
     with open('../tutorials.html', 'w') as output_file:
-        output_file.write(tutorial_template)
+        output_file.write(info_template)
+
+    # write info file
+    print( 'Compiling info.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    info_template = info_template.replace('[HEADER]', header_template)    
+    info_template = info_template.replace('[NAVBAR]', navbar_template)    
+    info_template = info_template.replace('[BANNER]', banner_template)    
+    info_template = info_template.replace('[DATES]', dates_template)    
+    info_template = info_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    # write to output
+    print( 'Writing to file (info.html) ...' )
+
+    with open('../info.html', 'w') as output_file:
+        output_file.write(info_template)
 
     # write workshops file
     print( 'Compiling workshops.html ...' )
