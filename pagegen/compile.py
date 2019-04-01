@@ -295,7 +295,7 @@ def write_file(args):
     print( 'Writing to file (tutorials.html) ...' )
 
     with open('../tutorials.html', 'w') as output_file:
-        output_file.write(info_template)
+        output_file.write(tutorial_template)
 
     # write info file
     print( 'Compiling info.html ...' )
