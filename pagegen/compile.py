@@ -5,7 +5,7 @@
 Auto-compile Webpages for ICAPS 2019
 ------
 Author :: Tathagata Chakraborti
-Date   :: 02/14/2019
+Date   :: 04/17/2019
 ------
 '''
 
@@ -25,6 +25,7 @@ global variables
 data = {} 
 pc_list = {}
 paper_list = {}
+demos_list = {}
 
 '''
 html templates
@@ -78,6 +79,9 @@ with open('templates/banner-template.html', 'r') as temp:
 with open('templates/paper-info-template.html', 'r') as temp:
     paper_info_stub = temp.read()
 
+with open('templates/demo-info-template.html', 'r') as temp:
+    demo_info_stub = temp.read()
+
 with open('templates/pc-info-template.html', 'r') as temp:
     track_table_td = temp.read()
 
@@ -104,9 +108,9 @@ with open('templates/carousel-elements/carousel-indicators-template.html', 'r') 
 '''
 method :: cache data from xlsx file
 '''
-def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS19 Metadata.xlsx'):
+def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS19 Metadata.xlsx', demos_filename='icaps19_info/demo.xlsx'):
 
-    global data, pc_list, paper_list
+    global data, pc_list, paper_list, demos_list
 
     print( 'Reading highlights...' )
 
@@ -175,13 +179,31 @@ def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx
             else:
                 paper_list[key] = [entry]
 
+    print( 'Reading Demos list...' )
+
+    wb = xl.load_workbook(demos_filename)
+
+    title_flag = False
+    for row in wb["DEMOS"]:
+
+        if not title_flag:
+            title_flag = True
+        else:
+
+            row_values = [str(item.value).strip() for item in row]
+
+            key   = row_values[1]
+            entry = row_values
+
+            demos_list[key] = entry
+
 
 '''
 method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template
+    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template, demo_info_stub
 
     # cache data
     print( 'Reading data...' )
@@ -424,6 +446,10 @@ def write_file(args):
 
         paper_list_stub += "\n\n" + temp_track_paper_single_template.replace('[ENTRIES]', temp_papers_list_stub)
 
+    demos_list_stub = ""
+    for demo in demos_list:
+        demos_list_stub += demo_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0])
+
     program_template = program_template.replace('[HEADER]', header_template)    
     program_template = program_template.replace('[NAVBAR]', navbar_template)    
     program_template = program_template.replace('[BANNER]', banner_template)    
@@ -431,6 +457,7 @@ def write_file(args):
     program_template = program_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     program_template = program_template.replace('[PAPERS]', paper_list_stub)
+    program_template = program_template.replace('[DEMOS]', demos_list_stub)
 
     # write to output
     print( 'Writing to file (program.html) ...' )
