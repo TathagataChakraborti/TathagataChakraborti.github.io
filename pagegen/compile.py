@@ -183,19 +183,14 @@ def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx
 
     wb = xl.load_workbook(demos_filename)
 
-    title_flag = False
     for row in wb["DEMOS"]:
 
-        if not title_flag:
-            title_flag = True
-        else:
+        row_values = [str(item.value).strip() for item in row]
 
-            row_values = [str(item.value).strip() for item in row]
+        key   = row_values[1]
+        entry = row_values
 
-            key   = row_values[1]
-            entry = row_values
-
-            demos_list[key] = entry
+        demos_list[key] = entry
 
 
 '''
