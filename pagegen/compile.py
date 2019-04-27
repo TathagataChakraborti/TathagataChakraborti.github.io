@@ -85,6 +85,12 @@ with open('templates/demo-info-template.html', 'r') as temp:
 with open('templates/pc-info-template.html', 'r') as temp:
     track_table_td = temp.read()
 
+with open('templates/privacy-policy-template.html', 'r') as temp:
+    privacy_policy_template = temp.read()
+
+with open('templates/terms-of-use-template.html', 'r') as temp:
+    terms_of_use_template = temp.read()
+
 
 '''
 carousel templates
@@ -198,7 +204,7 @@ method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template, demo_info_stub
+    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template, demo_info_stub, privacy_policy_template, terms_of_use_template
 
     # cache data
     print( 'Reading data...' )
@@ -459,6 +465,38 @@ def write_file(args):
 
     with open('../program.html', 'wb') as output_file:
         output_file.write(program_template.encode("utf-8"))
+
+    # write privacy policy file
+    print( 'Compiling privacy-policy.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    privacy_policy_template = privacy_policy_template.replace('[HEADER]', header_template)    
+    privacy_policy_template = privacy_policy_template.replace('[NAVBAR]', navbar_template)    
+    privacy_policy_template = privacy_policy_template.replace('[BANNER]', banner_template)    
+
+    # write to output
+    print( 'Writing to file (privacy-policy.html) ...' )
+
+    with open('../privacy-policy.html', 'w') as output_file:
+        output_file.write(privacy_policy_template)
+
+    # write terms of use file
+    print( 'Compiling terms-of-use.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    terms_of_use_template = terms_of_use_template.replace('[HEADER]', header_template)    
+    terms_of_use_template = terms_of_use_template.replace('[NAVBAR]', navbar_template)    
+    terms_of_use_template = terms_of_use_template.replace('[BANNER]', banner_template)    
+
+    # write to output
+    print( 'Writing to file (terms-of-use.html) ...' )
+
+    with open('../terms-of-use.html', 'w') as output_file:
+        output_file.write(terms_of_use_template)
 
     print( 'Done.' )
 
