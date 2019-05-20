@@ -756,3 +756,35 @@ input:checked + .slider:before {
     border-top-right-radius: 0.2rem!important;
     border-bottom-right-radius: 0.2rem!important;
 }
+
+.bg-tutorials {
+    background-color: #e6edff;
+}
+
+.bg-workshops {
+    background-color: #f1fde8;
+}
+
+.bg-consortium {
+    background-color: #fff3c8;
+}
+
+.bg-main {
+    background-color: #ffe7e7;
+}
+
+.color-tutorials {
+    color: #e6edff;
+}
+
+.color-workshops {
+    color: #f1fde8;
+}
+
+.color-consortium {
+    color: #fff3c8;
+}
+
+.color-main {
+    color: #ffe7e7;
+}
