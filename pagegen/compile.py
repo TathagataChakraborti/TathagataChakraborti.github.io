@@ -46,6 +46,9 @@ with open('templates/tutorial-template.html', 'r') as temp:
 with open('templates/info-template.html', 'r') as temp:
     info_template = temp.read()
 
+with open('templates/awards-template.html', 'r') as temp:
+    awards_template = temp.read()
+
 with open('templates/header-template.html', 'r') as temp:
     header_template = temp.read()
 
@@ -204,7 +207,7 @@ method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template, demo_info_stub, privacy_policy_template, terms_of_use_template
+    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template, demo_info_stub, privacy_policy_template, terms_of_use_template, awards_template
 
     # cache data
     print( 'Reading data...' )
@@ -338,6 +341,24 @@ def write_file(args):
     with open('../info.html', 'w') as output_file:
         output_file.write(info_template)
 
+    # write info file
+    print( 'Compiling awards.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    awards_template = awards_template.replace('[HEADER]', header_template)    
+    awards_template = awards_template.replace('[NAVBAR]', navbar_template)    
+    awards_template = awards_template.replace('[BANNER]', banner_template)    
+    awards_template = awards_template.replace('[DATES]', dates_template)    
+    awards_template = awards_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    # write to output
+    print( 'Writing to file (awards.html) ...' )
+
+    with open('../awards.html', 'w') as output_file:
+        output_file.write(awards_template)
+
     # write workshops file
     print( 'Compiling workshops.html ...' )
 
@@ -421,16 +442,21 @@ def write_file(args):
         for paper in paper_list[track]:
 
             authors = []
-            for i in range(5, len(paper), 3):
+            for i in range(5, len(paper)-1, 3):
                 if paper[i].strip() != "" and paper[i].strip() != "None":
                     authors.append(paper[i])
 
             temp = paper_info_stub.replace('[TITLE]', paper[2]).replace('[AUTHORS]', ', '.join(authors))
 
+            if paper[-1] != "None":
+                temp = temp.replace('[AWARD]', paper[-1])
+            else:
+                temp = temp.replace('toggle-', '')
+
             # save paper info
 
             authors = []
-            for i in range(5, len(paper), 3):
+            for i in range(5, len(paper)-1, 3):
                 if paper[i].strip() != "" and paper[i].strip() != "None":
 
                     if paper[i+1] == "None":
