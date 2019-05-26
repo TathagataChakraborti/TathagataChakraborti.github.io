@@ -449,7 +449,13 @@ def write_file(args):
 
     demos_list_stub = ""
     for demo in demos_list:
-        demos_list_stub += demo_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0])
+
+        if demos_list[demo][2].strip() == 'None':
+            demo_link =  ""
+        else:
+            demo_link = 'href="{}" target="_blank"'.format(demos_list[demo][2].strip())
+
+        demos_list_stub += demo_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0]).replace('[LINK]', demo_link)
 
     program_template = program_template.replace('[HEADER]', header_template)    
     program_template = program_template.replace('[NAVBAR]', navbar_template)    
