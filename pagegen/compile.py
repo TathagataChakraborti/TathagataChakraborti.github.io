@@ -55,8 +55,8 @@ with open('templates/header-template.html', 'r') as temp:
 with open('templates/navbar-template.html', 'r') as temp:
     navbar_template = temp.read()
 
-with open('templates/dates-template.html', 'r') as temp:
-    dates_template = temp.read()
+# with open('templates/dates-template.html', 'r') as temp:
+#     dates_template = temp.read()
 
 with open('templates/quicklinks-template.html', 'r') as temp:
     quicklinks_template = temp.read()
@@ -222,7 +222,7 @@ def write_file(args):
     index_template = index_template.replace('[HEADER]', header_template)    
     index_template = index_template.replace('[NAVBAR]', navbar_template)    
     index_template = index_template.replace('[BANNER]', banner_template)    
-    index_template = index_template.replace('[DATES]', dates_template)    
+    # index_template = index_template.replace('[DATES]', dates_template)    
     index_template = index_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write primary carousel section
@@ -296,7 +296,7 @@ def write_file(args):
     cfp_template = cfp_template.replace('[HEADER]', header_template)    
     cfp_template = cfp_template.replace('[NAVBAR]', navbar_template)    
     cfp_template = cfp_template.replace('[BANNER]', banner_template)    
-    cfp_template = cfp_template.replace('[DATES]', dates_template)    
+    # cfp_template = cfp_template.replace('[DATES]', dates_template)    
     cfp_template = cfp_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -314,7 +314,7 @@ def write_file(args):
     tutorial_template = tutorial_template.replace('[HEADER]', header_template)    
     tutorial_template = tutorial_template.replace('[NAVBAR]', navbar_template)    
     tutorial_template = tutorial_template.replace('[BANNER]', banner_template)    
-    tutorial_template = tutorial_template.replace('[DATES]', dates_template)    
+    # tutorial_template = tutorial_template.replace('[DATES]', dates_template)    
     tutorial_template = tutorial_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -332,7 +332,7 @@ def write_file(args):
     info_template = info_template.replace('[HEADER]', header_template)    
     info_template = info_template.replace('[NAVBAR]', navbar_template)    
     info_template = info_template.replace('[BANNER]', banner_template)    
-    info_template = info_template.replace('[DATES]', dates_template)    
+    # info_template = info_template.replace('[DATES]', dates_template)    
     info_template = info_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -350,7 +350,7 @@ def write_file(args):
     awards_template = awards_template.replace('[HEADER]', header_template)    
     awards_template = awards_template.replace('[NAVBAR]', navbar_template)    
     awards_template = awards_template.replace('[BANNER]', banner_template)    
-    awards_template = awards_template.replace('[DATES]', dates_template)    
+    # awards_template = awards_template.replace('[DATES]', dates_template)    
     awards_template = awards_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -368,7 +368,7 @@ def write_file(args):
     workshop_template = workshop_template.replace('[HEADER]', header_template)    
     workshop_template = workshop_template.replace('[NAVBAR]', navbar_template)    
     workshop_template = workshop_template.replace('[BANNER]', banner_template)    
-    workshop_template = workshop_template.replace('[DATES]', dates_template)    
+    # workshop_template = workshop_template.replace('[DATES]', dates_template)    
     workshop_template = workshop_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -412,7 +412,7 @@ def write_file(args):
     organizing_team_template = organizing_team_template.replace('[HEADER]', header_template)    
     organizing_team_template = organizing_team_template.replace('[NAVBAR]', navbar_template)    
     organizing_team_template = organizing_team_template.replace('[BANNER]', banner_template)    
-    organizing_team_template = organizing_team_template.replace('[DATES]', dates_template)    
+    # organizing_team_template = organizing_team_template.replace('[DATES]', dates_template)    
     organizing_team_template = organizing_team_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     organizing_team_template = organizing_team_template.replace('[TRACK-TABLES]', track_tables_stub)
@@ -486,7 +486,7 @@ def write_file(args):
     program_template = program_template.replace('[HEADER]', header_template)    
     program_template = program_template.replace('[NAVBAR]', navbar_template)    
     program_template = program_template.replace('[BANNER]', banner_template)    
-    program_template = program_template.replace('[DATES]', dates_template)    
+    # program_template = program_template.replace('[DATES]', dates_template)    
     program_template = program_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     program_template = program_template.replace('[PAPERS]', paper_list_stub)
