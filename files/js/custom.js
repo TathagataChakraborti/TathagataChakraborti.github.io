@@ -93,7 +93,7 @@ $(document).ready(function () {
         pause: 'hover'
     });
 
-    $('.carousel-primary').carousel(Math.floor(Math.random() * 6));
+    $('.carousel-primary').carousel(Math.floor(Math.random() * 13));
 
     $('.carousel-primary').on('slid.bs.carousel', function (ev) {
 
