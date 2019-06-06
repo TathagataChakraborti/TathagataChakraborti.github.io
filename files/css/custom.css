@@ -788,3 +788,18 @@ input:checked + .slider:before {
 .color-main {
     color: #ffe7e7;
 }
+
+.about-text {
+    border-left-style: groove;
+    border-left-width: thin;
+    border-left-color: gray;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.gap-text {
+    display: block;
+    margin-top: 10px;
+    content: " ";
+    line-height: 10px;
+}

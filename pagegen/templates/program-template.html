@@ -116,17 +116,76 @@
 
 <div class="list-group">
 
-<a class="list-group-item text-dark" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank">Christopher Beck
-<span class="text-muted"> &bull; U. Toronto</span>
+<a class="list-group-item text-dark" href="http://people.eecs.berkeley.edu/~anca/" target="_blank" style="background-color: #c7f1ff;">
+Anca Dragan
+<span class="text-muted"> &bull; U.C. Berkeley &middot; Friday 7/13</span>
 </a>
 
-<a class="list-group-item text-dark" href="http://people.eecs.berkeley.edu/~anca/" target="_blank">Anca Dragan
-<span class="text-muted"> &bull; U.C. Berkeley</span>
+<li class="list-group-item indent">
+<b>Planning for Human-Robot Interaction</b> 
+
+<p class="about-text">
+<b>Abstract:</b> 
+This talk will explore the role of planning in human-robot interaction: not just for generating the robot's actions, but for modeling and anticipating the human's own actions. Applications include self-driving cars, quadrotors navigating around people, and robot arms performing manipulation in shared spaces with humans.
+</p>
+
+<p class="about-text">
+<b>Bio:</b> 
+Anca Dragan is an Assistant Professor in EECS at UC Berkeley, where she runs the InterACT lab. Her goal is to enable robots to work with, around, and in support of people. She works on algorithms that enable robots to a) coordinate with people in shared spaces, and b) learn what people want them to do. Anca did her PhD in the Robotics Institute at Carnegie Mellon University on legible motion planning. At Berkeley, she helped found the Berkeley AI Research Lab, is a co-PI for the Center for Human-Compatible AI, and has been honored by the Sloan fellowship, the NSF CAREER award, the Okawa award, MIT's TR35, and an IJCAI Early Career Spotlight.
+</p>
+
+</li>
+
+<a class="list-group-item text-dark" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank" style="background-color: #c7f1ff;">
+Christopher Beck
+<span class="text-muted"> &bull; U. Toronto &middot; Saturday 7/14</span>
 </a>
 
-<a class="list-group-item text-dark" href="https://uk.linkedin.com/in/derek-long-306b2890" target="_blank">Derek Long
-<span class="text-muted"> &bull; Schlumberger &amp; Kings College London</span>
+<li class="list-group-item indent">
+<b>Local Optima in Planning and Neural Sequence Decoding</b> 
+
+<p class="about-text">
+<b>Abstract:</b> 
+In local search, a local optima is a region in the solution space that does not contain an optimal solution and where all paths to an optimal solution must traverse states with higher cost. There has been extensive work in the meta-heuristic community in analyzing and escaping local optima. In this talk, we show how local optima in greedy best-first search for planning and in beam search for neural sequence decoding can be used to analyze and reduce some pathological search behavior.
+<br class="gap-text">
+In planning, building on work in constraint programming and SAT, we demonstrate that search can exhibit heavy-tailed behavior depending on the level of constrainedness of a problem. This behavior can be traced to an exponential distribution in the depth of local optima encountered during the search. Heavy tails can be eliminated and search performance can be improved, as in CP and SAT, by the periodic restarting of the search, even in already randomized variants of GBFS.
+A common approach in neural sequence decoding tasks (e.g., machine translation and image captioning) is to use beam search based on a conditional probability estimate provided by a trained neural network. However, researchers have observed that while a wider beam results in a sequence with higher estimated probability, the quality of those sequences are worse than when a narrower beam is used. Based on extensive experiments, we hypothesize that the reason for this behavior is that early, large search discrepancies lead the search into a local optima from which it is unable to escape. We evaluate this hypothesis through the restriction of large early discrepancies and show that the beam degradation phenomenon is eliminated.
+<br class="gap-text">
+This is joint work with PhD student, Eldan Cohen.
+</p>
+
+<p class="about-text">
+<b>Bio:</b> 
+J. Christopher Beck is a Professor of Mechanical & Industrial Engineering at the University of Toronto with MSc and PhD degrees from the Department of Computer Science, University of Toronto. Before re-joining U of T, Chris spent three years at ILOG, now a part of IBM, and two years at the Cork Constraint Computation Centre. Chris has published over 130 papers in international journals and conferences on topics including scheduling, constraint programming, hybrid optimization techniques, mixed integer programming, AI planning, reasoning under uncertainty, and queueing theory. He has received four conference paper awards and was awarded the Outstanding Program Committee Member for AAAI2010. Chris has served as the President of the Executive Council for the International Conference on Automated Planning and Scheduling and held editorial responsibilities at the Journal of Artificial Intelligence Research, Constraints, the Journal of Scheduling, and the Knowledge Engineering Review. He has been the program chair or co-chair of the International Conference on Automated Planning and Scheduling, the International Conference on Constraint Programming, Artificial Intelligence, and Operations Research, and the International Conference on the Principles and Practice of Constraint Programming.
+</p>
+
+</li>
+
+<a class="list-group-item text-dark" href="https://uk.linkedin.com/in/derek-long-306b2890" target="_blank" style="background-color: #c7f1ff;">
+Derek Long
+<span class="text-muted"> &bull; Schlumberger &amp; Kings College London &middot; Sunday 7/15</span>
 </a>
+
+<li class="list-group-item indent">
+<b>Drilling Down: Planning in the Field</b> 
+
+<p class="about-text">
+<b>Abstract:</b> 
+AI is in the news! Most of the excitement tends to be focused on Machine Learning, but, hidden away in darker corners, other branches of AI are finding their opportunities to play an increasingly important role. Planning has been lurking in the back catalogue of AI for more than half a century, but advances in robotics, control, sensing and the field itself, have all contributed to make it more and more relevant to current challenges. 
+<br class="gap-text">
+In this talk, I will shed some light on the roles that planning is playing in work at Schlumberger, a drilling technology services company, where we are using it to help control some very big robots (a few kilometers from top to toe!) as well as in aiding in performing other tasks. A feature of this work that might surprise some is that we have conducted it using PDDL and PDDL planners. Furthermore, we have found that PDDL modeling is an accessible skill for a wide range of engineers, making planning available to a diverse community of users within the company. 
+<br class="gap-text">
+I will talk about our experiences with PDDL in fielded projects as well as the ways in which planning is affecting how jobs are performed. I will also raise some of the challenges to which we seek answers as we push forward with the applications of planning.
+</p>
+
+<p class="about-text">
+<b>Bio:</b> 
+Derek Long joined Schlumberger, a multi-national drilling technology services company, in 2016, after a preparation involving more than 50 years in full time education. During that period, he spent some time at several universities in the UK, including Oxford University, University College London, University of Durham, Strathclyde University and, most recently, King's College London, where he remains a part-time professor (as, most will attest, is the case with many professors). 
+<br class="gap-text">
+Together with Maria Fox, in particular, and a team of other researchers, he has made several contributions to planning, including definitions of PDDL2.1 and PDDL+ that added temporal structure and continuous processes to the community's favourite modeling language, a syntax and semantics for PDDL3, that added trajectory constraints to make sure planning was not getting too easy for everyone, and a variety of planners, including temporal planners such as LPGP, Crikey, TSGP, COLIN and POPF, and contributions to DiNo and SMT-Plan. He has also worked (always with the benefit of the insight of others) on analysis of planning domains, symmetry in planning, Planning Modulo Theories, testing robustness of plans and plan execution. It remains a constant source of surprise and delight to him to find that the problems he meets on a daily basis so often resemble those he spent time thinking about in the academic world. And if they don't, application of a little ingenuity often makes them seem to fit better.
+</p>
+
+</li>
 
 </div>
 
