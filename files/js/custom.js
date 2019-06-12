@@ -17,6 +17,12 @@ $(document).ready(function () {
         $("html, body").animate({scrollTop:$(window.location.hash).offset().top-50 }, 500);
     }
 
+    // method :: focus on scroll
+    $('.navbar-dropdown-item').click( function() {
+        console.log($.attr(this, 'href'))
+        $("html, body").animate({scrollTop:$("#"+$.attr(this, 'href').split("#")[1]).offset().top-50 }, 500);
+    })
+
     // method :: workshop reel on openreview area
     function show_ws_name() {
 
@@ -25,9 +31,7 @@ $(document).ready(function () {
             $('.ws-roll-content').fadeOut( function() { 
                 $(this).text( ws_names[Math.floor(Math.random()*ws_names.length)] ).fadeIn('slow');
             });
-
         }
-
     }
 
     var ws_names = $('.ws-roll').parent().find('.dropdown-item').map( function() { return $(this).text(); } );
