@@ -145,7 +145,7 @@ a:hover {
     margin: 0px;
 }
 
-.dropdown-menu > * {
+.dropdown-menu.openrev-link > * {
     color: white;
 }
 
@@ -802,4 +802,18 @@ input:checked + .slider:before {
     margin-top: 10px;
     content: " ";
     line-height: 10px;
+}
+
+.table-program {
+    border-collapse: inherit;
+}
+
+.navbar-dropdown-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-dropdown-item.active, .navbar-dropdown-item:hover {
+    background-color: #2d2824;
+    color: white;
 }

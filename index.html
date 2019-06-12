@@ -93,14 +93,17 @@
             <li class="nav-item">
                 <a class="nav-link spy-enabled" href="calls">Calls</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link spy-enabled" href="program">Program</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link spy-enabled" href="workshops">Workshops</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link spy-enabled" href="tutorials">Tutorials</a>
+            <li class="dropdown nav-item">
+                <a class="nav-link dropdown-toggle" href="program" role="button" data-toggle="dropdown">Program</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item navbar-dropdown-item" href="program">Program Overview</a>
+                    <!-- <a class="dropdown-item navbar-dropdown-item" href="program-details">Program Details</a> -->
+                    <a class="dropdown-item navbar-dropdown-item" href="invited-talks">Invited Talks</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item navbar-dropdown-item" href="workshops">Workshops</a>
+                    <a class="dropdown-item navbar-dropdown-item" href="tutorials">Tutorials</a>
+                    <a class="dropdown-item navbar-dropdown-item" href="demos">Demos</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link spy-enabled" href="info">Attending</a>
@@ -145,10 +148,7 @@
                         <div class="col-12 pull-over">
                             <div class="float-right d-md-none pull-right">
                                 <div class="btn-group-vertical">
-<!--                                     <button type="button" class="btn btn-dark btn-sm offcanvas-toggle-button caret" data-toggle="offcanvas">
-                                        <i class="fas fa-caret-left"></i>
-                                    </button>
- -->                                    <button type="button" class="btn btn-dark btn-sm offcanvas-toggle-button" data-toggle="offcanvas">
+                                    <button type="button" class="btn btn-dark btn-sm offcanvas-toggle-button" data-toggle="offcanvas">
                                         <strong>&nbsp;ICAPS</strong> in action&nbsp;<i class="fas fa-caret-up"></i>
                                     </button>
                                 </div>
@@ -180,8 +180,9 @@
                                     </table>
                                     <table>
                                         <tr><td class="indent mb-3" style="padding-left: 10px;">
-                                            Invited Speakers &middot; <a class="text-info" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank">Christopher Beck</a>
+                                            Invited Speakers 
                                             &middot; <a class="text-info" href="http://people.eecs.berkeley.edu/~anca/" target="_blank">Anca Dragan</a>
+                                            &middot; <a class="text-info" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank">Christopher Beck</a>
                                             &middot; <a class="text-info" href="https://uk.linkedin.com/in/derek-long-306b2890" target="_blank">Derek Long</a>
                                         </td></tr>
                                     </table>
@@ -208,7 +209,7 @@
             <button type="button" class="btn btn-info ws-roll btn-block" data-toggle="dropdown">
                 <span class="ws-roll-content"></span>
             </button>
-            <div class="dropdown-menu bg-info">
+            <div class="dropdown-menu openrev-link bg-info">
                 <a role="button" href="https://openreview.net/group?id=icaps-conference.org/ICAPS/2019/Workshop/HSDIP" target="_blank" class="dropdown-item bg-info list-group-item">HSDIP</a>
                 <a role="button" href="https://openreview.net/group?id=icaps-conference.org/ICAPS/2019/Workshop/XAIP" target="_blank" class="dropdown-item bg-info list-group-item">XAIP</a>
                 <a role="button" href="https://openreview.net/group?id=icaps-conference.org/ICAPS/2019/Workshop/KEPS" target="_blank" class="dropdown-item bg-info list-group-item">KEPS</a>
@@ -223,13 +224,15 @@
     <a href="files/images/icaps2019.png" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font"> 
         Download the ICAPS 2019 Poster
     </a>
-    <a href="program.html#program-overview" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
-    Program <span class="badge badge-warning">New</span></a>
-    <a href="program.html#invited" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
+    <a href="program" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
+    Program</a>
+    <a href="program.html#program-overview" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
+    Program Overview <span class="badge badge-warning">New</span></a>
+    <a href="invited-talks" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
     Invited Talks</a>
-    <a href="program.html#papers" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
+    <a href="accepted-papers" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
     Accepted Papers</a>
-    <a href="program.html#demos" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
+    <a href="demos" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled indent">
     Demos</a>
     <a href="workshops" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center go-big-for-current-font spy-enabled">
     Workshops</a>
@@ -281,8 +284,9 @@
                                     </table>
                                     <table>
                                         <tr><td class="indent mb-3" style="padding-left: 10px;">
-                                            Invited Speakers &middot; <a class="text-info" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank">Christopher Beck</a>
+                                            Invited Speakers 
                                             &middot; <a class="text-info" href="http://people.eecs.berkeley.edu/~anca/" target="_blank">Anca Dragan</a>
+                                            &middot; <a class="text-info" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank">Christopher Beck</a>
                                             &middot; <a class="text-info" href="https://uk.linkedin.com/in/derek-long-306b2890" target="_blank">Derek Long</a>
                                         </td></tr>
                                     </table>

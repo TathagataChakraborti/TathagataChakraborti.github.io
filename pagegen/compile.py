@@ -4,11 +4,7 @@
 ------
 Auto-compile Webpages for ICAPS 2019
 ------
-Author :: Tathagata Chakraborti
-Date   :: 04/17/2019
-------
 '''
-
 
 '''
 packages
@@ -16,7 +12,6 @@ packages
 
 import openpyxl as xl
 import argparse, sys, random, copy
-
 
 '''
 global variables 
@@ -55,35 +50,14 @@ with open('templates/header-template.html', 'r') as temp:
 with open('templates/navbar-template.html', 'r') as temp:
     navbar_template = temp.read()
 
-# with open('templates/dates-template.html', 'r') as temp:
-#     dates_template = temp.read()
-
 with open('templates/quicklinks-template.html', 'r') as temp:
     quicklinks_template = temp.read()
-
-with open('templates/program-template.html', 'r') as temp:
-    program_template = temp.read()
-
-with open('templates/track-paper-single.html', 'r') as temp:
-    track_paper_single_template = temp.read()
 
 with open('templates/organizing-team-template.html', 'r') as temp:
     organizing_team_template = temp.read()
 
-with open('templates/track-table.html', 'r') as temp:
-    track_table_template = temp.read()
-
-with open('templates/track-table-single.html', 'r') as temp:
-    track_table_single_template = temp.read()
-
 with open('templates/banner-template.html', 'r') as temp:
     banner_template = temp.read()
-
-with open('templates/paper-info-template.html', 'r') as temp:
-    paper_info_stub = temp.read()
-
-with open('templates/demo-info-template.html', 'r') as temp:
-    demo_info_stub = temp.read()
 
 with open('templates/pc-info-template.html', 'r') as temp:
     track_table_td = temp.read()
@@ -94,6 +68,39 @@ with open('templates/privacy-policy-template.html', 'r') as temp:
 with open('templates/terms-of-use-template.html', 'r') as temp:
     terms_of_use_template = temp.read()
 
+'''
+program templates
+'''
+
+with open('templates/program-template.html', 'r') as temp:
+    program_template = temp.read()
+
+with open('templates/program-details-template.html', 'r') as temp:
+    program_details_template = temp.read()
+
+with open('templates/accepted-papers-template.html', 'r') as temp:
+    accepted_papers_template = temp.read()
+
+with open('templates/demo-template.html', 'r') as temp:
+    demo_template = temp.read()
+
+with open('templates/invited-talks-template.html', 'r') as temp:
+    invited_talks_template = temp.read()
+
+with open('templates/track-paper-single.html', 'r') as temp:
+    track_paper_single_template = temp.read()
+
+with open('templates/track-table.html', 'r') as temp:
+    track_table_template = temp.read()
+
+with open('templates/track-table-single.html', 'r') as temp:
+    track_table_single_template = temp.read()
+
+with open('templates/paper-info-template.html', 'r') as temp:
+    paper_info_stub = temp.read()
+
+with open('templates/demo-info-template.html', 'r') as temp:
+    demo_info_stub = temp.read()
 
 '''
 carousel templates
@@ -207,7 +214,8 @@ method :: write index.html
 '''
 def write_file(args):
 
-    global index_template, cfp_template, workshop_template, organizing_team_template, program_template, tutorial_template, info_template, demo_info_stub, privacy_policy_template, terms_of_use_template, awards_template
+    global index_template, cfp_template, workshop_template, organizing_team_template, tutorial_template, info_template, privacy_policy_template, terms_of_use_template, awards_template
+    global program_template, demo_info_stub, program_details_template, demo_template, invited_talks_template, accepted_papers_template
 
     # cache data
     print( 'Reading data...' )
@@ -222,7 +230,6 @@ def write_file(args):
     index_template = index_template.replace('[HEADER]', header_template)    
     index_template = index_template.replace('[NAVBAR]', navbar_template)    
     index_template = index_template.replace('[BANNER]', banner_template)    
-    # index_template = index_template.replace('[DATES]', dates_template)    
     index_template = index_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write primary carousel section
@@ -296,7 +303,6 @@ def write_file(args):
     cfp_template = cfp_template.replace('[HEADER]', header_template)    
     cfp_template = cfp_template.replace('[NAVBAR]', navbar_template)    
     cfp_template = cfp_template.replace('[BANNER]', banner_template)    
-    # cfp_template = cfp_template.replace('[DATES]', dates_template)    
     cfp_template = cfp_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -314,7 +320,6 @@ def write_file(args):
     tutorial_template = tutorial_template.replace('[HEADER]', header_template)    
     tutorial_template = tutorial_template.replace('[NAVBAR]', navbar_template)    
     tutorial_template = tutorial_template.replace('[BANNER]', banner_template)    
-    # tutorial_template = tutorial_template.replace('[DATES]', dates_template)    
     tutorial_template = tutorial_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -332,7 +337,6 @@ def write_file(args):
     info_template = info_template.replace('[HEADER]', header_template)    
     info_template = info_template.replace('[NAVBAR]', navbar_template)    
     info_template = info_template.replace('[BANNER]', banner_template)    
-    # info_template = info_template.replace('[DATES]', dates_template)    
     info_template = info_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -350,7 +354,6 @@ def write_file(args):
     awards_template = awards_template.replace('[HEADER]', header_template)    
     awards_template = awards_template.replace('[NAVBAR]', navbar_template)    
     awards_template = awards_template.replace('[BANNER]', banner_template)    
-    # awards_template = awards_template.replace('[DATES]', dates_template)    
     awards_template = awards_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -368,7 +371,6 @@ def write_file(args):
     workshop_template = workshop_template.replace('[HEADER]', header_template)    
     workshop_template = workshop_template.replace('[NAVBAR]', navbar_template)    
     workshop_template = workshop_template.replace('[BANNER]', banner_template)    
-    # workshop_template = workshop_template.replace('[DATES]', dates_template)    
     workshop_template = workshop_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     # write to output
@@ -412,7 +414,6 @@ def write_file(args):
     organizing_team_template = organizing_team_template.replace('[HEADER]', header_template)    
     organizing_team_template = organizing_team_template.replace('[NAVBAR]', navbar_template)    
     organizing_team_template = organizing_team_template.replace('[BANNER]', banner_template)    
-    # organizing_team_template = organizing_team_template.replace('[DATES]', dates_template)    
     organizing_team_template = organizing_team_template.replace('[QUICKLINKS]', quicklinks_template)    
 
     organizing_team_template = organizing_team_template.replace('[TRACK-TABLES]', track_tables_stub)
@@ -425,6 +426,40 @@ def write_file(args):
 
     # write program file
     print( 'Compiling program.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    program_template = program_template.replace('[HEADER]', header_template)    
+    program_template = program_template.replace('[NAVBAR]', navbar_template)    
+    program_template = program_template.replace('[BANNER]', banner_template)    
+    program_template = program_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    # write to output
+    print( 'Writing to file (program.html) ...' )
+
+    with open('../program.html', 'wb') as output_file:
+        output_file.write(program_template.encode("utf-8"))
+
+    # write program file
+    print( 'Compiling invited-talks.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    invited_talks_template = invited_talks_template.replace('[HEADER]', header_template)    
+    invited_talks_template = invited_talks_template.replace('[NAVBAR]', navbar_template)    
+    invited_talks_template = invited_talks_template.replace('[BANNER]', banner_template)    
+    invited_talks_template = invited_talks_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    # write to output
+    print( 'Writing to file (invited-talks.html) ...' )
+
+    with open('../invited-talks.html', 'wb') as output_file:
+        output_file.write(program_template.encode("utf-8"))
+
+    # write program file
+    print( 'Compiling accepted-papers.html ...' )
 
     # writing templates
     print( 'Writing templates ...' )
@@ -473,6 +508,25 @@ def write_file(args):
 
         paper_list_stub += "\n\n" + temp_track_paper_single_template.replace('[ENTRIES]', temp_papers_list_stub)
 
+    accepted_papers_template = accepted_papers_template.replace('[HEADER]', header_template)    
+    accepted_papers_template = accepted_papers_template.replace('[NAVBAR]', navbar_template)    
+    accepted_papers_template = accepted_papers_template.replace('[BANNER]', banner_template)    
+    accepted_papers_template = accepted_papers_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    accepted_papers_template = accepted_papers_template.replace('[PAPERS]', paper_list_stub)
+
+    # write to output
+    print( 'Writing to file (accepted-papers.html) ...' )
+
+    with open('../accepted-papers.html', 'wb') as output_file:
+        output_file.write(accepted_papers_template.encode("utf-8"))
+
+    # write program file
+    print( 'Compiling demos.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
     demos_list_stub = ""
     for demo in demos_list:
 
@@ -483,20 +537,18 @@ def write_file(args):
 
         demos_list_stub += demo_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0]).replace('[LINK]', demo_link)
 
-    program_template = program_template.replace('[HEADER]', header_template)    
-    program_template = program_template.replace('[NAVBAR]', navbar_template)    
-    program_template = program_template.replace('[BANNER]', banner_template)    
-    # program_template = program_template.replace('[DATES]', dates_template)    
-    program_template = program_template.replace('[QUICKLINKS]', quicklinks_template)    
+    demo_template = demo_template.replace('[HEADER]', header_template)    
+    demo_template = demo_template.replace('[NAVBAR]', navbar_template)    
+    demo_template = demo_template.replace('[BANNER]', banner_template)    
+    demo_template = demo_template.replace('[QUICKLINKS]', quicklinks_template)    
 
-    program_template = program_template.replace('[PAPERS]', paper_list_stub)
-    program_template = program_template.replace('[DEMOS]', demos_list_stub)
+    demo_template = demo_template.replace('[DEMOS]', demos_list_stub)
 
     # write to output
-    print( 'Writing to file (program.html) ...' )
+    print( 'Writing to file (demos.html) ...' )
 
-    with open('../program.html', 'wb') as output_file:
-        output_file.write(program_template.encode("utf-8"))
+    with open('../demos.html', 'wb') as output_file:
+        output_file.write(demo_template.encode("utf-8"))
 
     # write privacy policy file
     print( 'Compiling privacy-policy.html ...' )
