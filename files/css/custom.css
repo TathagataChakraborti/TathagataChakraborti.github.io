@@ -813,6 +813,11 @@ input:checked + .slider:before {
     padding-bottom: 10px;
 }
 
+.navbar-dropdown-item {
+    background-color: #2d2824;
+    color: rgba(255,255,255,0.5);
+}
+
 .navbar-dropdown-item.active, .navbar-dropdown-item:hover {
     background-color: #2d2824;
     color: white;
