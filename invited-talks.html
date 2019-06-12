@@ -212,111 +212,91 @@
 
                                 <div class="col-12">
 
-<div class="jumbotron info-card info-card-page-title" id="program-overview">
+<div class="jumbotron info-card info-card-page-title" id="invited">
 <ol class="breadcrumb breadcrumb-header org-team-header">
 <li class="breadcrumb-item breadcrumb-item-primary">
-<h5 class="card-title">Program Overview</h5>
-<table class="info-table">
-    <tbody class="text-justify go-big-for-current-font">
-        <tr>
-            <td>
-                <a href="files/pdfs/icaps19_program.pdf" target="_blank" class="profile">
-                    <span class="badge badge-secondary">Download details</span>
-                    Click here to download program details.
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<h5 class="card-title">Invited Talks</h5>
 </li>
 </ol>
-<ol class="breadcrumb breadcrumb-header" style="margin:0;">
-<li class="breadcrumb-item breadcrumb-item-primary">
-<span class="text-muted" style="font-weight: normal;">
-<i class="fas fa-circle text-warning"></i> DC &nbsp;
-<i class="fas fa-circle text-info"></i> Tutorials &nbsp;
-<i class="fas fa-circle text-success"></i> Workshops &nbsp;
-<i class="fas fa-circle text-danger"></i> Conference
-</span>
+
+
+<div class="list-group">
+
+<a class="list-group-item text-dark" href="http://people.eecs.berkeley.edu/~anca/" target="_blank" style="background-color: #fff3c7;">
+<span class="profile"> Anca Dragan</span>
+<span class="text-muted"> &bull; U.C. Berkeley &middot; Friday 7/13</span>
+</a>
+
+<li class="list-group-item indent">
+<b>Planning for Human-Robot Interaction</b> 
+
+<p class="about-text">
+<b>Abstract:</b> 
+This talk will explore the role of planning in human-robot interaction: not just for generating the robot's actions, but for modeling and anticipating the human's own actions. Applications include self-driving cars, quadrotors navigating around people, and robot arms performing manipulation in shared spaces with humans.
+</p>
+
+<p class="about-text">
+<b>Bio:</b> 
+Anca Dragan is an Assistant Professor in EECS at UC Berkeley, where she runs the InterACT lab. Her goal is to enable robots to work with, around, and in support of people. She works on algorithms that enable robots to a) coordinate with people in shared spaces, and b) learn what people want them to do. Anca did her PhD in the Robotics Institute at Carnegie Mellon University on legible motion planning. At Berkeley, she helped found the Berkeley AI Research Lab, is a co-PI for the Center for Human-Compatible AI, and has been honored by the Sloan fellowship, the NSF CAREER award, the Okawa award, MIT's TR35, and an IJCAI Early Career Spotlight.
+</p>
+
+</li>
+
+<a class="list-group-item text-dark" href="https://tidel.mie.utoronto.ca/beck.php" target="_blank" style="background-color: #fff3c7;">
+<span class="profile"> J. Christopher Beck</span>
+<span class="text-muted"> &bull; U. Toronto &middot; Saturday 7/14</span>
+</a>
+
+<li class="list-group-item indent">
+<b>Local Optima in Planning and Neural Sequence Decoding</b> 
+
+<p class="about-text">
+<b>Abstract:</b> 
+In local search, a local optima is a region in the solution space that does not contain an optimal solution and where all paths to an optimal solution must traverse states with higher cost. There has been extensive work in the meta-heuristic community in analyzing and escaping local optima. In this talk, we show how local optima in greedy best-first search for planning and in beam search for neural sequence decoding can be used to analyze and reduce some pathological search behavior.
 <br class="gap-text">
-<span class="text-muted"><i class="fas fa-clock text-danger"></i> Note that the programs of individual workshops and tutorials may differ from the following schedule.</span>
+In planning, building on work in constraint programming and SAT, we demonstrate that search can exhibit heavy-tailed behavior depending on the level of constrainedness of a problem. This behavior can be traced to an exponential distribution in the depth of local optima encountered during the search. Heavy tails can be eliminated and search performance can be improved, as in CP and SAT, by the periodic restarting of the search, even in already randomized variants of GBFS.
+A common approach in neural sequence decoding tasks (e.g., machine translation and image captioning) is to use beam search based on a conditional probability estimate provided by a trained neural network. However, researchers have observed that while a wider beam results in a sequence with higher estimated probability, the quality of those sequences are worse than when a narrower beam is used. Based on extensive experiments, we hypothesize that the reason for this behavior is that early, large search discrepancies lead the search into a local optima from which it is unable to escape. We evaluate this hypothesis through the restriction of large early discrepancies and show that the beam degradation phenomenon is eliminated.
 <br class="gap-text">
+This is joint work with PhD student, Eldan Cohen.
+</p>
+
+<p class="about-text">
+<b>Bio:</b> 
+J. Christopher Beck is a Professor of Mechanical & Industrial Engineering at the University of Toronto with MSc and PhD degrees from the Department of Computer Science, University of Toronto. Before re-joining U of T, Chris spent three years at ILOG, now a part of IBM, and two years at the Cork Constraint Computation Centre. Chris has published over 130 papers in international journals and conferences on topics including scheduling, constraint programming, hybrid optimization techniques, mixed integer programming, AI planning, reasoning under uncertainty, and queueing theory. He has received four conference paper awards and was awarded the Outstanding Program Committee Member for AAAI2010. Chris has served as the President of the Executive Council for the International Conference on Automated Planning and Scheduling and held editorial responsibilities at the Journal of Artificial Intelligence Research, Constraints, the Journal of Scheduling, and the Knowledge Engineering Review. He has been the program chair or co-chair of the International Conference on Automated Planning and Scheduling, the International Conference on Constraint Programming, Artificial Intelligence, and Operations Research, and the International Conference on the Principles and Practice of Constraint Programming.
+</p>
+
 </li>
-</ol>
 
-<table class="table table-striped table-responsive table-program" style="margin-bottom: 0;">
-    <tbody class="go-big-for-current-font" style="text-align: center;">
+<a class="list-group-item text-dark" href="https://uk.linkedin.com/in/derek-long-306b2890" target="_blank" style="background-color: #fff3c7;">
+<span class="profile"> Derek Long</span>
+<span class="text-muted"> &bull; Schlumberger &amp; Kings College London &middot; Sunday 7/15</span>
+</a>
 
-        <tr><td><b>July 10</b></td><td class="bg-consortium text-warning" colspan="7">Doctoral Consortium</td></tr>
+<li class="list-group-item indent">
+<b>Drilling Down: Planning in the Field</b> 
 
-        <tr><td rowspan="4"><b>July 11</b></td><td><b>AM-1</b><br><span class="text-muted">8:00am - 10:30am</span></td><td class="bg-tutorials" rowspan="2"><a class="text-info" href="tutorials.html#tutorial-7" target="_blank">Goal Recognition Design</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/SPARK" target="_blank">SPARK</a><br>+<br><span class="text-info"><a class="text-info" href="tutorials.html#tutorial-2" target="_blank">(Tutorial) Planning and Scheduling Approaches for Urban Traffic Control</a></span></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/PlanRob" target="_blank">PlanRob</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/Hierarchical-Planning" target="_blank">Hierarchical Planning</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/HSDIP" target="_blank">HSDIP</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/KEPS" target="_blank">KEPS</a></td></tr>
-        <tr><td><b>AM-2</b><br><span class="text-muted">11:00am - 12:30pm</span></td></tr>
-        <tr><td><b>PM-1</b><br><span class="text-muted">2:00pm - 3:30pm</span></td><td class="bg-tutorials text-info"><a class="text-info" href="tutorials.html#tutorial-6" target="_blank">Integrated Task and Motion Planning</a></td></tr>
-        <tr><td><b>PM-2</b><br><span class="text-muted">4:00pm - 6:00pm</span></td><td class="bg-tutorials text-info"><a class="text-info" href="tutorials.html#tutorial-5" target="_blank">From Teaching the PDDL Novice to Empowering the Planning Solution Integrator</a></td></tr>
+<p class="about-text">
+<b>Abstract:</b> 
+AI is in the news! Most of the excitement tends to be focused on Machine Learning, but, hidden away in darker corners, other branches of AI are finding their opportunities to play an increasingly important role. Planning has been lurking in the back catalogue of AI for more than half a century, but advances in robotics, control, sensing and the field itself, have all contributed to make it more and more relevant to current challenges. 
+<br class="gap-text">
+In this talk, I will shed some light on the roles that planning is playing in work at Schlumberger, a drilling technology services company, where we are using it to help control some very big robots (a few kilometers from top to toe!) as well as in aiding in performing other tasks. A feature of this work that might surprise some is that we have conducted it using PDDL and PDDL planners. Furthermore, we have found that PDDL modeling is an accessible skill for a wide range of engineers, making planning available to a diverse community of users within the company. 
+<br class="gap-text">
+I will talk about our experiences with PDDL in fielded projects as well as the ways in which planning is affecting how jobs are performed. I will also raise some of the challenges to which we seek answers as we push forward with the applications of planning.
+</p>
 
-        <tr><td rowspan="4"><b>July 12</b></td><td><b>AM-1</b><br><span class="text-muted">8:00am - 10:30am</span></td><td class="bg-tutorials text-info" rowspan="2"><a class="text-info" href="tutorials.html#tutorial-4" target="_blank">AI Planning for Robotics with ROSPlan</a></td><td class="bg-tutorials text-info" rowspan="2"><a class="text-info" href="tutorials.html#tutorial-8" target="_blank">Deep Reinforcement Learning with Applications in Transportation</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/XAIP" target="_blank">XAIP</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/Actions" target="_blank">Actions</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/WIPC" target="_blank">WIPC</a></td><td class="bg-workshops text-success" rowspan="4"><a class="text-success" href="https://icaps19.icaps-conference.org/workshops/IntEx" target="_blank">IntEx</a></td></tr>
-        <tr><td><b>AM-2</b><br><span class="text-muted">11:00am - 12:30pm</span></td></tr>
-        <tr><td><b>PM-1</b><br><span class="text-muted">2:00pm - 3:30pm</span></td><td class="bg-tutorials text-info" rowspan="2"><a class="text-info" href="tutorials.html#tutorial-1" target="_blank">Multi-agent Path Finding:<br>Models, Solvers, and Systems</a></td><td class="bg-tutorials text-info" rowspan="2"><a class="text-info" href="tutorials.html#tutorial-3" target="_blank">Temporal Reasoning</a></td></tr>
-        <tr><td><b>PM-2</b><br><span class="text-muted">4:00pm - 6:00pm</span></td></tr>
-        <tr><td colspan="2" class="bg-main text-danger"><b>July 13-15</b></td><td class="bg-main text-danger text-left" colspan="6"><b>Main Conference</b></td></tr>
-    </tbody>
-</table>
+<p class="about-text">
+<b>Bio:</b> 
+Derek Long joined Schlumberger, a multi-national drilling technology services company, in 2016, after a preparation involving more than 50 years in full time education. During that period, he spent some time at several universities in the UK, including Oxford University, University College London, University of Durham, Strathclyde University and, most recently, King's College London, where he remains a part-time professor (as, most will attest, is the case with many professors). 
+<br class="gap-text">
+Together with Maria Fox, in particular, and a team of other researchers, he has made several contributions to planning, including definitions of PDDL2.1 and PDDL+ that added temporal structure and continuous processes to the community's favourite modeling language, a syntax and semantics for PDDL3, that added trajectory constraints to make sure planning was not getting too easy for everyone, and a variety of planners, including temporal planners such as LPGP, Crikey, TSGP, COLIN and POPF, and contributions to DiNo and SMT-Plan. He has also worked (always with the benefit of the insight of others) on analysis of planning domains, symmetry in planning, Planning Modulo Theories, testing robustness of plans and plan execution. It remains a constant source of surprise and delight to him to find that the problems he meets on a daily basis so often resemble those he spent time thinking about in the academic world. And if they don't, application of a little ingenuity often makes them seem to fit better.
+</p>
 
-<ol class="breadcrumb breadcrumb-header" style="margin:0;">
-<li class="breadcrumb-item breadcrumb-item-primary">
-<span class="text-muted" style="font-weight: normal;">
-<i class="fas fa-circle text-warning"></i> Invited Talks &nbsp;
-<i class="fas fa-circle text-info"></i> <i class="fas fa-circle text-success"></i> Sessions &nbsp;
-<i class="fas fa-circle text-danger"></i> Events
-</span>
 </li>
-</ol>
-
-<table class="table table-striped table-responsive table-program">
-    <tbody class="go-big-for-current-font" style="text-align: center;">
-
-        <tr><td rowspan="10" class="bg-main text-danger">July 13</td><td>8:30-9:30</td><td class="bg-consortium profile" colspan="6">Invited Talk: Anca Dragan</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Classical Planning</td><td class="bg-tutorials text-info" colspan="3">Planetary Exploration</td></tr>
-        <tr><td>10:40-10:40</td><td colspan="6" class="text-muted">Coffee Break</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Probabilistic Planning I</td><td class="bg-tutorials text-info" colspan="3">LTL &amp; Temporal Planning</td></tr>
-        <tr><td>12:30-14:00</td><td colspan="6" class="text-muted">Lunch Break</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Search</td><td class="bg-tutorials text-info" colspan="3">Reinforcement Learning</td></tr>
-        <tr><td>15:30-15:50</td><td colspan="6" class="text-muted">Coffee Break</td></tr>
-        <tr><td>15:50-16:30</td><td class="bg-workshops text-success" rowspan="2" colspan="3">Invited Industry Session</td><td class="bg-tutorials text-info" colspan="3">Hybrid Planning &amp; Algorithm Selection</td></tr>
-        <tr><td>16:40-17:40</td><td class="bg-tutorials text-info" colspan="3">Complexity</td></tr>
-        <tr><td>18:00-20:00</td><td colspan="6" class="bg-main text-danger">Poster &amp; Demo session (drinks & appetizers provided)</td></tr>
-
-        <tr><td colspan="8"></td></tr>
-
-        <tr><td rowspan="10" class="bg-main text-danger">July 14</td><td>8:30-9:30</td><td class="bg-consortium profile" colspan="6">Invited talk: J. Christopher Beck</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Multi-Agent Planning</td><td class="bg-tutorials text-info" colspan="3">Knowledge Engineering and Execution</td></tr>
-        <tr><td>10:40-10:40</td><td colspan="6" class="text-muted">Coffee Break</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Optimal &amp; Oversubscription Planning</td><td class="bg-tutorials text-info" colspan="3">Scheduling under Uncertainty</td></tr>
-        <tr><td>12:30-14:00</td><td colspan="6" class="text-muted">Lunch Break</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Recognition I</td><td class="bg-tutorials text-info" colspan="3">Applications I</td></tr>
-        <tr><td>15:30-15:50</td><td colspan="6" class="text-muted">Coffee Break</td></tr>
-        <tr><td>15:50-16:30</td><td class="bg-workshops text-success" colspan="3">Recognition II</td><td class="bg-tutorials text-info" colspan="3">Robotics I</td></tr>
-        <tr><td>16:40-<span class="text-danger">18:30</span></td><td class="bg-main text-danger" colspan="6">Awards + Community meeting</td></tr>
-        <tr><td>19:00</td><td colspan="6" class="bg-main text-danger">Banquet</td></tr>
-
-        <tr><td colspan="8"></td></tr>
-
-        <tr><td rowspan="9" class="bg-main text-danger">July 15</td><td>8:30-9:30</td><td class="bg-consortium profile" colspan="6">Invited talk: Derek Long</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Probabilistic Planning II</td><td class="bg-tutorials text-info" colspan="3">Applications II</td></tr>
-        <tr><td>10:40-10:40</td><td colspan="6" class="text-muted">Coffee Break</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Learning</td><td class="bg-tutorials text-info" colspan="3">Constraint Reasoning and OR</td></tr>
-        <tr><td>12:30-14:00</td><td colspan="6" class="text-muted">Lunch Break</td></tr>
-        <tr><td>9:40-10:40</td><td class="bg-workshops text-success" colspan="3">Path and Motion Planning</td><td class="bg-tutorials text-info" colspan="3">Robotics II</td></tr>
-        <tr><td>15:30-15:50</td><td colspan="6" class="text-muted">Coffee Break</td></tr>
-        <tr><td>15:50-16:30</td><td class="bg-workshops text-success" colspan="3">Path Planning</td><td class="bg-tutorials text-info" colspan="3">Transportation Scheduling</td></tr>
-        <tr><td>16:40-17:40</td><td class="bg-workshops text-success" colspan="3">Applications III</td><td class="bg-tutorials text-info" colspan="3">Hybrid Planning</td></tr>
-
-        <tr><td colspan="2" class="bg-main"></td><td colspan="6" class="bg-main text-danger">End of Conference</td></tr>
-
-    </tbody>
-</table>
 
 </div>
+
+</div>
+
 
                                 </div>
 

@@ -456,7 +456,7 @@ def write_file(args):
     print( 'Writing to file (invited-talks.html) ...' )
 
     with open('../invited-talks.html', 'wb') as output_file:
-        output_file.write(program_template.encode("utf-8"))
+        output_file.write(invited_talks_template.encode("utf-8"))
 
     # write program file
     print( 'Compiling accepted-papers.html ...' )
