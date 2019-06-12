@@ -19,7 +19,6 @@ $(document).ready(function () {
 
     // method :: focus on scroll
     $('.navbar-dropdown-item').click( function() {
-        console.log($.attr(this, 'href'))
         $("html, body").animate({scrollTop:$("#"+$.attr(this, 'href').split("#")[1]).offset().top-50 }, 500);
     })
 
