@@ -207,7 +207,7 @@ $(document).ready(function () {
     });
 
     // method :: populate modal info
-    $(document).on("click", "#accepted_papers .list-group-item", function() {
+    $(document).on("click", "#papers .list-group-item", function() {
 
         var elem = $(this);
 
