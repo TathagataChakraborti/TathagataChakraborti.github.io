@@ -823,3 +823,10 @@ input:checked + .slider:before {
     color: white;
 }
 
+.demo-paper-link:hover {
+    background-color: #d9d9d6;
+}
+
+.demo-paper-link[target="_blank"]:hover {
+    background-color: #c7f1ff;
+}
