@@ -22,6 +22,7 @@ pc_list = {}
 paper_list = {}
 demos_list = {}
 jorunal_list = {}
+program = {}
 
 '''
 html templates
@@ -76,9 +77,6 @@ program templates
 with open('templates/program-template.html', 'r') as temp:
     program_template = temp.read()
 
-with open('templates/program-details-template.html', 'r') as temp:
-    program_details_template = temp.read()
-
 with open('templates/accepted-papers-template.html', 'r') as temp:
     accepted_papers_template = temp.read()
 
@@ -107,6 +105,25 @@ with open('templates/demo-journal-info-template.html', 'r') as temp:
     demo_journal_info_stub = temp.read()
 
 '''
+program details templates
+'''
+
+with open('templates/program-details-template.html', 'r') as temp:
+    program_details_template = temp.read()
+
+with open('templates/program/program-td-event.html', 'r') as temp:
+    program_details_event_template = temp.read()
+
+with open('templates/program/program-td-invited-talk.html', 'r') as temp:
+    program_details_invited_talk_template = temp.read()
+
+with open('templates/program/program-td-session.html', 'r') as temp:
+    program_details_session_template = temp.read()
+
+with open('templates/program/program-td-paper.html', 'r') as temp:
+    program_details_paper_template = temp.read()
+
+'''
 carousel templates
 '''
 
@@ -132,7 +149,8 @@ def cache(filename = 'data.xlsx',
     pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', 
     papers_filename = 'icaps19_info/ICAPS19 Metadata.xlsx', 
     demos_filename='icaps19_info/demo.xlsx',
-    journals_filename='icaps19_info/journal_track.xlsx'):
+    journals_filename='icaps19_info/journal_track.xlsx',
+    program_filename='icaps19_info/ICAPS19 Schedule.xlsx'):
 
     global data, pc_list, paper_list, demos_list, jorunal_list
 
@@ -229,6 +247,33 @@ def cache(filename = 'data.xlsx',
 
         jorunal_list[key] = entry
 
+    print( 'Program list...' )
+
+    wb = xl.load_workbook(program_filename)
+
+    current_date_key = ""
+    current_time_key = ""
+
+    for row in wb["Details"]:
+
+        row_values = [str(item.value).strip() for item in row]
+
+        if not all(item == 'None' for item in row_values):
+
+            if 'th' in row_values[0]:
+
+                current_date_key = row_values[0]
+                program[current_date_key] = {}
+                continue
+
+            else:
+
+                if row_values[0] != 'None':
+                    current_time_key = row_values[0]
+                    program[current_date_key][current_time_key] = []
+
+                program[current_date_key][current_time_key].append(row_values[1:])
+
 
 '''
 method :: write index.html
@@ -237,6 +282,7 @@ def write_file(args):
 
     global index_template, cfp_template, workshop_template, organizing_team_template, tutorial_template, info_template, privacy_policy_template, terms_of_use_template, awards_template
     global program_template, demo_journal_info_stub, program_details_template, demo_template, invited_talks_template, accepted_papers_template, journal_track_template
+    global program_details_template, program_details_event_template, program_details_invited_talk_template, program_details_session_template, program_details_paper_template
 
     # cache data
     print( 'Reading data...' )
@@ -461,6 +507,78 @@ def write_file(args):
 
     with open('../program.html', 'wb') as output_file:
         output_file.write(program_template.encode("utf-8"))
+
+    # write program file
+    print( 'Compiling program-details.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    program_details_template = program_details_template.replace('[HEADER]', header_template)    
+    program_details_template = program_details_template.replace('[NAVBAR]', navbar_template)    
+    program_details_template = program_details_template.replace('[BANNER]', banner_template)    
+    program_details_template = program_details_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    program_stub = ""
+    for date in program:
+        row_num = 0
+        for time in program[date]:
+            row_num += 1
+            row_num_2 = 1 
+
+            if 'invited talk' in program[date][time][0][0].lower():
+                program_stub += program_details_invited_talk_template.replace('[DATE]', date).replace('[TIME]', time).replace('[TALK]', program[date][time][0][0])
+            
+            elif program[date][time][0][1] != 'None':
+                program_stub += program_details_session_template.replace('[TIME]', time).replace('[SESSION-1]', program[date][time][0][0]).replace('[SESSION-2]', program[date][time][0][3])
+
+                for session in program[date][time][1:]:
+                    row_num += 1
+                    row_num_2 += 1
+
+                    paper1_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[0], session[1])
+                    paper2_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[3], session[4])
+
+                    temp = program_details_paper_template.replace('[SESSION-1]', paper1_details).replace('[SESSION-2]', paper2_details)
+
+                    if session[2] != 'None':
+                        temp = temp.replace('d-none-1 d-none', '').replace('[EXTRA-1]', session[2])
+
+                    if session[5] != 'None':
+                        temp = temp.replace('d-none-2 d-none', '').replace('[EXTRA-2]', session[5])
+
+                    if session[2] == 'Short Paper' or session[2] == 'Journal Paper':
+                        temp = temp.replace('text-orange-1', '')
+                    else:
+                        temp = temp.replace('text-orange-1', 'text-orange')
+
+                    if session[5] == 'Short Paper' or session[5] == 'Journal Paper':
+                        temp = temp.replace('text-orange-2', '')
+                    else:
+                        temp = temp.replace('text-orange-2', 'text-orange')
+
+                    # HACK ¯\_(ツ)_/¯
+                    if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
+                        pass
+                    else:
+                        temp = temp.replace('<b>', '').replace('</b>', '')
+
+                    program_stub += temp
+
+            else:
+                program_stub += program_details_event_template.replace('[TIME]', time).replace('[EVENT]', program[date][time][0][0])
+
+            program_stub = program_stub.replace('[ROWS-2]', str(row_num_2))
+
+        program_stub = program_stub.replace('[ROWS]', str(row_num))
+
+    program_details_template = program_details_template.replace('[PROGRAM]', program_stub).replace('None', '')
+
+    # write to output
+    print( 'Writing to file (program-details.html) ...' )
+
+    with open('../program-details.html', 'wb') as output_file:
+        output_file.write(program_details_template.encode("utf-8"))
 
     # write program file
     print( 'Compiling invited-talks.html ...' )
