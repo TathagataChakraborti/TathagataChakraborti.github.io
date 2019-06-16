@@ -537,7 +537,12 @@ def write_file(args):
                     row_num_2 += 1
 
                     paper1_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[0], session[1])
-                    paper2_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[3], session[4])
+
+                    # HACK ¯\_(ツ)_/¯
+                    if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
+                        paper2_details = session[3]
+                    else:
+                        paper2_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[3], session[4])
 
                     temp = program_details_paper_template.replace('[SESSION-1]', paper1_details).replace('[SESSION-2]', paper2_details)
 
