@@ -21,6 +21,7 @@ data = {}
 pc_list = {}
 paper_list = {}
 demos_list = {}
+jorunal_list = {}
 
 '''
 html templates
@@ -84,6 +85,9 @@ with open('templates/accepted-papers-template.html', 'r') as temp:
 with open('templates/demo-template.html', 'r') as temp:
     demo_template = temp.read()
 
+with open('templates/journal-track-template.html', 'r') as temp:
+    journal_track_template = temp.read()
+
 with open('templates/invited-talks-template.html', 'r') as temp:
     invited_talks_template = temp.read()
 
@@ -99,8 +103,8 @@ with open('templates/track-table-single.html', 'r') as temp:
 with open('templates/paper-info-template.html', 'r') as temp:
     paper_info_stub = temp.read()
 
-with open('templates/demo-info-template.html', 'r') as temp:
-    demo_info_stub = temp.read()
+with open('templates/demo-journal-info-template.html', 'r') as temp:
+    demo_journal_info_stub = temp.read()
 
 '''
 carousel templates
@@ -124,9 +128,13 @@ with open('templates/carousel-elements/carousel-indicators-template.html', 'r') 
 '''
 method :: cache data from xlsx file
 '''
-def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', papers_filename = 'icaps19_info/ICAPS19 Metadata.xlsx', demos_filename='icaps19_info/demo.xlsx'):
+def cache(filename = 'data.xlsx', 
+    pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx', 
+    papers_filename = 'icaps19_info/ICAPS19 Metadata.xlsx', 
+    demos_filename='icaps19_info/demo.xlsx',
+    journals_filename='icaps19_info/journal_track.xlsx'):
 
-    global data, pc_list, paper_list, demos_list
+    global data, pc_list, paper_list, demos_list, jorunal_list
 
     print( 'Reading highlights...' )
 
@@ -208,6 +216,19 @@ def cache(filename = 'data.xlsx', pc_filename = 'icaps19_info/ICAPS-2019_PC.xlsx
 
         demos_list[key] = entry
 
+    print( 'Journal Track list...' )
+
+    wb = xl.load_workbook(journals_filename)
+
+    for row in wb["JOURNALS"]:
+
+        row_values = [str(item.value).strip() for item in row]
+
+        key   = row_values[1]
+        entry = row_values
+
+        jorunal_list[key] = entry
+
 
 '''
 method :: write index.html
@@ -215,7 +236,7 @@ method :: write index.html
 def write_file(args):
 
     global index_template, cfp_template, workshop_template, organizing_team_template, tutorial_template, info_template, privacy_policy_template, terms_of_use_template, awards_template
-    global program_template, demo_info_stub, program_details_template, demo_template, invited_talks_template, accepted_papers_template
+    global program_template, demo_journal_info_stub, program_details_template, demo_template, invited_talks_template, accepted_papers_template, journal_track_template
 
     # cache data
     print( 'Reading data...' )
@@ -535,7 +556,7 @@ def write_file(args):
         else:
             demo_link = 'href="{}" target="_blank"'.format(demos_list[demo][2].strip())
 
-        demos_list_stub += demo_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0]).replace('[LINK]', demo_link)
+        demos_list_stub += demo_journal_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0]).replace('[LINK]', demo_link)
 
     demo_template = demo_template.replace('[HEADER]', header_template)    
     demo_template = demo_template.replace('[NAVBAR]', navbar_template)    
@@ -544,11 +565,34 @@ def write_file(args):
 
     demo_template = demo_template.replace('[DEMOS]', demos_list_stub)
 
-    # write to output
-    print( 'Writing to file (demos.html) ...' )
+    # write program file
+    print( 'Compiling journal-track.html ...' )
 
-    with open('../demos.html', 'wb') as output_file:
-        output_file.write(demo_template.encode("utf-8"))
+    # writing templates
+    print( 'Writing templates ...' )
+
+    journal_list_stub = ""
+    for journal in jorunal_list:
+
+        journal_link =  ""
+        if len(jorunal_list[journal]) == 3:
+            if jorunal_list[journal][2].strip() != 'None':
+                journal_link = 'href="{}" target="_blank"'.format(jorunal_list[journal][2].strip())
+
+        journal_list_stub += demo_journal_info_stub.replace('[TITLE]', journal).replace('[AUTHORS]', jorunal_list[journal][0]).replace('[LINK]', journal_link)
+
+    journal_track_template = journal_track_template.replace('[HEADER]', header_template)    
+    journal_track_template = journal_track_template.replace('[NAVBAR]', navbar_template)    
+    journal_track_template = journal_track_template.replace('[BANNER]', banner_template)    
+    journal_track_template = journal_track_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    journal_track_template = journal_track_template.replace('[DEMOS]', journal_list_stub)
+
+    # write to output
+    print( 'Writing to file (journal-track.html) ...' )
+
+    with open('../journal-track.html', 'wb') as output_file:
+        output_file.write(journal_track_template.encode("utf-8"))
 
     # write privacy policy file
     print( 'Compiling privacy-policy.html ...' )
