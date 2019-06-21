@@ -688,6 +688,12 @@ def write_file(args):
 
     demo_template = demo_template.replace('[DEMOS]', demos_list_stub)
 
+    # write to output
+    print( 'Writing to file (demos.html) ...' )
+
+    with open('../demos.html', 'wb') as output_file:
+        output_file.write(demo_template.encode("utf-8"))
+
     # write program file
     print( 'Compiling journal-track.html ...' )
 
