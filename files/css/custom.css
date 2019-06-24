@@ -830,3 +830,14 @@ input:checked + .slider:before {
 .demo-paper-link[target="_blank"]:hover {
     background-color: #c7f1ff;
 }
+
+.room {
+    min-width: 150px;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.cap-room {
+    display: block;
+    font-weight: normal;
+}
