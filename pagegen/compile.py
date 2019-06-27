@@ -83,6 +83,9 @@ with open('templates/accepted-papers-template.html', 'r') as temp:
 with open('templates/demo-template.html', 'r') as temp:
     demo_template = temp.read()
 
+with open('templates/demo-program-entry.html', 'r') as temp:
+    demo_program_entry = temp.read()
+
 with open('templates/journal-track-template.html', 'r') as temp:
     journal_track_template = temp.read()
 
@@ -281,8 +284,9 @@ method :: write index.html
 def write_file(args):
 
     global index_template, cfp_template, workshop_template, organizing_team_template, tutorial_template, info_template, privacy_policy_template, terms_of_use_template, awards_template
-    global program_template, demo_journal_info_stub, program_details_template, demo_template, invited_talks_template, accepted_papers_template, journal_track_template
+    global program_template, program_details_template, invited_talks_template, accepted_papers_template, journal_track_template
     global program_details_template, program_details_event_template, program_details_invited_talk_template, program_details_session_template, program_details_paper_template
+    global demo_program_entry, demo_journal_info_stub, demo_template
 
     # cache data
     print( 'Reading data...' )
@@ -681,11 +685,41 @@ def write_file(args):
 
         demos_list_stub += demo_journal_info_stub.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0]).replace('[LINK]', demo_link)
 
+    demos_program_stub = ""
+    num_desks = max([int(demos_list[demo][4]) for demo in demos_list])
+    num_session = set([demos_list[demo][3] for demo in demos_list])
+
+    for desk in range(num_desks):
+        demo_program_entry_stub = copy.deepcopy(demo_program_entry)
+
+        for session in num_session:
+
+            for demo in demos_list:
+
+                if demos_list[demo][3] == session and demos_list[demo][4] == str(desk+1):
+
+                    if demos_list[demo][2].strip() == 'None':
+                        demo_link =  ""
+                    else:
+                        demo_link = 'href="{}" target="_blank"'.format(demos_list[demo][2].strip())
+
+                    temp = '<a class="text-dark" [LINK]>[TITLE]<span class="text-muted"> &bull; [AUTHORS]</span></a>'
+                    temp = temp.replace('[TITLE]', demo).replace('[AUTHORS]', demos_list[demo][0]).replace('[LINK]', demo_link)
+
+                    demo_program_entry_stub = demo_program_entry_stub.replace('[NUM]', str(desk+1)).replace('[SESSION-{}]'.format(session), temp).replace('[LINK-{}]'.format(session), demo_link)
+
+                    if demo_link:
+                        demo_program_entry_stub = demo_program_entry_stub.replace('demo-paper-link-{}'.format(session), 'demo-paper-link click-to-go')
+
+        demo_program_entry_stub = demo_program_entry_stub.replace('[SESSION-A]', '').replace('[SESSION-B]', '')
+        demos_program_stub += demo_program_entry_stub
+
     demo_template = demo_template.replace('[HEADER]', header_template)    
     demo_template = demo_template.replace('[NAVBAR]', navbar_template)    
     demo_template = demo_template.replace('[BANNER]', banner_template)    
     demo_template = demo_template.replace('[QUICKLINKS]', quicklinks_template)    
 
+    demo_template = demo_template.replace('[DEMO-PROGRAM]', demos_program_stub)
     demo_template = demo_template.replace('[DEMOS]', demos_list_stub)
 
     # write to output

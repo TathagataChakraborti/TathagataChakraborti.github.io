@@ -90,6 +90,15 @@ $(document).ready(function () {
         $('html,body').animate({scrollTop: $("body").offset().top}, 'slow');
     });
 
+    // method :: propagate click on demo link
+    $(document).on( 'click', '.td-demo-link', function () {
+        event.preventDefault()
+
+        link = $(this).find('a').attr('href')
+        if (link)
+            window.open(link, '_blank')
+    });
+
     // method :: set default primary carousel speed 
     $('.carousel-primary').carousel({
         interval: 5000,

@@ -827,7 +827,15 @@ input:checked + .slider:before {
     background-color: #d9d9d6;
 }
 
+.td-demo-link:hover {
+    background-color: #d9d9d6;
+}
+
 .demo-paper-link[target="_blank"]:hover {
+    background-color: #c7f1ff;
+}
+
+td.demo-paper-link:hover {
     background-color: #c7f1ff;
 }
 
@@ -840,4 +848,8 @@ input:checked + .slider:before {
 .cap-room {
     display: block;
     font-weight: normal;
+}
+
+.demo-desk-num {
+    min-width: 100px;
 }

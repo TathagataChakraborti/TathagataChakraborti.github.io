@@ -172,11 +172,11 @@ Challenges and open problems in model acquisition.
 
 <ol class="breadcrumb breadcrumb-header">
 <li class="breadcrumb-item breadcrumb-item-primary">
-<h5 class="text-left">Accepted papers</h5>
+<h5 class="text-left">Program Details</h5>
 </li>
 </ol>
 
-Check out the papers at:
+We will announce details of the program soon. In the meantime, check out the papers at:
 <a href="https://openreview.net/group?id=icaps-conference.org/ICAPS/2019/Workshop/KEPS" target="_blank">
 https://openreview.net/group?id=icaps-conference.org/ICAPS/2019/Workshop/KEPS
 </a>.
@@ -247,92 +247,6 @@ Luciano Serafini, Paolo Traverso
 </span>
 </li>
 </ul>
-
-
-<ol class="breadcrumb breadcrumb-header">
-<li class="breadcrumb-item breadcrumb-item-primary">
-<h5 class="text-left">Program Details</h5>
-</li>
-</ol>
-
-<table border=0 cellpadding=0 cellspacing=0 width=600 style='border-collapse:
- collapse;table-layout:fixed;width:750pt'>
- <col width=116 style='width:40pt'>
- <col width=700 style='mso-width-source:userset;mso-width-alt:45312;
- width:300pt'>
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl63 width=116 style='height:15.75pt;width:40pt'>Time</td>
-  <td class=xl63 width=700 style='border-left:none;width:300pt'>Program</td>
- </tr>
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>09:00-09:15</td>
-  <td class=xl65 style='border-left:none'><b>Workshop Open</b></td>
- </tr>
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>09:15-10:15</td>
-  <td class=xl65 style='border-left:none'><b>Invited Talk: Scott Sanner</b></td>
- </tr>
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>10:15-11:00</td>
-  <td class=xl65 style='border-left:none'><b>Coffee Break</b></td>
- </tr>
-
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>11:00-12:15</td>
-  <td class=xl65 style='border-left:none'><b>Session 1</b> 
-<br />
-Goal-constrained planning domain model formal verification of safety properties
-<br />
-Object-Centric Knowledge Representations in Hierarchical Planning for Decentralized Environments
-<br />
-Domain Modeling for Multi-Payload Planning of Experimental Satellite
-<br />
-Planning for Implicit Coordination using FOND
-<br />
-The International Competition on Knowledge Engineering for Planning and Scheduling: Food for Thoughts (and Call to Action)
-
-
-</td>
- </tr>
-
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>12:30-14:15</td>
-  <td class=xl65 style='border-left:none'><b>Lunch Break</b></td>
- </tr>
-
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>14:15-15:30</td>
-  <td class=xl65 style='border-left:none'><b>Session 2</b> 
-<br />
-Reprocess: Process Refinement for Improving Accuracy in Hybrid Planning Domain Models
-<br />
-Commonsense Reasoning and Knowledge Acquisition to Guide Deep Learning on Robots
-<br />
-One-shot learning: From domain knowledge to action models
-<br />
-Incremental Learning of Action Models for Planning
-<br />
-Incremental Learning of Discrete Planning Domains from Continuous Perceptions
-</td>
- </tr>
-
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>15:30-16:00</td>
-  <td class=xl65 style='border-left:none'><b>Coffee Break</b></td>
- </tr>
-
- <tr height=20 style='mso-height-source:userset;height:15.75pt'>
-  <td height=20 class=xl64 style='height:15.75pt'>16:00-17:30</td>
-  <td class=xl65 style='border-left:none'><b> Tutorial: From Teaching the PDDL Novice to Empowering the Planning Solution Integrator</b></td>
- </tr>
-
- <![if supportMisalignedColumns]>
- <tr height=0 style='display:none'>
-  <td width=116 style='width:40pt'></td>
-  <td width=700 style='width:300pt'></td>
- </tr>
- <![endif]>
-</table>
 
 <ol class="breadcrumb breadcrumb-header">
 <li class="breadcrumb-item breadcrumb-item-primary">
