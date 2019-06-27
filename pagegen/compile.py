@@ -575,7 +575,47 @@ def write_file(args):
                     program_stub += temp
 
             else:
-                program_stub += program_details_event_template.replace('[TIME]', time).replace('[EVENT]', program[date][time][0][0])
+                temp = program_details_event_template.replace('[TIME]', time).replace('[EVENT]', program[date][time][0][0])
+
+                if 'Coffee' in program[date][time][0][0] or 'Lunch' in program[date][time][0][0]:
+                    temp = temp.replace('class="bg-main text-danger"', '')
+
+                program_stub += temp
+
+                if 'Demo' in program[date][time][0][0]:
+
+                    program_stub = program_stub.replace('rowspan="1"', 'rowspan="{}"'.format( len(demos_list.keys()) + 1 ))
+                    num_session = ['A', 'B']
+                    session_info = {'A' : 'Session A<br><span class="text-muted">18:00-19:00</span>', 'B' : 'Session B<br><span class="text-muted">19:00-20:00</span>'}
+
+                    for session in num_session:
+
+                        session_count = 0 
+                        for demo in demos_list:
+                            if demos_list[demo][3] == session:
+                                session_count += 1
+
+                        demo_session_start_flag = True
+
+                        for demo in demos_list:
+
+                            if session == demos_list[demo][3]:
+                                demos_program_stub = '<tr>{}<td class="text-muted">Desk {}</td><td colspan="4">{}</td></tr>'
+                                paper_info = '{} <span class="text-muted">&middot; {}</span>'.format(demo, demos_list[demo][0])
+
+                                if demo_session_start_flag:
+                                    demo_session_start_flag = False
+
+                                    demos_program_stub = demos_program_stub.format('<td rowspan = "{}">{}</td>'.format(session_count, session_info[session]), demos_list[demo][4], paper_info)
+                                else:
+                                    demos_program_stub = demos_program_stub.format('', demos_list[demo][4], paper_info)
+
+                                row_num += 1
+                                row_num_2 += 1
+                                program_stub += demos_program_stub
+
+                else:
+                    program_stub = program_stub.replace('rowspan="1"', '')
 
             program_stub = program_stub.replace('[ROWS-2]', str(row_num_2))
 
@@ -687,7 +727,7 @@ def write_file(args):
 
     demos_program_stub = ""
     num_desks = max([int(demos_list[demo][4]) for demo in demos_list])
-    num_session = set([demos_list[demo][3] for demo in demos_list])
+    num_session = ['A', 'B']
 
     for desk in range(num_desks):
         demo_program_entry_stub = copy.deepcopy(demo_program_entry)
