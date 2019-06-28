@@ -126,6 +126,9 @@ with open('templates/program/program-td-session.html', 'r') as temp:
 with open('templates/program/program-td-paper.html', 'r') as temp:
     program_details_paper_template = temp.read()
 
+with open('templates/program/program-td-opening.html', 'r') as temp:
+    program_opening_template = temp.read()
+
 '''
 carousel templates
 '''
@@ -286,7 +289,7 @@ def write_file(args):
     global index_template, cfp_template, workshop_template, organizing_team_template, tutorial_template, info_template, privacy_policy_template, terms_of_use_template, awards_template
     global program_template, program_details_template, invited_talks_template, accepted_papers_template, journal_track_template
     global program_details_template, program_details_event_template, program_details_invited_talk_template, program_details_session_template, program_details_paper_template
-    global demo_program_entry, demo_journal_info_stub, demo_template
+    global demo_program_entry, demo_journal_info_stub, demo_template, program_opening_template
 
     # cache data
     print( 'Reading data...' )
@@ -530,103 +533,112 @@ def write_file(args):
             row_num += 1
             row_num_2 = 1 
 
-            if 'invited talk' in program[date][time][0][0].lower():
-                program_stub += program_details_invited_talk_template.replace('[DATE]', date).replace('[TIME]', time).replace('[TALK]', program[date][time][0][0])
-            
-            elif program[date][time][0][1] != 'None':
+            if row_num == 1:
+                program_stub += program_opening_template.replace('[DATE]', date).replace('[TIME]', time).replace('[TALK]', program[date][time][0][0]).replace('bg-consortium profile', 'bg-main text-danger')
 
-                if program[date][time][0][1].strip() == 'Chair:':
-                    item1 = program[date][time][0][0] + '<br><span style="font-weight:normal;">Chair: TBD</span'
+            else:
+
+                if 'invited talk' in program[date][time][0][0].lower():
+
+                    if row_num == 2:
+                        program_stub += program_details_invited_talk_template.replace('<td rowspan="[ROWS]" class="text-dark"><b>[DATE]</b>', '').replace('[TIME]', time).replace('[TALK]', program[date][time][0][0])
+                    else:
+                        program_stub += program_details_invited_talk_template.replace('[DATE]', date).replace('[TIME]', time).replace('[TALK]', program[date][time][0][0])
+                
+                elif program[date][time][0][1] != 'None':
+
+                    if program[date][time][0][1].strip() == 'Chair:':
+                        item1 = program[date][time][0][0] + '<br><span style="font-weight:normal;">Chair: TBD</span'
+                    else:
+                        item1 = program[date][time][0][0] + '<br><span style="font-weight:normal;">{}</span'.format(program[date][time][0][1])
+
+                    if program[date][time][0][4].strip() == 'Chair:':
+                        item2 = program[date][time][0][3] + '<br><span style="font-weight:normal;">Chair: TBD</span'
+                    else:
+                        item2 = program[date][time][0][3] + '<br><span style="font-weight:normal;">{}</span'.format(program[date][time][0][4])
+
+                    program_stub += program_details_session_template.replace('[TIME]', time).replace('[SESSION-1]', item1).replace('[SESSION-2]', item2)
+
+                    for session in program[date][time][1:]:
+                        row_num += 1
+                        row_num_2 += 1
+
+                        paper1_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[0], session[1])
+
+                        # HACK ¯\_(ツ)_/¯
+                        if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
+                            paper2_details = session[3] + '<br><span style="font-weight:normal;">{}</span>'.format(session[4])
+                        else:
+                            paper2_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[3], session[4])
+
+                        temp = program_details_paper_template.replace('[SESSION-1]', paper1_details).replace('[SESSION-2]', paper2_details)
+
+                        if session[2] != 'None':
+                            temp = temp.replace('d-none-1 d-none', '').replace('[EXTRA-1]', session[2])
+
+                        if session[5] != 'None':
+                            temp = temp.replace('d-none-2 d-none', '').replace('[EXTRA-2]', session[5])
+
+                        if session[2] == 'Short Paper' or session[2] == 'Journal Paper':
+                            temp = temp.replace('text-orange-1', '')
+                        else:
+                            temp = temp.replace('text-orange-1', 'text-orange')
+
+                        if session[5] == 'Short Paper' or session[5] == 'Journal Paper':
+                            temp = temp.replace('text-orange-2', '')
+                        else:
+                            temp = temp.replace('text-orange-2', 'text-orange')
+
+                        # HACK ¯\_(ツ)_/¯
+                        if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
+                            pass
+                        else:
+                            temp = temp.replace('<b>', '').replace('</b>', '')
+
+                        program_stub += temp
+
                 else:
-                    item1 = program[date][time][0][0] + '<br><span style="font-weight:normal;">{}</span'.format(program[date][time][0][1])
+                    temp = program_details_event_template.replace('[TIME]', time).replace('[EVENT]', program[date][time][0][0])
 
-                if program[date][time][0][4].strip() == 'Chair:':
-                    item2 = program[date][time][0][3] + '<br><span style="font-weight:normal;">Chair: TBD</span'
-                else:
-                    item2 = program[date][time][0][3] + '<br><span style="font-weight:normal;">{}</span'.format(program[date][time][0][4])
-
-                program_stub += program_details_session_template.replace('[TIME]', time).replace('[SESSION-1]', item1).replace('[SESSION-2]', item2)
-
-                for session in program[date][time][1:]:
-                    row_num += 1
-                    row_num_2 += 1
-
-                    paper1_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[0], session[1])
-
-                    # HACK ¯\_(ツ)_/¯
-                    if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
-                        paper2_details = session[3] + '<br><span style="font-weight:normal;">{}</span>'.format(session[4])
-                    else:
-                        paper2_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[3], session[4])
-
-                    temp = program_details_paper_template.replace('[SESSION-1]', paper1_details).replace('[SESSION-2]', paper2_details)
-
-                    if session[2] != 'None':
-                        temp = temp.replace('d-none-1 d-none', '').replace('[EXTRA-1]', session[2])
-
-                    if session[5] != 'None':
-                        temp = temp.replace('d-none-2 d-none', '').replace('[EXTRA-2]', session[5])
-
-                    if session[2] == 'Short Paper' or session[2] == 'Journal Paper':
-                        temp = temp.replace('text-orange-1', '')
-                    else:
-                        temp = temp.replace('text-orange-1', 'text-orange')
-
-                    if session[5] == 'Short Paper' or session[5] == 'Journal Paper':
-                        temp = temp.replace('text-orange-2', '')
-                    else:
-                        temp = temp.replace('text-orange-2', 'text-orange')
-
-                    # HACK ¯\_(ツ)_/¯
-                    if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
-                        pass
-                    else:
-                        temp = temp.replace('<b>', '').replace('</b>', '')
+                    if 'Coffee' in program[date][time][0][0] or 'Lunch' in program[date][time][0][0]:
+                        temp = temp.replace('class="bg-main text-danger"', '')
 
                     program_stub += temp
 
-            else:
-                temp = program_details_event_template.replace('[TIME]', time).replace('[EVENT]', program[date][time][0][0])
+                    if 'Demo' in program[date][time][0][0]:
 
-                if 'Coffee' in program[date][time][0][0] or 'Lunch' in program[date][time][0][0]:
-                    temp = temp.replace('class="bg-main text-danger"', '')
+                        program_stub = program_stub.replace('rowspan="1"', 'rowspan="{}"'.format( len(demos_list.keys()) + 1 ))
+                        num_session = ['A', 'B']
+                        session_info = {'A' : 'Session A<br><span class="text-muted">18:00-19:00</span>', 'B' : 'Session B<br><span class="text-muted">19:00-20:00</span>'}
 
-                program_stub += temp
+                        for session in num_session:
 
-                if 'Demo' in program[date][time][0][0]:
+                            session_count = 0 
+                            for demo in demos_list:
+                                if demos_list[demo][3] == session:
+                                    session_count += 1
 
-                    program_stub = program_stub.replace('rowspan="1"', 'rowspan="{}"'.format( len(demos_list.keys()) + 1 ))
-                    num_session = ['A', 'B']
-                    session_info = {'A' : 'Session A<br><span class="text-muted">18:00-19:00</span>', 'B' : 'Session B<br><span class="text-muted">19:00-20:00</span>'}
+                            demo_session_start_flag = True
 
-                    for session in num_session:
+                            for demo in demos_list:
 
-                        session_count = 0 
-                        for demo in demos_list:
-                            if demos_list[demo][3] == session:
-                                session_count += 1
+                                if session == demos_list[demo][3]:
+                                    demos_program_stub = '<tr>{}<td class="text-muted">Desk {}</td><td colspan="4">{}</td></tr>'
+                                    paper_info = '{} <span class="text-muted">&middot; {}</span>'.format(demo, demos_list[demo][0])
 
-                        demo_session_start_flag = True
+                                    if demo_session_start_flag:
+                                        demo_session_start_flag = False
 
-                        for demo in demos_list:
+                                        demos_program_stub = demos_program_stub.format('<td rowspan = "{}">{}</td>'.format(session_count, session_info[session]), demos_list[demo][4], paper_info)
+                                    else:
+                                        demos_program_stub = demos_program_stub.format('', demos_list[demo][4], paper_info)
 
-                            if session == demos_list[demo][3]:
-                                demos_program_stub = '<tr>{}<td class="text-muted">Desk {}</td><td colspan="4">{}</td></tr>'
-                                paper_info = '{} <span class="text-muted">&middot; {}</span>'.format(demo, demos_list[demo][0])
+                                    row_num += 1
+                                    row_num_2 += 1
+                                    program_stub += demos_program_stub
 
-                                if demo_session_start_flag:
-                                    demo_session_start_flag = False
-
-                                    demos_program_stub = demos_program_stub.format('<td rowspan = "{}">{}</td>'.format(session_count, session_info[session]), demos_list[demo][4], paper_info)
-                                else:
-                                    demos_program_stub = demos_program_stub.format('', demos_list[demo][4], paper_info)
-
-                                row_num += 1
-                                row_num_2 += 1
-                                program_stub += demos_program_stub
-
-                else:
-                    program_stub = program_stub.replace('rowspan="1"', '')
+                    else:
+                        program_stub = program_stub.replace('rowspan="1"', '')
 
             program_stub = program_stub.replace('[ROWS-2]', str(row_num_2))
 
