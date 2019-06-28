@@ -534,7 +534,18 @@ def write_file(args):
                 program_stub += program_details_invited_talk_template.replace('[DATE]', date).replace('[TIME]', time).replace('[TALK]', program[date][time][0][0])
             
             elif program[date][time][0][1] != 'None':
-                program_stub += program_details_session_template.replace('[TIME]', time).replace('[SESSION-1]', program[date][time][0][0]).replace('[SESSION-2]', program[date][time][0][3])
+
+                if program[date][time][0][1].strip() == 'Chair:':
+                    item1 = program[date][time][0][0] + '<br><span style="font-weight:normal;">Chair: TBD</span'
+                else:
+                    item1 = program[date][time][0][0] + '<br><span style="font-weight:normal;">{}</span'.format(program[date][time][0][1])
+
+                if program[date][time][0][4].strip() == 'Chair:':
+                    item2 = program[date][time][0][3] + '<br><span style="font-weight:normal;">Chair: TBD</span'
+                else:
+                    item2 = program[date][time][0][3] + '<br><span style="font-weight:normal;">{}</span'.format(program[date][time][0][4])
+
+                program_stub += program_details_session_template.replace('[TIME]', time).replace('[SESSION-1]', item1).replace('[SESSION-2]', item2)
 
                 for session in program[date][time][1:]:
                     row_num += 1
@@ -544,7 +555,7 @@ def write_file(args):
 
                     # HACK ¯\_(ツ)_/¯
                     if "a:" in session[0] or "b:" in session[0] or "a:" in session[3] or "b:" in session[3]:
-                        paper2_details = session[3]
+                        paper2_details = session[3] + '<br><span style="font-weight:normal;">{}</span>'.format(session[4])
                     else:
                         paper2_details = '{} &middot; <span class="text-muted">{}</span>'.format(session[3], session[4])
 
