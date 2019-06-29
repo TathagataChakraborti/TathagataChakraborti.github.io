@@ -201,7 +201,7 @@ You can also call the hotel directly at <b>866-466-9199</b> and reference our gr
                                             </tbody>
                                         </table>
 
-                                        <table class="table info-table">
+                                        <table class="table info-table mb-3">
                                             <tbody class="go-big-for-current-font">
                                                 <tr><td class="indent">
 
@@ -211,6 +211,37 @@ You can also call the hotel directly at <b>866-466-9199</b> and reference our gr
                                                 <tr><td></td></tr>
                                             </tbody>
                                         </table>
+
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+<script>
+// Initialize and add the map
+function initMap() {
+
+var conf_loc = {lat: 37.869465, lng: -122.259651};
+var ws_loc = {lat: 37.875235, lng: -122.258366};
+var shattuck = {lat: 37.869424, lng: -122.267671};
+var hostel = {lat: 37.868365, lng: -122.254611};
+var campanile = {lat: 37.872236, lng: -122.257290};
+var club = {lat: 37.871978, lng: -122.255385};
+
+var map = new google.maps.Map(
+document.getElementById('map'), {zoom: 15, center: campanile});
+
+var marker = new google.maps.Marker({position: conf_loc, map: map, title: 'Martin Luther King, Jr. Student Union'});
+var marker = new google.maps.Marker({position: ws_loc, map: map, title: 'Sutardja Dai Hall'});
+var marker = new google.maps.Marker({position: shattuck, map: map, title: 'Hotel Shattuck Plaza'});
+var marker = new google.maps.Marker({position: hostel, map: map, title: 'Residence Halls Unit 1'});
+var marker = new google.maps.Marker({position: hostel, map: map, title: 'Residence Halls Unit 1'});
+var marker = new google.maps.Marker({position: campanile, map: map, title: 'Campanile Esplanade'});
+var marker = new google.maps.Marker({position: club, map: map, title: 'The Faculty Club'});
+
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbhy7kidx4RqH4BytnWfaqfcT2yBte-0w&callback=initMap">
+</script>
+
 
                                         </div>
 
@@ -245,7 +276,7 @@ South Hall Rd, Berkeley, CA 94704.
                                             </tbody>
                                         </table>
 
-<iframe width="600" height="450" frameborder="0" style="border:0"
+<iframe width="100%" height="400px" frameborder="0" style="border:0"
 src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJh9LbSCR8hYARPKlv00dvAso&key=AIzaSyCbhy7kidx4RqH4BytnWfaqfcT2yBte-0w" 
 allowfullscreen></iframe>
 
@@ -282,7 +313,7 @@ Minor Ln, Berkeley, CA 94720.
                                             </tbody>
                                         </table>
 
-<iframe width="600" height="450" frameborder="0" style="border:0"
+<iframe width="100%" height="400px" frameborder="0" style="border:0"
 src="https://www.google.com/maps/embed/v1/place?q=Berkeley%20Faculty%20Club&key=AIzaSyCbhy7kidx4RqH4BytnWfaqfcT2yBte-0w" allowfullscreen></iframe>
 
                                         </div>
