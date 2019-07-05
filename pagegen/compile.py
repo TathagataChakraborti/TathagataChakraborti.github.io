@@ -83,6 +83,9 @@ with open('templates/accepted-papers-template.html', 'r') as temp:
 with open('templates/demo-template.html', 'r') as temp:
     demo_template = temp.read()
 
+with open('templates/dc-template.html', 'r') as temp:
+    dc_template = temp.read()
+
 with open('templates/demo-program-entry.html', 'r') as temp:
     demo_program_entry = temp.read()
 
@@ -289,7 +292,7 @@ def write_file(args):
     global index_template, cfp_template, workshop_template, organizing_team_template, tutorial_template, info_template, privacy_policy_template, terms_of_use_template, awards_template
     global program_template, program_details_template, invited_talks_template, accepted_papers_template, journal_track_template
     global program_details_template, program_details_event_template, program_details_invited_talk_template, program_details_session_template, program_details_paper_template
-    global demo_program_entry, demo_journal_info_stub, demo_template, program_opening_template
+    global demo_program_entry, demo_journal_info_stub, demo_template, program_opening_template, dc_template
 
     # cache data
     print( 'Reading data...' )
@@ -435,6 +438,23 @@ def write_file(args):
 
     with open('../awards.html', 'w') as output_file:
         output_file.write(awards_template)
+
+    # write info file
+    print( 'Compiling dc.html ...' )
+
+    # writing templates
+    print( 'Writing templates ...' )
+
+    dc_template = dc_template.replace('[HEADER]', header_template)    
+    dc_template = dc_template.replace('[NAVBAR]', navbar_template)    
+    dc_template = dc_template.replace('[BANNER]', banner_template)    
+    dc_template = dc_template.replace('[QUICKLINKS]', quicklinks_template)    
+
+    # write to output
+    print( 'Writing to file (dc.html) ...' )
+
+    with open('../dc.html', 'w') as output_file:
+        output_file.write(dc_template)
 
     # write workshops file
     print( 'Compiling workshops.html ...' )
