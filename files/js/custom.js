@@ -7,7 +7,7 @@
 $(document).ready(function () {
 
     // method :: custom fonts for twitter timeline 
-    window.setTimeout(function(){
+    window.setTimeout( function() {
         $(".twitter-timeline").contents().find(".timeline-Tweet-text").css("font-size","12");
         $(".twitter-timeline").contents().find(".timeline-Header-title").css("font-size","20");
     }, 2000);
@@ -16,6 +16,11 @@ $(document).ready(function () {
     if(window.location.hash) {
         $("html, body").animate({scrollTop:$(window.location.hash).offset().top-50 }, 500);
     }
+
+    // method :: double scroll
+    $(document).ready( function() {
+        $('.table-responsive').doubleScroll();
+    });
 
     // method :: focus on scroll
     $('.navbar-dropdown-item').click( function() {
