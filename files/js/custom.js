@@ -26,6 +26,12 @@ $(document).ready(function () {
     $('.navbar-dropdown-item').click( function() {
         $("html, body").animate({scrollTop:$("#"+$.attr(this, 'href').split("#")[1]).offset().top-50 }, 500);
     })
+    
+    // method :: nested downlaod program button
+    $(document).on( 'click', '.download-program-badge', function () {
+        event.preventDefault()
+        window.open('files/pdfs/icaps19_program.pdf', '_blank')
+    })
 
     // method :: workshop reel on openreview area
     function show_ws_name() {
