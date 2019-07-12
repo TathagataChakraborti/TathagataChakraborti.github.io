@@ -21,5 +21,19 @@ for row in wb["LOCATIONS"]:
             else:
                 affiliation_data[item] = 1
 
-for key in affiliation_data:
-    print('["{}", {}, {}],'.format(key, affiliation_data[key], 100*affiliation_data[key]/total))
+
+title_cache = []
+mega_cache = []
+
+for row in wb["AAAIPressList"]:
+
+    row_values = [str(item.value).strip().lower() for item in row]
+
+    title_cache.append(row_values[2])
+    mega_cache.append(row_values[2] + ' ' + row_values[3])
+
+with open('title_cache.txt', 'wb') as f:
+    f.write(' '.join(title_cache).encode("utf-8"))
+
+with open('mega_cache.txt', 'wb') as f:
+    f.write(' '.join(mega_cache).encode("utf-8"))    
