@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       // Note: you will need to get a mapsApiKey for your project.
+       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+       'mapsApiKey': 'AIzaSyCbhy7kidx4RqH4BytnWfaqfcT2yBte-0w'
+     });
+     google.charts.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Location', 'Entries', 'Percentage'],
+["Ben-Gurion University", 6, 1.8987341772151898],
+["Harvard University", 1, 0.31645569620253167],
+["University of Massachusetts Amherst", 3, 0.9493670886075949],
+["Technion", 3, 0.9493670886075949],
+["Université catholique de Louvain", 1, 0.31645569620253167],
+["Harvey Mudd College", 14, 4.430379746835443],
+["King's College London", 8, 2.5316455696202533],
+["University of New Hampshire", 5, 1.5822784810126582],
+["Konkuk University", 1, 0.31645569620253167],
+["Sungkyunkwan University", 1, 0.31645569620253167],
+["The University of Tokyo", 2, 0.6329113924050633],
+["Institute for Systems and Robotics, Instituto Superior Técnico, U. Lisboa", 4, 1.2658227848101267],
+["University of Basel", 16, 5.063291139240507],
+["Jet Propulsion Laboratory, California Institute of Technology", 18, 5.69620253164557],
+["Université du Québec à Montréal", 3, 0.9493670886075949],
+["Data61", 1, 0.31645569620253167],
+["Australian National University, Data61", 1, 0.31645569620253167],
+["Australian National University", 3, 0.9493670886075949],
+["IBM", 6, 1.8987341772151898],
+["Karlsruhe Institute of Technology", 2, 0.6329113924050633],
+["Laboratoire d'Informatique de Grenoble", 2, 0.6329113924050633],
+["IBM Research", 2, 0.6329113924050633],
+["Arizona State University", 3, 0.9493670886075949],
+["National University of Defense Technology", 5, 1.5822784810126582],
+["Monash University", 7, 2.2151898734177213],
+["Massachusetts Institute of Technology", 6, 1.8987341772151898],
+["The University of Melbourne", 5, 1.5822784810126582],
+["Delft University of Technology", 5, 1.5822784810126582],
+["University of Würzburg", 1, 0.31645569620253167],
+["University of Konstanz", 2, 0.6329113924050633],
+["Vassar College", 1, 0.31645569620253167],
+["Università degli Studi di Verona", 1, 0.31645569620253167],
+["CD Laboratory, TU Wien", 4, 1.2658227848101267],
+["XIMES GmbH", 3, 0.9493670886075949],
+["University of Toronto", 11, 3.481012658227848],
+["Oesia", 1, 0.31645569620253167],
+["Universitat Pompeu Fabra", 2, 0.6329113924050633],
+["Universitat Politècnica de València", 3, 0.9493670886075949],
+["University of Huddersfield", 2, 0.6329113924050633],
+["West Yorkshire Police", 1, 0.31645569620253167],
+["Instituto Superior Técnico and INESC-ID and Carnegie Mellon University", 1, 0.31645569620253167],
+["Carnegie Mellon University", 17, 5.379746835443038],
+["Instituto Superior Tecnico/INESC-ID", 1, 0.31645569620253167],
+["CNRS, University of Bordeaux", 1, 0.31645569620253167],
+["MIT", 4, 1.2658227848101267],
+["Tufts University", 1, 0.31645569620253167],
+["Indiana University Bloomington", 1, 0.31645569620253167],
+["Pontifical Catholic University of Rio Grande do Sul", 2, 0.6329113924050633],
+["Universidade Federal do Rio Grande do Sul", 1, 0.31645569620253167],
+["University of Southern California", 6, 1.8987341772151898],
+["BGU of the Negev, Israel", 1, 0.31645569620253167],
+["Ben Gurion University", 1, 0.31645569620253167],
+["Saarland University", 6, 1.8987341772151898],
+["University of Freiburg", 5, 1.5822784810126582],
+["Sapienza Univ. Roma", 1, 0.31645569620253167],
+["Sapienza University of Rome", 4, 1.2658227848101267],
+["Singapore Management University", 8, 2.5316455696202533],
+["Research School of Computer Science, ANU", 1, 0.31645569620253167],
+["Universidad Carlos III de Madrid", 4, 1.2658227848101267],
+["Sorbonne Université, LIP6", 1, 0.31645569620253167],
+["Université Paris Saclay, LRI", 1, 0.31645569620253167],
+["Conservatoire national des arts et métiers, CEDRIC", 1, 0.31645569620253167],
+["Indraprastha Institute of Information Technology, Dehli", 3, 0.9493670886075949],
+["Czech Technical University in Prague", 3, 0.9493670886075949],
+["Université Grenoble Alpes, Grenoble INP", 1, 0.31645569620253167],
+["Polytechnique Montreal", 1, 0.31645569620253167],
+["University of Padova", 1, 0.31645569620253167],
+["Technion – Israel Institute of Technology", 1, 0.31645569620253167],
+["MCP GmbH", 1, 0.31645569620253167],
+["Ulm University", 2, 0.6329113924050633],
+["University of Brescia", 10, 3.1645569620253164],
+["Hasso Plattner Institute, University of Potsdam", 12, 3.7974683544303796],
+["Princeton University", 1, 0.31645569620253167],
+["InterDigital, Inc.", 1, 0.31645569620253167],
+["Mitsubishi Electric Research Laboratories", 1, 0.31645569620253167],
+["Invitae", 1, 0.31645569620253167],
+["Hebrew University", 1, 0.31645569620253167],
+["University of Naples Federico II", 2, 0.6329113924050633],
+["University of São Paulo", 3, 0.9493670886075949],
+["Polytechnique Montréal", 1, 0.31645569620253167],
+["CISPA Helmholtz Center for Information Security", 1, 0.31645569620253167],
+["Saarland University, Saarland Informatics Campus", 1, 0.31645569620253167],
+["RWTH Aachen University", 3, 0.9493670886075949],
+["The University of Queensland", 2, 0.6329113924050633],
+["CSIRO", 1, 0.31645569620253167],
+["York University", 1, 0.31645569620253167],
+["Ryerson University, Toronto, Ontario", 1, 0.31645569620253167],
+["Imperial College London", 3, 0.9493670886075949],
+["NASA Ames Research Center", 1, 0.31645569620253167],
+["University of Sassari", 2, 0.6329113924050633],
+["Università di Genova", 1, 0.31645569620253167],
+["Ecole Polytechnique and ISAE-SUPAERO, France", 1, 0.31645569620253167],
+["University of Colorado, Boulder", 2, 0.6329113924050633],
+["Stanford University", 4, 1.2658227848101267],
+["University of Washington", 4, 1.2658227848101267],
+["The University of Texas at Austin", 3, 0.9493670886075949],
+["Ecole Polytechnique", 1, 0.31645569620253167],
+["Indian Institute of Technology, Delhi", 3, 0.9493670886075949]
+      ]);
+
+      var options = {
+        sizeAxis: { minValue: 0, maxValue: 100 },
+        region: ['002', '155'], // Western Europe
+        displayMode: 'markers',
+        colorAxis: {colors: ['#e7711c', '#4374e0']} // orange to blue
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body>
+    <h1>ICAPS 2019 Authors by location</h1>
+    <div id="chart_div" style="width: auto; height: 90vh;">
+    </div>
+  </body>
+</html>
