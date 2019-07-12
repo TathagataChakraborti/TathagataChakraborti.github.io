@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       // Note: you will need to get a mapsApiKey for your project.
+       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+       'mapsApiKey': 'AIzaSyCbhy7kidx4RqH4BytnWfaqfcT2yBte-0w'
+     });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['United States', 127],
+          ['Germany', 29],
+          ['United Kingdom', 22],
+          ['Australia', 14],
+          ['Canada', 12],
+          ['France', 10],
+          ['Italy', 8],
+          ['Israel', 8],
+          ['Spain', 7],
+          ['Switzerland', 6],
+          ['Singapore', 5],
+          ['Brazil', 4],
+          ['Czech Republic', 4],
+          ['Austria', 3],
+          ['India', 3],
+          ['Japan', 3],
+          ['South Korea', 3],
+          ['Hungary', 2],
+          ['Netherlands', 2],
+          ['Portugal', 2],
+          ['Taiwan', 2],
+          ['Belgium', 1],
+          ['China', 1],
+          ['Ireland', 1],
+          ['New Zealand', 1]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>ICAPS 2019 Registration</h1>
+    <div id="regions_div" style="width: auto; height: 90vh;">
+    </div>
+  </body>
+</html>
